@@ -13,6 +13,8 @@ var addressSchema =  new Schema({
 	city 			: {type : String,required : true},
 	district 		: {type : String,required : true},
 	state 			: {type : String,required : true},
+	pincode 		: {type : Number,required : true},
+	wardNo 			: {type : Number,required : true}
 })
 
 /*A user schema to store all its details*/
