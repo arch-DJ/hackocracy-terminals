@@ -44,7 +44,8 @@ var userSchema = new Schema({
 // Hashing password and protecting it from rainbow attack i.e maximum login limit
 userSchema.pre(save,function(next){
 		var user = this;
-		if(!user.isModified('password')) return next();
+		if(!user.isModified('password')) 
+			return next();
 		//generation of a salt 
 		bcrypt.genSalt(SALT_WORK_FACTOR,function(err,salt){
 				if(err) 
