@@ -36,7 +36,9 @@ var userSchema = new Schema({
 	mobile 			: {type : Number,required : true,unique; true},
 	address 		: [addressSchema],
 	profession 		: {type : String,required : true},
-	isBanned 		: {type : Boolean,default : false}	
+	isBanned 		: {type : Boolean,default : false},
+	group			: {type : Number,default : 8},
+					  {timestamps: true}	
 });
 
 // Hashing password and protecting it from rainbow attack i.e maximum login limit
