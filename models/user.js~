@@ -34,53 +34,15 @@ var userSchema = new Schema({
                    type : String,
                    required : true,
                    unique : true
-                   },	
+                   }	
         email : {
                 work : mongoose.SchemaTypes.Email,required:'true',
                 home : mongoose.SchemaTypes.Email,
                 unique : true,
                 required : 'Email address is required'
-                },
+                }
         password :{type : String , required : true },
-        mobile :{
-                type : Number,
-                required : true,
-                unique; true
-                },
-        address1 : {
-                   type : String,
-                   required : true;
-                   },
-        address2 : {
-                    type : String,
-                    default : ''
-                    },
-        city :{
-               type : String,
-               required : true
-                },
-        district :{
-                type : String,
-                required : true
-                },
-       state :{
-                type : String,
-                required : true
-              },
-       profession :{
-                    type = String,
-                    required : true
-                    }
-       isBanned :{
-                  type :Boolean,
-                  default : false
-                 }
-       time_created : {
-                        type : Date,
-                        default : Date.now
-                      }
 });
-// use of password hashing and "USE OF MAXIMUM LOGIN LIMIT REMAINING"
 userSchema,pre(save,function(next){
         var user = this;
         if(!user.isModified('password')) return next();
@@ -95,7 +57,6 @@ userSchema,pre(save,function(next){
                         next();
                 });
         });
-        
 });
 UserSchema,methods.comparePassword = function(candidatePassword , cb){
         bcrypt.compare(candidatePassword, this.password , function (err,isMatch){
