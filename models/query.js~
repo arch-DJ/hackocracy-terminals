@@ -11,7 +11,7 @@ const Schema = mongoose.Schema;
 	    wardNo 			: {type : Number,required : true}
 	    });
 var querySchema = new Schema ({
-	userid 		: {type:mongoose.Schema.Types.ObjectId, ref: 'User'},// The user folder must be included inside this folder??
+	userid 		: {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
 	query  		: {type : String , required : true},
 	tags   		: {type : String , required : true},
 	heading 	: {type : String , required : true},
@@ -21,6 +21,4 @@ var querySchema = new Schema ({
 
 var Query = mongoose.models('Query',querySchema);
 
-module.exports = {
-	Query
-}
+models

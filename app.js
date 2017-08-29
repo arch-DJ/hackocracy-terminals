@@ -8,7 +8,7 @@ var _ = require("lodash");
 
 
 const {User} = require("./models/user")// Now can access all the user.js Schema via that of User variable
-mongoose.connect('mongodb://localhost/hackocracyterminals');
+mongoose.connect("mongodb://localhost:27017/hackocracyTerminals');
 var db = mongoose.connection;
 
 var app = express();

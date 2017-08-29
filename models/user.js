@@ -87,6 +87,6 @@ UserSchema.methods.comparePassword =  function(candidatePassword , cb){
 }
 // User as a deconstructor will be added where-ever it will be used
 var User = mongoose.model('User' , UserSchema);
-models.exports = {
+module.exports = {
 	User	
 }
