@@ -11,8 +11,10 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+var ejs = require('ejs');
+var _ = require("lodash");
 
-mongoose.connect('mongodb://localhost/loginapp');
+mongoose.connect('mongodb://localhost/hackocracyterminals');
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
@@ -25,7 +27,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views')); // Views folder will handle views
 // set 'handlebars' as app.engine and defaultLayout file as 'Layout'
 app.engine('handlebars', exphbs({defaultLayout:'layout'}));
-app.set('view engine', 'handlebars'); // set view engine to handlebars
+app.set('view engine', 'ejs'); // set view engine to handlebars
 
 // BodyParser Middleware
 app.use(bodyParser.json());
@@ -64,7 +66,6 @@ app.use(expressValidator({
   }
 }));
 
-// Connect Flash
 app.use(flash());
 
 // Global Vars
@@ -82,6 +83,59 @@ app.use('/users', users);
 // Set Port
 app.set('port', (process.env.PORT || 3000));
 
+// Initializing routers
+app.get("/",(req,res)=>{
+  res.render("homepage");
+});
+
+app.post("/login",(req,res)=>{
+  res.render("login");
+});
+//Using lodash module .
+app.post("/register",(req,res)=>{
+  res.render("register");
+  //var body= _.pick(req.body,['email','password']);
+  //Will be done according the register form given
+  var newUser = User(body);
+  newUser.save().then((user)=>{
+    res.status(200).send();
+  },(err)=>{
+    res.status(400).send();
+  })
+});
+
+app.get("/feeds",(req,res)=>{
+  res.render("feeds");
+});
+//Requires authenticate specially for admins
+app.get("/adminportal",(req,res)=>{
+  res.render("adminportal")
+});
+
+app.get("/publicportal",(req,res)=>{
+  res.render("publicportal");
+});
+// Submission of questions or the query
+app.post("/queryposting",(req,res)=>{
+  res.render("queryposting");
+  var body = _.pick(req.body,[]);// Do be done according to the body page 
+  
+  
+});
+
+app.post("/adminposting",(req,res)=>{
+  res.render("adminposting");
+  var body = _.pick(req.body,[])// To be done according to the adminposting page;
+});
+// Query initilization according to that of catogory
+app.get("/feeds/:id",(req,res))=>{
+  
+});
+ 
+//Main page that comes after that of the logining the user in
+app.get("/dashboard/:id",(req,res)=>{
+  res.render("dashboard");
+});
 app.listen(app.get('port'), function() {
 	console.log('Server started on port '+ app.get('port'));
 });
