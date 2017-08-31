@@ -5,13 +5,27 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var ejs = require('ejs');
 var _ = require("lodash");
-
+const flash = require('connect-flash');
 
 const {User} = require("./models/user")// Now can access all the user.js Schema via that of User variable
-mongoose.connect("mongodb://localhost:27017/hackocracyTerminals');
+mongoose.connect("mongodb://localhost:27017/Todo");
 var db = mongoose.connection;
-
 var app = express();
+
+const session = require('express-session')
+app.use(session({
+  cookieName  : 'session',
+  secret      : 'asdfghjklpoiuytrewq',
+}))
+app.use(flash());
+const passport = require('passport');
+
+app.use(passport.initialize());
+
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
 
 // View Engine
 app.set('views', path.join(__dirname, 'views')); // Views folder will handle views
@@ -27,7 +41,7 @@ app.get("/",(req,res)=>{
 });
 
 // For the getting part
-app.get("/login",(req,res)=>{
+/*app.get("/login",(req,res)=>{
   res.render("login");
 });
 
@@ -52,7 +66,7 @@ app.post("/register",(req,res)=>{
   },(err)=>{
     res.status(400).send();
   })
-});
+});*/
 
 app.get("/feeds",(req,res)=>{
   res.render("feeds");
@@ -79,7 +93,7 @@ app.post("/adminposting",(req,res)=>{
   var body = _.pick(req.body,[])// To be done according to the adminposting page;
 });
 // Query initilization according to that of catogory
-app.get("/feeds/:id",(req,res))=>{
+app.get("/feeds/:id",(req,res)=>{
   
 });
  
@@ -87,6 +101,24 @@ app.get("/feeds/:id",(req,res))=>{
 app.get("/dashboard/:id",(req,res)=>{
   res.render("dashboard");
 });
+app.post('/login',passport.authenticate('local-login',{
+    successRedirect :  '/home',
+    failureRedirect : '/afhjguth',
+    failureFlash : true
+}))
+app.post('/register',passport.authenticate('local-signup',{
+    successRedirect :  '/dashfboghard',
+    failureRedirect :  '/auth',
+}))
+app.get('/register',function(req,res){
+    if(req.isAuthenticated())
+      res.redirect('/home');
+    else 
+      res.render("register");
+})
+app.get('/login',(req,res)=>{
+  res.render("login");
+})
 app.listen(port ,()=> {
-	console.log('Server started on port '+ app.get('port'));
+	console.log('Server started on port '+ port);
 });
