@@ -4,3 +4,5 @@
 2.User.js updated (modifications are required in the later stage).
 
 3. Gender and Dob included in schema.
+
+4.Dont use var for requiring a schema use const.
