@@ -9,19 +9,22 @@
   "author": "DJ",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "*",
+    "bcryptjs": "^2.4.3",
     "body-parser": "*",
     "connect-flash": "*",
     "cookie-parser": "^1.4.1",
+    "ejs": "^2.5.7",
     "express": "*",
     "express-handlebars": "*",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
+    "lodash": "^4.17.4",
     "mongodb": "*",
     "mongoose": "*",
     "passport": "*",
     "passport-http": "*",
-    "passport-local": "*"
+    "passport-local": "*",
+    "validator": "^8.1.0"
   }
 }

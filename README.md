@@ -5,4 +5,7 @@
 
 3. Gender and Dob included in schema.
 
-4.Dont use var for requiring a schema use const.
+
+4. Basic routing done  for the different pages.
+
+5. Models user improved.
