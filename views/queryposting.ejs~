@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+    <TITLE>POST YOUR QUERY</TITLE>
+</HEAD>
+<body>
+    <form action = "/queryposting1" method = "post">
+    <input type = "text" name = "query" placeholder = "Enter your query"> <br>
+    <input type = "text" name = "heading" placeholder = "Enter the heading of the query"><br>
+    <input type = "text" name = "tags" placeholder = "Enter the tags"><br>
+    <input type="submit" value="send">
+    </form>
+</body>
+

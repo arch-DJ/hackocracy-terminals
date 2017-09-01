@@ -1,25 +1,41 @@
 const _ = require("lodash");
+const mongoose = require("mongoose");
+//var {Query} = require("./../models/query");
+var Query = mongoose.model('Query');
 
-var {Query} = require("./../models/query");
-
-
-// Controller to insert the query in the Query Database
 var insertQuery = function(req){
-    var body = _.pick(req.body,['query','tags','heading','address']);//Do Id needs to be considered here?
-    var queryInsert = new Query{
-      query : req.body.query,
-      userid : req.user._id
-    }
-    queryInsert.save().then((e)=>{
-        console.log("Data inserted");
-    },(err)={
-       console.log("Data not inserted "); 
-    });
+//	console.log(req.body);
+	var queryInsert = new Query({
+	  query : req.body.query,
+	  heading : req.body.heading,
+	  tags : req.body.tags
+	});
+	queryInsert.save().then((e)=>{
+	  console.log("Date inserted to the query collection");
+	  
+	},(err)=>{
+	  console.log(err);
+	});
 };
+
+
+// To put list of all the queries on the feeds page
+var getAllElements = function(req,callback){
+  Query.find().then((query)=>{
+    if(query){
+    callback({"data":query});
+   }
+    else
+    callback({"data":null});
+  },(err)=>{
+    console.log("No query found");
+    callback({"data":null});
+  });
+}
 
 // To put list of the queries posted by an user
 var getElementByUserId = function(req,callback){
-  Query.find({"userid":req.userid}).then((query)=>{
+  Query.find({"userid":req.user.userid}).then((query)=>{
     callback({"data":query});
   },(err)=>{
     callback({"date":null});
@@ -27,24 +43,16 @@ var getElementByUserId = function(req,callback){
 };
 // Get list of query via a particular tags
 var getElementByTags = function(req,callback){
-  Query.find({"tags":req.tags}).then((query))=>{   // How to handle a tags when its a array
+  Query.find({"tags":req.params.tags}).then((query)=>{   // How to handle a tags when its a array
     callback({"data":query});
   },(err)=>{
-    callback("data":null);
-  }
+    callback({"data":null});
+  });
 };
 
-// For searching a particular query
-var getElementByQuery = function(req,callback){
- Query.find({"query":req.query}).then((query)=>{
-   callback({"data":query});
- ),(err)=>{
-    callback{("data":null});  
- }); 
-};
-
+// For searching a particular headings
 var getElementByHeading = function(req,callback){
-  Query.find({"heading":req.heading}).then((query)=>{
+  Query.find({"heading":req.params.heading}).then((query)=>{
     if(!query)
     {
       return  callback({"data":null})
@@ -56,17 +64,30 @@ var getElementByHeading = function(req,callback){
   
 };
 
-var getElementByAddress = function(req,callback){
-  Query.find("address":req.address)
-}
+// Get the elements by the date created
+var getElementbyDate=function(req,callback){
+  Query.find({"createdAt":req.params.date}).then((query)=>{
+    if(!query){
+      return callback({"data":null});
+    }
+    callback({"data":query})
+   },(err)=>{
+     callback({"data":null});
+     console.log("Some error occurred");
+   });
+  };
+
 
 // The following functions would be called form the calling functions
 
 module.exports = {
+ insertQuery,
+ getAllElements,
  getElementByHeading,
- getElementByQuery,
+// getElementByQuery,
  getElementByTags,
- getElementByUserId 
+ getElementByUserId,
+ getElementbyDate 
 };
 
 //1. How to save into the database when its a array of string like in tags
