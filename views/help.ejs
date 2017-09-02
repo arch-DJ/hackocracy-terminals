@@ -1,0 +1,30 @@
+<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+    <option value="//getQuery/all">Select any option to filter</option>
+    <option value="/sortqbydate1">Sort By Date-Created</option>
+    <option value="/sortqbydate2">Sort By Date-Modified</option>
+</select>
+
+<br>
+<br>
+<p>
+<p>
+<script>
+    function redirect(){
+        var a = document.getElementById("dateValue").value;
+        location.href='/getQuery/date/'+a;
+    }
+</script>
+
+Search query by date of creation of query:-
+<input type = "date" name = "date" placeholder = "Enter date of creation of query" id="dateValue">
+<input type = "submit" name = "submit" onclick="redirect()">
+
+</p>
+<br>
+<br>
+<form>
+Search query by userid
+<input type = "text" name = "date" placeholder = "Enter userid">
+<input type = "submit" name = "submit">
+</form>
+

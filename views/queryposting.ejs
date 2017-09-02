@@ -1,14 +1,46 @@
-<!DOCTYPE HTML>
-<HTML>
-<HEAD>
-    <TITLE>POST YOUR QUERY</TITLE>
-</HEAD>
-<body>
-    <form action = "/queryposting" method = "post">
-    <input type = "text" name = "query" placeholder = "Enter your query"> <br>
-    <input type = "text" name = "heading" placeholder = "Enter the heading of the query"><br>
-    <input type = "text" name = "tags" placeholder = "Enter the tags"><br>
-    <input type="submit" value="send">
-    </form>
-</body>
+<% include header.ejs %>
+    <div class="main">
+        <section class="module">
+            <div class="container">
+                <div class="row">
+                                                        </div>
+                    <hr class="divider-w pt-20">
+                    <div class="row">
+                                    <div class="col-sm-12">
+                                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                                            </div>
+                    </div>
+                    <div class="col-sm-4">
+                <!--                <div class="form-group">-->
+                <!--                  <button class="btn btn-round btn-g" type="submit">Apply</button>-->
+                <!--                  <input type="hidden" value="" name="user">-->
+                <!--                </form>-->
+                <!--                </div>-->
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <h1 class="module-title font-alt">POST YOUR QUERY</h1>
+                        <form action = "/queryposting" method = "post">
+                            Query:<input type = "text" name = "query" placeholder = "Enter your query"  required> <br>
+                            Heading:<input type = "text" name = "heading" placeholder = "Enter the heading of the query" required><br>
+                            Tag:<input type = "text" name = "tags" placeholder = "Write  the tag" required><br>
+                            Address Line 1:<input type ="text" name="address1" placeholder="Address"  required title="Please enter your address"><br>
+                            Address Line 2:<input type ="text" name="address2" placeholder="Address"  ><br>
+                            City:<input type ="text" name="city" placeholder="City" required  title="Please enter your city"><br>
+                            District:<input type ="text" name="district" placeholder="District" required  title="Please enter your district"><br>
+                            State:<input type="text" name="state" placeholder="State" required><br>
+                            Pin Code:<input type="phone" name="pincode" placeholder="Pin Code" required  title="Please enter the valid 6 digit Pin Code of your area"><br>
+                            Ward Number:<input type="phone" name="wardNo" required>
+                                <input type="submit" value="send">
+                            </form>
 
+                    </div>
+                </div>
+                <hr class="divider-w">
+                            </div>
+        </section>
+        <% include footer.ejs %>
+    </body>
+</html>

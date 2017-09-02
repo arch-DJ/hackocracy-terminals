@@ -23,6 +23,7 @@ var insertQuery = function(req){
 var getAllElements = function(req,callback){
   Query.find().then((query)=>{
     if(query){
+      console.log(query.createdAt);
     callback({"data":query});
    }
     else
@@ -77,6 +78,31 @@ var getElementbyDate=function(req,callback){
    });
   };
 
+// API to to sort the message in the decreasing order of the createdDate
+var sortByCreatedDate = function(req,callback){
+  Query.find({}).sort('-createdAt').then((query)=>{
+    if(!query){
+      return callback({"data":null});
+    }
+    callback({"data":query});
+  },(err)=>{
+    callback({"data":null});
+    console.log("some error occurred");
+  });
+};
+// API to sort the message according to the decreasing order of the modifiedDate
+var sortByUpdatedDate = function(req,callback){
+  Query.find({}).sort('-updatedAt').then((query)=>{
+    if(!query){
+      return callback({"data":null});
+    }
+    callback({"data":query});
+  },(err)=>{
+    callback({"data":null});
+    console.log("some error occurred");
+  });
+};
+
 
 // The following functions would be called form the calling functions
 
@@ -87,7 +113,9 @@ module.exports = {
 // getElementByQuery,
  getElementByTags,
  getElementByUserId,
- getElementbyDate 
+ getElementbyDate,
+ sortByCreatedDate,
+ sortByUpdatedDate
 };
 
 //1. How to save into the database when its a array of string like in tags

@@ -86,7 +86,7 @@ app.get('/register',function(req,res){
     if(req.isAuthenticated())
       res.redirect('/home');
     else 
-      res.render("register");
+      res.render("login");
 })
 app.get('/login',(req,res)=>{
   res.render("login");
@@ -103,7 +103,7 @@ app.post("/queryposting",(req,res)=>{
 });
 
 // All feeds are included from here
-app.get("/query/all",(req,res)=>{
+app.get("/getQuery/all",(req,res)=>{
   query_controller.getAllElements(req,(query)=>{
     res.render("queryall",{"data":query.data});
   });
@@ -116,14 +116,14 @@ app.get('/getQuery/:tags',(req,res)=>{
   });
 });
 // Getting the query by a particular headings
-app.get('/getQuery/:heading',(req,res)=>{
+app.get('/getQuery/heading/:heading',(req,res)=>{
   query_controller.getElementByHeading(req,(found)=>{
     res.render("querybyheading",{"data":found.data});
   });
 });
 // Getting the query by a particular date posted:
 
-app.get('/getQuery/:date',(req,res)=>{
+app.get('/getQuery/all/:date',(req,res)=>{
   query_controller.getElementbyDate(req,(found)=>{
     res.render("querybydate",{"data":found.data});
   });
@@ -136,6 +136,18 @@ app.get('/getQuery/:id',(req,res)=>{
   })
 })
 
+// Sort the date by date createdAt
+app.get('/sortqbydate1',(req,res)=>{
+  query_controller.sortByCreatedDate(req,(result)=>{
+    res.render("sortbycreatedDate",{"data":result.data});
+  });
+});
+// Sort the date by date updatedAt
+app.get('/sortqbydate2',(req,res)=>{
+  query_controller.sortByUpdatedDate(req,(result)=>{
+    res.render("sortbyupdatedDate",{"data":result.data});
+  });
+});
 // Calling the admin related queries
 app.get("/adminposting",(req,res)=>{
   res.render("adminposting");

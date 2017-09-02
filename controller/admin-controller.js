@@ -98,7 +98,30 @@ var getElementByMinistry=function(req,callback){
   });
 };
 
-
+// API to to sort the message in the decreasing order of the createdDate
+var sortByCreatedDate = function(req,callback){
+  AdminPost.find({}).sort('-createdAt').then((query)=>{
+    if(!query){
+      return callback({"data":null});
+    }
+    callback({"data":query});
+  },(err)=>{
+    callback({"data":null});
+    console.log("some error occurred");
+  });
+};
+// API to sort the message according to the decreasing order of the modifiedDate
+var sortByUpdatedDate = function(req,callback){
+  AdminPost.find({}).sort('updatedAt').then((query)=>{
+    if(!query){
+      return callback({"data":null});
+    }
+    callback({"data":query});
+  },(err)=>{
+    callback({"data":null});
+    console.log("some error occurred");
+  });
+};
 module.exports = {
     getAllElements,
     saveMessage,
@@ -106,6 +129,8 @@ module.exports = {
     getElementByHeading,
     getElementByTags,
     getElementByUserId,
-    getElementbyDate 
+    getElementbyDate ,
+    sortByCreatedDate,
+    sortByUpdatedDate
 }
   

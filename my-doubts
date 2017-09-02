@@ -1,11 +1,15 @@
-1. query is moving via the post method then how can we get if via get method.
+1. query is moving via the post method then how can we get if via get method.=>done
 2. after entering the thing in the database successRedirect should appear.
 3. On all querypage click on the query and the details of the query gets loaded there ///
 4. Search from the heading more optimally.
 5. Search via data modified. => Done
 6. if someone wants to edit his/her query then what to done??
-7. Sort by the data modified and date created.
-8. How to access the createdDate via the req in the database?
+7. Sort by the data modified and date created.=>done
+8. How to access the createdDate via the req in the database?=>done
 9. Aadhar verification
 10. On the feeds page all the things should appear(both admin and regular user)
 11. If data is null create a page that says nothing found.
+12. Update-and-editing option done
+13. The image addition to the problem
+15. Date not being added to the frontend
+14. Banning any user.
