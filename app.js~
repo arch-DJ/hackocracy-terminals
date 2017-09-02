@@ -40,7 +40,7 @@ app.use(bodyParser());
 var port = process.env.PORT || 3000;
 // Initializing routers
 app.get("/",(req,res)=>{
-  res.render("homepage");
+  res.render("../public/index");
 });
 
 
@@ -86,7 +86,7 @@ app.get('/register',function(req,res){
     if(req.isAuthenticated())
       res.redirect('/home');
     else 
-      res.render("register");
+      res.render("login");
 })
 app.get('/login',(req,res)=>{
   res.render("login");
