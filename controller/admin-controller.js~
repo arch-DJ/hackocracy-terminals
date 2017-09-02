@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 //var {Query} = require("./../models/query");
+require('./models/adminpost');
 var AdminPost = mongoose.model('AdminPost');
 
 // API to save the messages in the database
@@ -24,9 +25,9 @@ var getAllElements = function(req,callback){
         if(!result){
         return  callback({"data":null});
         }
-        callback("data":result);
+        callback({"data":result});
   },(err)=>{
-    callback("data":null);
+    callback({"data":null});
     console.log("No result found and error found sorry");
       });
     
@@ -34,7 +35,7 @@ var getAllElements = function(req,callback){
 
 // API to find the message according to the user for using it in the dashboard
 var getElementByUserId = function(req,callback){
-  AdminPost.find({"userid": req.user._id}).then((result)=>{
+  AdminPost.find({"userid": req.params.id}).then((result)=>{
     if(!result){
       return callback({"data":null})
     }

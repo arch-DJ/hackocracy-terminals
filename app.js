@@ -57,27 +57,14 @@ app.get("/publicportal",(req,res)=>{
   res.render("publicportal");
 });
 // Submission of questions or the query
-app.get("/queryposting",(req,res)=>{
-  res.render("queryposting");
-//  var body = _.pick(req.body,[]);// Do be done according to the body page 
-});
 
-app.post("/queryposting",(req,res)=>{
-  query_controller.insertQuery(req);
-});
 
 // Query initilization according to that of catogory
 app.get("/feeds/:id",(req,res)=>{
   
 });
 
-// All feeds are included from here
-app.get("/query/all",(req,res)=>{
-  query_controller.getAllElements(req,(query)=>{
-    res.render("queryall",{"data":query.data});
-  });
-  //res.render("queryall");
-});
+
 
 //Main page that comes after that of the logining the user in
 app.get("/dashboard/:id",(req,res)=>{
@@ -89,7 +76,8 @@ app.post('/login',passport.authenticate('local-login',{
     successRedirect :  '/home',
     failureRedirect : '/afhjguth',
     failureFlash : true
-}))
+})
+);
 app.post('/register',passport.authenticate('local-signup',{
     successRedirect :  '/dashfboghard',
     failureRedirect :  '/auth',
@@ -103,6 +91,24 @@ app.get('/register',function(req,res){
 app.get('/login',(req,res)=>{
   res.render("login");
 })
+
+// Query related things and use of APIs
+app.get("/queryposting",(req,res)=>{
+  res.render("queryposting");
+//  var body = _.pick(req.body,[]);// Do be done according to the body page 
+});
+
+app.post("/queryposting",(req,res)=>{
+  query_controller.insertQuery(req);
+});
+
+// All feeds are included from here
+app.get("/query/all",(req,res)=>{
+  query_controller.getAllElements(req,(query)=>{
+    res.render("queryall",{"data":query.data});
+  });
+});
+
 // Getting the query by a particular tag
 app.get('/getQuery/:tags',(req,res)=>{
   querycontroller.getElementByTags(req,(found)=>{
@@ -123,6 +129,13 @@ app.get('/getQuery/:date',(req,res)=>{
   });
 });
 
+// Getting the query according to the a particular id
+app.get('/getQuery/:id',(req,res)=>{
+  query_controller.getElementByUserId(req,(found)=>{
+    res.render("querybyid",{"data":found.data});
+  })
+})
+
 // Calling the admin related queries
 app.get("/adminposting",(req,res)=>{
   res.render("adminposting");
@@ -130,36 +143,45 @@ app.get("/adminposting",(req,res)=>{
 app.post('/adminposting',(req,res)=>{
   admin_controller.saveMessage(req);
 });
+// All admin queries
 app.get('/getAdmin/all',(req,res)=>{
   admin_controller.getAllElements(req,(result)=>{
     res.render("admin",{"data":result.data});
   })
 });
+// All query for any particular user
 app.get('/getAdmin/:id',(req,res)=>{
   admin_controller.getElementByUserId(req,(result)=>{
     res.render("adminqueryid",{"data":result.data});
   });
 });
+// All query according to the particular tags
 app.get("/getAdmin/:tags",(req,res)=>{
   admin_controller.getElementByTags(req,(result)=>{
     res.render("adminquerytags",{"data":result.data});
   });
-};
+});
+// All query according to the heading 
 app.get("/getAdmin/:heading",(req,res)=>{
   admin_controller.getElementByHeading(req,(result)=>{
     res.render("adminqueryheading",{"data":result.data});
   });
 });
+
+// All query according to the date
 app.get('/getAdmin/:date',(req,res)=>{
   admin_controller.getElementbyDate(req,(result)=>{
     res.render("adminquerydate",{"data":result.data});
   });
-})
+});
+// All query access to the ministry
 app.get('/getAdmin/:ministry',(req,res)=>{
   admin_controller.getElementByMinistry(req,(result)=>{
     res.render("adminqueryministry",{"data":result.data});
   });
 });
+
+// Starting the server on a particular port
 app.listen(port ,()=> {
 	console.log('Server started on port '+ port);
 });

@@ -35,7 +35,7 @@ var getAllElements = function(req,callback){
 
 // To put list of the queries posted by an user
 var getElementByUserId = function(req,callback){
-  Query.find({"userid":req.user.userid}).then((query)=>{
+  Query.find({"userid":req.user._-id}).then((query)=>{
     callback({"data":query});
   },(err)=>{
     callback({"date":null});

@@ -89,7 +89,8 @@ app.post('/login',passport.authenticate('local-login',{
     successRedirect :  '/home',
     failureRedirect : '/afhjguth',
     failureFlash : true
-}))
+});
+);
 app.post('/register',passport.authenticate('local-signup',{
     successRedirect :  '/dashfboghard',
     failureRedirect :  '/auth',
@@ -144,7 +145,7 @@ app.get("/getAdmin/:tags",(req,res)=>{
   admin_controller.getElementByTags(req,(result)=>{
     res.render("adminquerytags",{"data":result.data});
   });
-};
+});
 app.get("/getAdmin/:heading",(req,res)=>{
   admin_controller.getElementByHeading(req,(result)=>{
     res.render("adminqueryheading",{"data":result.data});
@@ -152,13 +153,13 @@ app.get("/getAdmin/:heading",(req,res)=>{
 });
 app.get('/getAdmin/:date',(req,res)=>{
   admin_controller.getElementbyDate(req,(result)=>{
-    res.render("adminquerydate",("data":result.data));
+    res.render("adminquerydate",{"data":result.data});
   });
 })
 app.get('/getAdmin/:ministry',(req,res)=>{
   admin_controller.getElementByMinistry(req,(result)=>{
-    res.render("adminqueryministry",("data":re))
-  })
+    res.render("adminqueryministry",{"data":result.data});
+  });
 });
 app.listen(port ,()=> {
 	console.log('Server started on port '+ port);
