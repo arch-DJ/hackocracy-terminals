@@ -29,7 +29,7 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-
+app.use(express.static(path.join(__dirname, 'public')));
 // View Engine
 app.set('views', path.join(__dirname, 'views')); // Views folder will handle views
 app.set('view engine', 'ejs'); // set view engine to handlebars
@@ -111,7 +111,7 @@ app.get("/query/all",(req,res)=>{
 
 // Getting the query by a particular tag
 app.get('/getQuery/:tags',(req,res)=>{
-  querycontroller.getElementByTags(req,(found)=>{
+  query_controller.getElementByTags(req,(found)=>{
     res.render("querybytags",{"data":found.data});
   });
 });

@@ -1,0 +1,2496 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>how to get full file path from input type file? - CodeProject</title><link type="text/css" rel="stylesheet" href="file_path_files/Main.css">
+<style type="text/css">
+div.grippie { background:#eee url(https://codeproject.global.ssl.fastly.net/images/gripH.png) no-repeat scroll center 2px;
+border-color:#ddd;
+border-style:solid;
+border-width:0pt 1px 1px;
+cursor:s-resize;
+height:9px;
+overflow:hidden;
+}
+.resizable-control textarea {
+display:block;
+margin-bottom:0pt;
+width:95%;
+height: 20%;
+}
+
+</style>
+
+
+<script src="file_path_files/gpt.js" type="text/javascript" async=""></script><script src="file_path_files/recaptcha__en.js" async="" type="text/javascript"></script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Question",
+  "headline": "how to get full file path from input type file?",
+  "url": "https://www.codeproject.com/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl",
+  "discussionUrl": "https://www.codeproject.com/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/App_Themes/CodeProject/Img/Article100.png",
+  "description": "Hi,  how to get full file path from input type file?",
+  "keywords": "Javascript, HTML, jQuery",
+  "answerCount": "2",
+  "upvoteCount": "0",
+  "suggestedAnswer" : [{
+    "@type" : "Answer",
+    "name" : "how to get full file path from input type file?",
+    "url" : "https://www.codeproject.com/Answers/602933/howplustoplusgetplusfullplusfilepluspathplusfrompl"
+    },{
+    "@type" : "Answer",
+    "name" : "how to get full file path from input type file?",
+    "url" : "https://www.codeproject.com/Answers/602918/howplustoplusgetplusfullplusfilepluspathplusfrompl"
+    }],
+  "author" : [{
+      "@type" : "Person",
+      "name" : "vaibhav10Dec1987",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=9907063"
+    }],
+  "datePublished": "2013-06-05",
+  "dateCreated": "2013-06-05",
+  "dateModified": "2016-05-04",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/Chapters/6/General-Programming.aspx",
+      "name" : "General Programming"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/KB/answers/",
+      "name" : "Uncategorised Quick Answers"
+    }
+  }]
+}
+</script>
+<meta http-equiv="content-language" content="en-US">
+<meta charset="UTF-8">
+<meta name="Description" content="Free source code and tutorials for Software developers and Architects.; Updated: 4 May 2016">
+<meta name="Keywords" content="Free source code, tutorials">
+<meta name="Author" content="CodeProject">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"> 
+
+
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Android" href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=22">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="https://www.codeproject.com/webservices/LoungeRSS.aspx">
+<meta name="robots" content="index, follow">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="https://www.codeproject.com/info/OpenSearch.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- base href="https://www.codeproject.com/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl" -->
+	<link rel="icon" href="https://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="https://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="https://www.codeproject.com/favicon.ico" type="image/png">
+<script type="text/javascript" language="Javascript" src="file_path_files/jquery.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+  var altScript  = document.createElement('script');
+  altScript.type = 'text/javascript';
+  altScript.src  = unescape('%2fscript%2fJS%2fjquery.2.2.4.js');
+  var target = document.getElementsByTagName('script')[0];
+  target.parentNode.insertBefore(altScript, target);
+}//]]></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function defrm () { /* thanks twitter */ document.write = ''; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = ''; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = ''; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!='undefined')   document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh"                  con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+
+//]]>
+</script>
+<link rel="icon" href="https://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="https://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="https://www.codeproject.com/favicon.ico" type="image/png">
+<script type="text/javascript" language="Javascript" src="file_path_files/jquery.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+  var altScript  = document.createElement('script');
+  altScript.type = 'text/javascript';
+  altScript.src  = unescape('%2fscript%2fJS%2fjquery.2.2.4.js');
+  var target = document.getElementsByTagName('script')[0];
+  target.parentNode.insertBefore(altScript, target);
+}//]]></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function defrm () { /* thanks twitter */ document.write = ''; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = ''; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = ''; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!='undefined')   document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh"                  con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+
+//]]>
+</script>
+
+
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1735123-1']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_setDomainName', 'www.codeproject.com']);
+	_gaq.push(['_setSessionTimeout', '1200']); 
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})(); 
+</script><script src="file_path_files/ga.js" async="" type="text/javascript"></script>
+
+<script src="file_path_files/a.js" async="" type="text/javascript"></script><script async="" src="file_path_files/pubads_impl_121.js"></script><link href="https://tpc.googlesyndication.com/safeframe/1-0-9/html/container.html" rel="prefetch"></head>
+<body class="firefox firefox38">
+
+<a class="access-link" href="#Main"><img alt="Click here to Skip to main content" src="file_path_files/t.gif"></a>
+
+
+
+<div class="page-background">
+
+	
+	<div id="ctl00_ctl00_STM" class="site-top-menu fixed">
+		<div class="main-content">
+			
+
+<div class="container memberbar clearfix">
+
+	<div id="ctl00_ctl00_MemberMenu_GenInfo" class="float-left">12,976,779 members (57,208 online)</div>
+
+	<div class="float-left">
+		
+	</div>
+
+	<div class="float-right">
+
+		
+
+		
+
+		
+
+			<script type="text/javascript">//<!--
+			function doSubmit(secure)
+			{
+				if (secure)
+					document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f602912%2fhowplustoplusgetplusfullplusfilepluspathplusfrompl"
+				else
+					document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f602912%2fhowplustoplusgetplusfullplusfilepluspathplusfrompl"
+				document.subForm.submit();
+				return true;
+			}//-->
+			</script>
+
+			<a name="SignUp"></a>
+			<span class="member-signin tooltip openable">
+				<span><a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f602912%2fhowplustoplusgetplusfullplusfilepluspathplusfrompl">Sign in</a></span>
+
+				<div class="tooltip-flyout">
+					<form name="subForm" id="subForm" action="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f602912%2fhowplustoplusgetplusfullplusfilepluspathplusfrompl" method="post" class="tight">
+
+						
+						<input id="FormName" name="FormName" value="MenuBarForm" type="hidden">
+
+						<div>Email</div>
+						<div><input class="small-text" name="Email" id="Email" type="email"></div>
+						<div>Password</div>
+						<div><input class="small-text" name="Password" id="Password" type="password"></div>
+						<div class="action">
+							
+                                  <input style="visibility: visible;" id="joinBtn" class="create hidden" onclick="return Join();" value="Join" type="button">
+                                  <input name="fld_quicksign" value="true" type="hidden">
+                                  <script type="text/javascript">
+                                  function simpleMask(str, key) {
+                                      var result = ''; 
+                                      for (var i = 0; i < str.length; ++i)
+                                          result += String.fromCharCode(key ^ str.charCodeAt(i));
+                                      return result;
+                                  }
+                                  function Join() {
+                                      var url = 'https://www.codeproject.com/script/Membership/Modify.aspx';
+document.location.href=url;
+                                      return false;
+                                  }
+                                  $('#joinBtn').css('visibility', 'visible');
+                                  </script>
+							<input value="Sign in" class="signin" onclick="return doSubmit(false);" type="submit">
+						</div>
+
+						<div class="container">
+							
+							&nbsp;
+							<a id="ctl00_ctl00_MemberMenu_SendPassword" class="forgot float-right" href="https://www.codeproject.com/script/Membership/SendPassword.aspx?rp=/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl">Forgot your password?</a>
+						</div>
+					</form>
+
+					<hr class="divider-dark">
+
+					Sign in with <a class="oauth" title="Sign in using Github" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=GitHub"><img src="file_path_files/octicons_github.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Linkedin" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=LinkedIn"><img src="file_path_files/linkedin.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Facebook" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Facebook"><img src="file_path_files/facebook.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Google" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Google"><img src="file_path_files/google-plus.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Microsoft" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Microsoft"><img src="file_path_files/microsoft.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+
+				</div>
+            </span>
+		
+	</div>
+</div>
+		</div>
+	</div>
+
+	
+	<div id="ctl00_ctl00_SH" class="site-header fixed">
+		<div class="main-content">
+			<div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_ctl00_Logo" tabindex="1" title="CodeProject" src="file_path_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+			<div class="promo"><div data-processed="true" class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros" data-tags="Javascript, HTML, jQuery,pos_top"><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=728x90&c=938931"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=728x90&c=938931"  width="728px" height="90px" target="_blank"/></a></noscript></div></div>
+		</div>
+	</div>
+
+	
+	<div id="ctl00_ctl00_TPR" class="sub-headerbar clearfix fixed">
+	<div class="float-right">
+		
+
+<div class="searchbar">
+
+<form method="get" action="/search.aspx?sbo=kw" name="Search" class="tight">
+
+
+<table class="search" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><input tabindex="2" class="search  watermark" id="sb_tb" value="Search for articles, questions, tips" name="q"></td><td><input src="file_path_files/search.gif" type="image"></td></tr></tbody></table>
+
+<div class="hover-container">
+	<div style="display: none;" id="SearchFilter" class="search-advanced small-text align-left">
+	<b>Search within:<br></b>
+		
+		<input id="sb_kw" name="sbo" value="kw" type="radio"><label for="sb_kw">Articles</label><br>
+<input id="sb_qa" name="sbo" value="qa" checked="checked" type="radio"><label for="sb_qa">Quick Answers</label><br>
+<input id="sb_fm" name="sbo" value="fm" type="radio"><label for="sb_fm">Messages</label><br>
+
+
+		
+		<div id="ctl00_ctl00_SearchBarCtrl_UseSavedFilters" class="padded-top"><input id="usf" name="usf" type="checkbox"><label for="usf">Use my saved <a target="_blank" href="https://www.codeproject.com/script/Membership/Modify.aspx#contentfilter">content filters</a></label><input id="usfc" name="usfc" value="false" type="hidden"></div>
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+	</div>
+	<div class="float-left">
+		
+
+<div class="navbar clearfix">
+<ul class="navmenu openable">
+
+<li class="desktop-only"><a id="ctl00_ctl00_TopNavBar_Home" href="https://www.codeproject.com/">home</a>
+
+
+</li><li class="openable"><a id="ctl00_ctl00_TopNavBar_Art" class="down" href="https://www.codeproject.com/script/Articles/Latest.aspx">articles</a>
+
+	<ul>
+		<li class="openable"><a id="ctl00_ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="navBarMenu.ShowMap(this, 'ctl00_ctl00_TopNavBar_MapFlyout');" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections<span class="has-submenu">&gt;</span></a><ul id="ctl00_ctl00_TopNavBar_MapFlyout">
+			<li>
+				<div id="siteMap">
+					<img src="file_path_files/animated.gif" alt="loading" style="margin:150px;width:100px;height:100px;">
+				</div>
+			</li>
+			</ul>
+		</li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtSearch" class="fly break" href="https://www.codeproject.com/search.aspx?sbo=kw">Search</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtLatestArts" class="fly" href="https://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtLatestTips" class="fly" href="https://www.codeproject.com/script/Articles/Latest.aspx?at=6">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtTop" class="fly" href="https://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtBeginner" class="fly" href="https://www.codeproject.com/search.aspx?sbo=kw?aidlst=152&amp;sa_us=True">Beginner Articles</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="https://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtGuide" class="fly" href="https://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtHelpForum" class="fly" href="https://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtCompetition" class="fly break" href="https://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="https://www.codeproject.com/script/Articles/Submit.aspx">
+			<img src="file_path_files/write13.png" height="13px" width="13px"> Submit an article or tip
+			</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="https://www.codeproject.com/script/Articles/BlogFeed.aspx">
+			<img src="file_path_files/write13.png" height="13px" width="13px"> Post your Blog
+			</a></li>		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="openable">
+<a id="ctl00_ctl00_TopNavBar_Answers" class=" selected" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active">
+    <span class="desktop-only tablet-only">quick answers</span><span class="mobile-only">Q&amp;A</span>
+</a>
+	<ul>
+		
+
+		<li><a id="ctl00_ctl00_TopNavBar_QAAsk" class="fly highlight2" href="https://www.codeproject.com/Questions/ask.aspx"><img src="file_path_files/write13.png" height="13px" width="13px"> Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_ctl00_TopNavBar_QAUnanswered" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_QALatest" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" style="padding-left:30px">C# questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" style="padding-left:30px">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=93" style="padding-left:30px">SQL questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=87" style="padding-left:30px">Javascript questions</a></li>
+			
+				<li><a id="ctl00_ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" style="padding-left:30px">VB.NET questions</a></li>
+			
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="openable"><a id="ctl00_ctl00_TopNavBar_Forums" href="https://www.codeproject.com/script/Forums/List.aspx">
+        <span class="desktop-only tablet-only">discussions</span><span class="mobile-only">forums</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_MessageBoardsAll" class="fly" href="https://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class="openable"><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="https://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="https://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="https://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="https://www.codeproject.com/Forums/3304/Work-Issues.aspx">Work  Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li class="openable"><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="https://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="https://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1827460/Objective-C-and-Swift.aspx">Objective-C and Swift</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li class="openable"><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="https://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1848626/Android.aspx">Android</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1876716/iOS.aspx">iOS</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1540733/SharePoint.aspx">SharePoint</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1652005/Spam-and-Abuse-Watch.aspx">Spam and Abuse Watch</a>
+</li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+<li class="openable desktop-only"><a id="ctl00_ctl00_TopNavBar_Features" href="https://www.codeproject.com/Feature/">features</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_Comps" class="fly" href="https://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&amp;awsac=true">Competitions</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_News" class="fly" href="https://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Insider" class="fly" href="https://www.codeproject.com/Feature/Insider/">The Insider Newsletter</a></li>
+    	<li><a id="ctl00_ctl00_TopNavBar_DailyBuild" class="fly" href="https://www.codeproject.com/Feature/DailyBuild">The Daily Build Newsletter</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Newsletters" class="fly" href="https://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Surveys" class="fly" href="https://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Showcase" class="fly" href="https://www.codeproject.com/KB/showcase/">Product Showcase</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_Research" class="fly" href="https://www.codeproject.com/script/ResearchLibrary/Index.aspx">Research Library</a></li>
+
+		<li><a id="ctl00_ctl00_TopNavBar_Stuff" class="fly" href="https://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li class="openable"><a id="ctl00_ctl00_TopNavBar_Lounge" href="https://www.codeproject.com/Lounge.aspx">
+            <span class="desktop-only tablet-only">community</span><span class="mobile-only">lounge</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_WhosWho" class="fly" href="https://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_MVPs" class="fly break" href="https://www.codeproject.com/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		
+
+		<li><a id="ctl00_ctl00_TopNavBar_LoungeLnk" class="fly highlight2" href="https://www.codeproject.com/Lounge.aspx">The Lounge &nbsp;</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_InsiderLnk" class="fly" href="https://www.codeproject.com/Insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_WeirdWonderful" class="fly" href="https://www.codeproject.com/Feature/WeirdAndWonderful.aspx">The Weird &amp; The Wonderful</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_SoapBoxLnk" class="fly" href="https://www.codeproject.com/Forums/1536756/The-Soapbox.aspx">The Soapbox</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_PRLnk" class="fly break" href="https://www.codeproject.com/Forums/1738007/Press-Releases.aspx">Press Releases</a></li>
+
+		
+		<li class="openable"><a class="fly" href="https://www.codeproject.com/Forums/1580229/Hindi.aspx">Non-English Language
+			<span class="has-submenu">&gt;</span></a>
+		<ul>
+		<li><a class="fly" href="https://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="https://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		</li><li class="last"></li>
+		
+	</ul>
+
+</li>
+
+
+<li class="openable desktop-only tablet-only" style="margin-left:20px"><a id="ctl00_ctl00_TopNavBar_Help" href="https://www.codeproject.com/KB/FAQs/">help</a>
+
+	<ul>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpWhatIs" class="fly" href="https://www.codeproject.com/info/guide.aspx">What is 'CodeProject'?</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpGeneral" class="fly break" href="https://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight2" href="https://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpBugs" class="fly" href="https://www.codeproject.com/suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpArticles" class="fly" href="https://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpSiteMap" class="fly" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Site Map</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://developermedia.com/">Advertise with us</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpAboutAds" class="fly" href="https://www.codeproject.com/info/AboutOurAds.aspx">About our Advertising</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpJobs" class="fly" href="https://www.codeproject.com/info/Jobs/">Employment Opportunities</a></li>
+		<li><a id="ctl00_ctl00_TopNavBar_HelpAboutUs" class="fly" href="https://www.codeproject.com/info/about.aspx">About Us</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+	</div>
+	<div class="sub-headerbar-divider"></div>
+	</div>		
+	
+
+	<div id="C" class="container-content-wrap fixed"> 
+	<div class="container-content">
+
+		<div class="container-breadcrumb">
+		
+		</div>
+
+		
+		
+		
+
+		<div id="ctl00_ctl00_ContentPane" class="container-main ">
+
+			
+
+				<div style="min-height:600px">
+					<a name="Main"></a>
+
+					
+					<!-- Main Page Contents Start -->
+					
+
+					
+					
+			
+					
+
+
+<form name="aspnetForm" method="post">
+<div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="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" type="hidden">
+</div>
+
+
+<script src="file_path_files/WebResource.axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="47897F27" type="hidden">
+</div>
+
+<div id="Q" class="container-entry container-question">
+
+<div id="T" class="text fixed">
+	
+	<div class="clearfix">
+		
+		<div id="ctl00_ctl00_MC_QARow" class="mainlinks">
+            <div class="float-left">
+			    <a id="ctl00_ctl00_MC_AskQ" class="button compose" href="https://www.codeproject.com/Questions/ask.aspx">Ask a Question</a>
+            </div>
+			<div class="navigation float-right">
+				<a id="ctl00_ctl00_MC_Latest" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active">All<span class="desktop-only"> Questions</span></a>
+				<a id="ctl00_ctl00_MC_Unansw" href="https://www.codeproject.com/script/Answers/List.aspx?tab=unanswered"><span class="desktop-only">All </span>Unanswered</a> 
+				
+				<a id="ctl00_ctl00_MC_Help" class="faq" href="https://www.codeproject.com/KB/FAQs/QuickAnswersFAQ.aspx">FAQ</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="contentdiv">
+	
+	<!-- Main Page Contents Start -->
+	
+
+<script type="text/javascript">
+function ConfirmDelete() { return window.confirm("Are you sure you want to delete this item?"); }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<a name="_articleTop"></a>
+
+
+<div class="float-right" style="width:150px">
+	
+</div>
+
+<div class="question">
+
+
+<div class="header">
+	<a id="ctl00_ctl00_MC_AMC_TitleLink" class="header tight padded-top" href="https://www.codeproject.com/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl"><h1 id="ctl00_ctl00_MC_AMC_ItemTitle">how to get full file path from input type file?</h1></a>
+</div>
+
+<div id="CC" class="container-content">
+
+	
+	<div class="container-question clearfix extended">
+
+		<div class="rate-group">
+
+			
+			<div class="rate-item">
+				<div id="ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper" class="small-text" name="RateItem_602912">
+
+	<table class="small-text" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td id="ctl00_ctl00_MC_AMC_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="file_path_files/animated_loading_blue.gif" style="display:none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_ctl00_MC_AMC_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				
+				<td id="ctl00_ctl00_MC_AMC_RatePost_VoteFormDiv" class="nowrap rating-stars-voter-medium">
+					
+
+<table class="content float-left" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		<span id="ctl00_ctl00_MC_AMC_RatePost_ItemRating_VI">
+		<div class="rating-stars-medium">
+	<img src="file_path_files/stars-empty-md.png" height="16" width="80">
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ctl00_MC_AMC_RatePost_ItemRating_VR" class="nowrap">
+		&nbsp;
+		<span id="ctl00_ctl00_MC_AMC_RatePost_ItemRating_VotesR"></span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+
+					<span style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_0" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_1" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_2" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_3" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_RatePost_VoteRBL_4" name="ctl00$ctl00$MC$AMC$RatePost$VoteRBL" value="5" type="radio"></span> 
+
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				
+				<td style="padding-left:5px">	
+					<input style="display: none;" name="ctl00$ctl00$MC$AMC$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_RatePost_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_ctl00_MC_AMC_RatePost_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_ctl00_MC_AMC_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f602912%2fhowplustoplusgetplusfullplusfilepluspathplusfrompl">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+			</div>
+
+			
+			<div id="ctl00_ctl00_MC_AMC_CurRat" class="float-right" style="margin-top:3px;width:100px" name="CurRat_602912">
+				
+				
+			</div>
+
+		</div>
+
+		
+		<div>
+			<span id="ctl00_ctl00_MC_AMC_TagList_TagWrp" class="medium-text tags horizontal">
+
+	
+	<span id="ctl00_ctl00_MC_AMC_TagList_TagLabel" class="bold">See more:</span>
+
+	
+	<span id="ctl00_ctl00_MC_AMC_TagList_VisibleTags"><div class="t"><a href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=87" data-id="87">Javascript</a></div><div class="t"><a href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=104" data-id="104">HTML</a></div><div class="t"><a href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;tags=317" data-id="317">jQuery</a></div></span> 
+
+	
+	
+</span>
+
+		</div>
+
+		<div style="margin-top:25px">
+			Hi,<br>
+  how to get full file path from input type file?
+		</div>
+	</div>
+
+</div>
+
+<div class="qa-info clearfix">
+	<div class="small-text commands float-right">
+	
+
+		
+		
+	</div>	
+
+	
+	<div class="column">
+		<strong>Posted</strong> 4-Jun-13 23:43pm
+<div class="member-rep-container">
+	<a id="ctl00_ctl00_MC_AMC_QuestionAuthorRepInfo_MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=9907063">vaibhav10Dec1987</a><span id="ctl00_ctl00_MC_AMC_QuestionAuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box bronze">817</span>
+</div>
+
+	</div>
+
+	
+	
+	<div class="column" style="margin-left:10px">
+		<b>Updated</b> 3-May-16 18:43pm
+	</div>
+
+	
+	
+	
+</div>
+
+
+
+
+<div class="spaced padded-top">
+	<a name="anchorTarget" id="ctl00_ctl00_MC_AMC_AddChild1" class="button large anchorLink" href="#NewEntryGroup">Add a Solution</a>
+</div>
+
+
+<a id="ctl00_ctl00_MC_AMC_QuestionComments_ContainerPermalink" class="CommentAnchor" name="cmt2_602912"></a>
+<div id="ctl00_ctl00_MC_AMC_QuestionComments_ComHdr" class="comment-header">Comments</div>
+<div id="ctl00_ctl00_MC_AMC_QuestionComments_CommentContainer" class="container-comments" objectref="2_602912_1" pagenumber="0" pagesize="0" boldmemberid="9907063" currentmemberid="0" modifystatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+
+
+		<div id="ctl00_ctl00_MC_AMC_QuestionComments_CommentsList_List_ctl00_CR_CommentItem" class="comment-item clearfix hover-row first" commentid="460253" authorid="8572747">
+
+	<div class="comment-author"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=8572747" id="ctl00_ctl00_MC_AMC_QuestionComments_CommentsList_List_ctl00_CR_MemberLink">Rockstar_</a>
+        <span id="cmt-jump-460253"></span>
+		<span id="ctl00_ctl00_MC_AMC_QuestionComments_CommentsList_List_ctl00_CR_DatePosted">5-Jun-13 5:44am</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_QuestionComments_CommentsList_List_ctl00_CR_CommentContent" class="comment-content">Input type file? Plz describe?</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+		<div id="ctl00_ctl00_MC_AMC_QuestionComments_CommentsList_List_ctl01_CR_CommentItem" class="comment-item clearfix hover-row mine" commentid="460260" authorid="9907063" style="padding-left:16px;">
+
+	<div class="comment-author"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=9907063" id="ctl00_ctl00_MC_AMC_QuestionComments_CommentsList_List_ctl01_CR_MemberLink">vaibhav10Dec1987</a>
+        <span id="cmt-jump-460260"></span>
+		<span id="ctl00_ctl00_MC_AMC_QuestionComments_CommentsList_List_ctl01_CR_DatePosted">5-Jun-13 5:49am</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_QuestionComments_CommentsList_List_ctl01_CR_CommentContent" class="comment-content"> &lt;input id="txtFile" type="file"/&gt;<br>
+In these while adding a file via browse button. how to get a full path of that file name.</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+
+
+
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+<div class="QATopPager">
+	
+</div>
+
+
+<div class="answer-list-header row">
+    <div class="float-left">
+        <h2 id="ctl00_ctl00_MC_AMC_AnswerCount" class="tight">2 solutions</h2>
+    </div>
+    <div class="float-right" style="margin-top: 15px;">
+	    <ul class="ui-tabs-nav ui-helper-reset ui-corner-all clearfix">
+	<li id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl01_LI" class="ui-corner-top ui-tabs-selected">
+		<a id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl01_TL" title="Best rated answers" class="ui-corner-top">
+			<span>Top Rated</span>
+		</a>
+		
+	</li>
+
+	<li id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl02_LI" class="ui-corner-top ">
+		<a id="ctl00_ctl00_MC_AMC_TabsCtrl_TabsRpt_ctl02_TL" title="Newest answers posted to this question" class="ui-corner-top" href="https://www.codeproject.com/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl?tab=mostrecent">
+			<span>Most Recent</span>
+		</a>
+		
+	</li>
+</ul>
+
+    </div>
+</div>
+
+<div class="ui-tabs-panel tight">
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AnswerGroup" class="answer-row answer first">
+
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Header" class="header container accepted-community">
+
+	
+	
+	<div class="rate-group">
+
+		<div class="rate-item">
+			<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper" class="small-text" name="RateItem_602933">
+
+	<table class="small-text" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="file_path_files/animated_loading_blue.gif" style="display:none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_StartForm" align="right" nowrap="nowrap"><img class="align-middle" src="file_path_files/thmbdn.png" alt="bad" height="16px" width="16px"></td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteFormDiv" class="nowrap rating-stars-voter-medium">
+					
+
+<table class="content float-left" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_ItemRating_VI">
+		<div class="nowrap rating-stars-medium" style="height:18px;width:80px;position:relative;">
+	<div class="clipped align-left float-left" style="height:16px;width:77px;">
+		<img src="file_path_files/stars-fill-md.png" style="border-width:0px;">
+	</div><div class="clipped" style="height:16px;width:3px;position:relative;">
+		<img src="file_path_files/stars-empty-md.png" style="border-width:0px;position:absolute;top:0;right:0;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_ItemRating_VR" class="nowrap">
+		&nbsp;
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_ItemRating_VotesR"></span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+
+					<span style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_0" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_1" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_2" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_3" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteRBL_4" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$VoteRBL" value="5" type="radio"></span> 
+
+						
+						<div class="speech-bubble-container-up-right" style="width:200px;margin-top:24px;right:-90px;top:6px">
+							<div class="speech-bubble-up">
+								<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_Histogram">
+
+</div><img id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_Loading" class="align-middle" src="file_path_files/animated_loading.gif" style="border-width:0px;">
+							</div>
+							<div class="speech-bubble-pointer-up">
+								<div class="speech-bubble-pointer-up-inner"></div>
+							</div>
+						</div>
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_EndForm" align="left"><img class="align-middle" src="file_path_files/thmbup.png" alt="good" height="16px" width="16px"></td>
+
+				<td style="padding-left:5px">	
+					<input style="display: none;" name="ctl00$ctl00$MC$AMC$Answers$ctl00$A$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f602912%2fhowplustoplusgetplusfullplusfilepluspathplusfrompl">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+		</div>
+
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CurRat" class="align-right float-right" style="display:inline-block;margin-top:3px;width:100px" name="CurRat_602933">
+			
+			
+		</div>
+	</div>
+	
+
+	
+	<h2 id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Title" class="float-left" style="margin:-10px 0 0 5px">Solution 2</h2><a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Heading" name="answer2"></a>
+
+	
+	<div class="float-left" style="margin:3px 0 0 20px">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Accept" title="Mark this solution as an accepted solution." class="button safe" style="display:none;">Accept&nbsp;Solution</a>
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Unaccept" title="Revoke accepted solution designation." class="button unsafe" style="display:none;">Reject&nbsp;Solution</a>
+	</div>
+
+	<p id="AcceptError" class="error" style="display:none"></p>
+		
+	
+	
+</div>
+
+
+<div class="text">You can't: It's a security feature in all modern browsers.<br>
+<br>
+For IE8, it's off by default, but can be reactivated using a security setting:<br>
+<br>
+<div class="pre-action-link" id="premain607215" style="width:100%;display:block;"><span id="prehide607215" onclick="processCodeBlocks.togglePre(607215);">Hide</span>  &nbsp; <span id="copycode607215" onclick="return processCodeBlocks.copyCode(607215);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre607215" lang="c#">When a file <span class="code-keyword">is</span> selected by <span class="code-keyword">using</span> the input type=file <span class="code-keyword">object</span>, the <span class="code-sdkkeyword">value</span> of the <span class="code-sdkkeyword">value</span> property depends on the <span class="code-sdkkeyword">value</span> of the <span class="code-string">"</span><span class="code-string">Include local directory path when uploading files to a server"</span> security setting <span class="code-keyword">for</span> the security zone used to display the Web page containing the input <span class="code-keyword">object</span>.
+&nbsp;
+The fully qualified filename of the selected file <span class="code-keyword">is</span> returned only <span class="code-sdkkeyword">when</span> <span class="code-keyword">this</span> setting <span class="code-keyword">is</span> enabled. When the setting <span class="code-keyword">is</span> disabled, Internet Explorer <span class="code-digit">8</span> replaces the local drive and directory path with the <span class="code-keyword">string</span> C:\fakepath\ <span class="code-keyword">in</span> order to prevent inappropriate information disclosure.</pre><br>
+<br>
+In all other current mainstream browsers I know of, it is also turned off. The file name is the best you can get.</div>
+
+<div></div>
+
+<div class="qa-info clearfix">
+	
+	<div class="float-right commands">
+
+		
+		&nbsp;
+		<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_Permalink" rel="nofollow" href="https://www.codeproject.com/Answers/602933/howplustoplusgetplusfullplusfilepluspathplusfrompl">Permalink</a>
+		&nbsp;
+		 
+
+		
+
+    	
+	
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_ReportItem_StatusMsg" class="tiny-text" style="display:none"></span>
+
+
+
+
+
+
+		
+	</div>
+	
+	
+	<div class="meta-data">
+		<b>Posted</b> 5-Jun-13 0:03am
+		
+<div class="member-rep-container">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AuthorRepInfo_MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=9218495">Palash Mondal_</a><span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_AuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box platinum bold">12.6K</span>
+</div>
+
+	</div>
+
+	
+	
+
+	
+	
+
+	
+	
+</div>
+
+   
+
+<div style="clear:both"></div>
+
+
+<a id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_ContainerPermalink" class="CommentAnchor" name="cmt2_602933"></a>
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_ComHdr" class="comment-header">Comments</div>
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentContainer" class="container-comments" objectref="2_602933_1" pagenumber="0" pagesize="0" boldmemberid="9218495" currentmemberid="0" modifystatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+
+
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_CommentItem" class="comment-item clearfix hover-row first" commentid="460295" authorid="57586">
+
+	<div class="comment-author"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=57586" id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_MemberLink">Prasad Khandekar</a>
+        <span id="cmt-jump-460295"></span>
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_DatePosted">5-Jun-13 6:20am</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_Answers_ctl00_A_CommentCtrlObj_CommentsList_List_ctl00_CR_CommentContent" class="comment-content">Very good explanation. +5.</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+
+
+
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AnswerGroup" class="answer-row answer">
+
+
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Header" class="header container">
+
+	
+	
+	<div class="rate-group">
+
+		<div class="rate-item">
+			<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper" class="small-text" name="RateItem_602918">
+
+	<table class="small-text" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="file_path_files/animated_loading_blue.gif" style="display:none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_StartForm" align="right" nowrap="nowrap"><img class="align-middle" src="file_path_files/thmbdn.png" alt="bad" height="16px" width="16px"></td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteFormDiv" class="nowrap rating-stars-voter-medium">
+					
+
+<table class="content float-left" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_ItemRating_VI">
+		<div class="rating-stars-medium">
+	<img src="file_path_files/stars-empty-md.png" height="16" width="80">
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_ItemRating_VR" class="nowrap">
+		&nbsp;
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_ItemRating_VotesR"></span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+
+					<span style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_0" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_1" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_2" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_3" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteRBL_4" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$VoteRBL" value="5" type="radio"></span> 
+
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				<td id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_EndForm" align="left"><img class="align-middle" src="file_path_files/thmbup.png" alt="good" height="16px" width="16px"></td>
+
+				<td style="padding-left:5px">	
+					<input style="display: none;" name="ctl00$ctl00$MC$AMC$Answers$ctl01$A$RatePost$SubmitRateBtn" value="Vote!" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fQuestions%2f602912%2fhowplustoplusgetplusfullplusfilepluspathplusfrompl">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+		</div>
+
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CurRat" class="align-right float-right" style="display:inline-block;margin-top:3px;width:100px" name="CurRat_602918">
+			
+			
+		</div>
+	</div>
+	
+
+	
+	<h2 id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Title" class="float-left" style="margin:-10px 0 0 5px">Solution 1</h2><a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Heading" name="answer1"></a>
+
+	
+	<div class="float-left" style="margin:3px 0 0 20px">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Accept" title="Mark this solution as an accepted solution." class="button safe" style="display:none;">Accept&nbsp;Solution</a>
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Unaccept" title="Revoke accepted solution designation." class="button unsafe" style="display:none;">Reject&nbsp;Solution</a>
+	</div>
+
+	<p id="AcceptError" class="error" style="display:none"></p>
+		
+	
+	
+</div>
+
+
+<div class="text">Hello,<br>
+<br>
+Here is a small sample demonstrating this. Hope this is what you are looking.<br>
+<div class="pre-action-link" id="premain419022" style="width:100%;display:block;"><span id="prehide419022" onclick="processCodeBlocks.togglePre(419022);">Hide</span>  &nbsp; <span id="copycode419022" onclick="return processCodeBlocks.copyCode(419022);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre419022" data-lang-guess="HTML" lang="html"><span class="code-keyword">&lt;</span><span class="code-leadattribute">!DOCTYPE</span><span class="code-attribute"> </span><span class="code-attribute">html</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">html</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">head</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">script</span><span class="code-attribute"> </span><span class="code-attribute">type</span><span class="code-keyword">="</span><span class="code-keyword">text/javascript"</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">function</span> showFileName() {
+   <span class="code-keyword">var</span> fil = document.getElementById(<span class="code-string">"</span><span class="code-string">myFile"</span>);
+   alert(fil.value);
+}
+<span class="code-keyword">&lt;</span><span class="code-keyword">/</span><span class="code-leadattribute">script</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">/head</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">body</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">form</span><span class="code-attribute"> </span><span class="code-attribute">id</span><span class="code-keyword">="</span><span class="code-keyword">frmMain"</span><span class="code-attribute"> </span><span class="code-attribute">name</span><span class="code-keyword">="</span><span class="code-keyword">frmMain"</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">input</span><span class="code-attribute"> </span><span class="code-attribute">type</span><span class="code-keyword">="</span><span class="code-keyword">file"</span><span class="code-attribute"> </span><span class="code-attribute">id</span><span class="code-keyword">="</span><span class="code-keyword">myFile"</span><span class="code-attribute"> </span><span class="code-attribute">name</span><span class="code-keyword">="</span><span class="code-keyword">myFile"</span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">a</span><span class="code-attribute"> </span><span class="code-attribute">href</span><span class="code-keyword">="</span><span class="code-keyword">#"</span><span class="code-attribute"> </span><span class="code-attribute">onclick</span><span class="code-keyword">="</span><span class="code-keyword">showFileName()"</span><span class="code-keyword">&gt;</span>Show Name<span class="code-keyword">&lt;</span><span class="code-leadattribute">/a</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">/form</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">/body</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">/html</span><span class="code-keyword">&gt;</span></pre><br>
+<small><b>Note</b><i>For security reasons most of the browser's will 
+only return the file name and not the full path and file name. IE6 and 
+below browsers will return you the desired value</i></small><br>
+<br>
+Regards,</div>
+
+<div></div>
+
+<div class="qa-info clearfix">
+	
+	<div class="float-right commands">
+
+		
+		&nbsp;
+		<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_Permalink" rel="nofollow" href="https://www.codeproject.com/Answers/602918/howplustoplusgetplusfullplusfilepluspathplusfrompl">Permalink</a>
+		&nbsp;
+		 
+
+		
+
+    	
+	
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_ReportItem_StatusMsg" class="tiny-text" style="display:none"></span>
+
+
+
+
+
+
+		
+	</div>
+	
+	
+	<div class="meta-data">
+		<b>Posted</b> 4-Jun-13 23:48pm
+		
+<div class="member-rep-container">
+	<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AuthorRepInfo_MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=57586">Prasad Khandekar</a><span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_AuthorRepInfo_TotalPoints" title="Total reputation points" class="member-rep-box platinum bold">52.4K</span>
+</div>
+
+	</div>
+
+	
+	
+	<div class="meta-data" style="margin-left:15px">
+		<b>Updated</b> 5-Jun-13 0:19am
+	</div>
+	
+
+	
+	<div class="version"><a href="https://www.codeproject.com/script/Articles/ListVersions.aspx?aid=602918">v2</a></div>
+
+	
+	
+</div>
+
+   
+
+<div style="clear:both"></div>
+
+
+<a id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_ContainerPermalink" class="CommentAnchor" name="cmt2_602918"></a>
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_ComHdr" class="comment-header">Comments</div>
+<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentContainer" class="container-comments" objectref="2_602918_2" pagenumber="0" pagesize="0" boldmemberid="57586" currentmemberid="0" modifystatus="False">	 
+
+	
+	
+
+	
+	<div name="CP-CommentList" class="comment-list">
+		
+
+
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl00_CR_CommentItem" class="comment-item clearfix hover-row first" commentid="460269" authorid="9907063">
+
+	<div class="comment-author"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=9907063" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl00_CR_MemberLink">vaibhav10Dec1987</a>
+        <span id="cmt-jump-460269"></span>
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl00_CR_DatePosted">5-Jun-13 5:56am</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl00_CR_CommentContent" class="comment-content">Thanks for your help.<br>
+  In that case i got only "file Name".But in my scenario I want to get a "full file path<br>
+with file name".</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl01_CR_CommentItem" class="comment-item clearfix hover-row mine" commentid="460292" authorid="57586" style="padding-left:16px;">
+
+	<div class="comment-author"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=57586" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl01_CR_MemberLink">Prasad Khandekar</a>
+        <span id="cmt-jump-460292"></span>
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl01_CR_DatePosted">5-Jun-13 6:17am</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl01_CR_CommentContent" class="comment-content">For
+ security reasons most of the browser's will only return the file name 
+IE-8 however will return a fake path. IE 6 and below browsers will 
+actually return you the desired value.<br>
+<br>
+Regards,</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl02_CR_CommentItem" class="comment-item clearfix hover-row" commentid="676523" authorid="11035041">
+
+	<div class="comment-author"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=11035041" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl02_CR_MemberLink">Member 11035041</a>
+        <span id="cmt-jump-676523"></span>
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl02_CR_DatePosted">18-Sep-14 13:50pm</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl02_CR_CommentContent" class="comment-content">I want to share some data of a file from jsp to java so I need the exact path of a file...<br>
+Somebody will try and posted here as soon as possible</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl03_CR_CommentItem" class="comment-item clearfix hover-row mine" commentid="681544" authorid="57586" style="padding-left:16px;">
+
+	<div class="comment-author"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=57586" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl03_CR_MemberLink">Prasad Khandekar</a>
+        <span id="cmt-jump-681544"></span>
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl03_CR_DatePosted">1-Oct-14 12:07pm</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl03_CR_CommentContent" class="comment-content">Can you please elaborate your requirement? What exactly is the use of knowing file's complete path on the user's computer?</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+		<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl04_CR_CommentItem" class="comment-item clearfix hover-row" commentid="867029" authorid="11146598">
+
+	<div class="comment-author"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=11146598" id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl04_CR_MemberLink">Member 11146598</a>
+        <span id="cmt-jump-867029"></span>
+		<span id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl04_CR_DatePosted">4-May-16 0:44am</span> 
+		
+	</div>
+	<div class="comment-commands">
+		&nbsp; &nbsp; 
+		
+	
+		<div class="float-right">
+			
+			
+
+			
+
+			
+		</div>
+
+	</div>	
+	<div id="ctl00_ctl00_MC_AMC_Answers_ctl01_A_CommentCtrlObj_CommentsList_List_ctl04_CR_CommentContent" class="comment-content">Hi, Thanks for this.<br>
+<br>
+Can I get the path in other browsers than IE.<br>
+<br>
+I mean can your solution work in another browser(Google Chrome) with any settings.</div>
+
+
+	<div id="EditDialogPlaceholder"></div>
+	<div id="ReplyDialogPlaceholder"></div>
+
+</div>
+
+	
+
+
+
+	</div> 
+
+	 
+	
+
+	  
+
+</div> 
+
+
+</div>
+
+
+
+
+
+	
+</div>
+
+
+
+		
+
+<div class="padded-top">
+<a style="display: none;" id="ctl00_ctl00_MC_AMC_AddChild2" class="button large" href="https://www.codeproject.com/Questions/602912/answer.aspx">Add a Solution</a>
+</div>
+
+
+
+
+<div id="NewEntryGroup" class="container" style="">
+	
+
+<div id="PostEntryContainer" class="AnswersPost">
+
+
+<h2 id="ctl00_ctl00_MC_AMC_PostEntryObj_NewEntryHeading" class="contrast1-color">Add your solution here</h2>
+
+
+<input name="ctl00$ctl00$MC$AMC$PostEntryObj$CustomValidationHook" id="ctl00_ctl00_MC_AMC_PostEntryObj_CustomValidationHook" style="display:none" type="text">
+
+
+
+
+
+
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1" class="error callout" style="color:Red;display:none;">
+
+</div>
+
+
+
+<div class="container-post new-message">
+
+	<div class="inline">
+
+		
+		<p id="AjaxSubmitErrors" class="error callout" style="display:none"></p>
+
+		
+		
+
+		<a name="PostContent"></a>
+		
+		
+		
+
+		
+		<div class="clearfix">
+            
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_FormatBar" class="desktop-only tablet-only"><button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('b');return false;" title="Wrap the Selected Text in HTML bold Tags"><b>&nbsp;B&nbsp;</b></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('i');return false;" title="Wrap the Selected Text in HTML Italic Tags"><i>&nbsp;I&nbsp;</i></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('u');return false;" title="Wrap the Selected Text in HTML Underline Tags">&nbsp;<u>U</u>&nbsp;</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('strike');return false;" title="Wrap the Selected Text in HTML strike through Tags"><strike>&nbsp;S&nbsp;</strike></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('small');return false;" title="Wrap the Selected Text in HTML small Tags"><small>small</small></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('big');return false;" title="Wrap the Selected Text in HTML big Tags">BIG</button>
+<span class="tooltip"><button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre');return false;" title="Wrap the Selected Text in 'pre' Tags: For separate source code blocks"><tt style="background-color: #FBEDBB;">code</tt></button>
+<div class="tooltip-flyout small-text" style="width:135px !important"><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;text&quot;')">Plain Text</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;c++&quot;')">C++</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;CSS&quot;')">CSS</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;c#&quot;')">C#</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Delphi&quot;')">Delphi / Pascal</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;F#&quot;')">F#</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;HTML&quot;')">HTML / XML / ASP</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;java&quot;')">Java</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Javascript&quot;')">Javascript</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;objc&quot;')">Objective-C</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;SQL&quot;')">SQL</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Swift&quot;')">Swift</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Perl&quot;')">Perl</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;PHP&quot;')">PHP</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;Python&quot;')">Python</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;vb&quot;')">VB</a></div><div class="list-item"><a href="#" onclick="return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('pre','lang=&quot;xml&quot;')">XML</a></div></div></span><button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.toggleWrapSelection('code');return false;" title="Wrap the Selected Text in 'code' Tags: For code within sentences"><code>var</code></button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.insertText('&amp;l' + 't;');return false;" title="Insert HTML Extended Character Code For &lt;">&nbsp;&lt;&nbsp;</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.insertText('&amp;g' + 't;');return false;" title="Insert HTML Extended Character Code For &gt;">&nbsp;&gt;&nbsp;</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.insertText('&amp;a' + 'mp;');return false;" title="Insert HTML Extended Character Code For &amp;">&nbsp;&amp;&nbsp;</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.inLinkErAte(null, false);return false;" title="Convert URL to a hyperlink">link</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.inLinkErAte(null, true);return false;" title="Convert URL to a hyperlink with optional 'New Window' link">[^]</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.encoderate();return false;" title="HTML encode text">encode</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.untab();return false;" title="Replace tabs with spaces">untab</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.fixCase();return false;" title="Fix the casing of a sentence">case</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.adjustLeading(4);return false;" title="indent">indent</button>
+<button class="toolbar" onclick="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.adjustLeading(-4);return false;" title="outdent">outdent</button>
+</div>
+<div id="EditWrap" style="position:relative">
+	<table id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_EditContainer" class="container-editor" cellpadding="0" cellspacing="0">
+	<tbody><tr valign="top">
+		<td style="padding-right:15px;width:100%">
+		<div class="resizable-control"><span><textarea name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$MessageText" id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText" class="resizable text-editor processed" style="width:100%;height:250px;"></textarea><div style="margin-right: -12px;" class="grippie"> </div></span></div>
+		
+	</td>
+	</tr>
+</tbody></table>
+
+
+</div>
+	<div id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_pasteDialog" class="paste-dialog invisible">
+
+		<div class="header"><a href="#" class="close-notify">OK</a>
+		Paste as</div>
+
+        <div class="padded">
+		<table id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting" class="small-text paste-options extended" border="0">
+	<tbody><tr>
+		<td><span title="HTML markup will be removed from text" onmouseover='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("text");' onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_0" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="text" onclick='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("text");' tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_0">Strip HTML</label></span></td>
+	</tr><tr>
+		<td><span title="Pasted text will automatically be HTML-encoded" onmouseover='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("encoded");' onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_1" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="encoded" onclick='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("encoded");' tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_1">Encode HTML</label></span></td>
+	</tr><tr>
+		<td><span title="Clipboard will be pasted as-is, preserving HTML tags and entities." onmouseover='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("html");' onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_2" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="html" checked="checked" onclick='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("html");' tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_2">Paste as-is</label></span></td>
+	</tr><tr>
+		<td><span title="Clipboard text will be wrapped in PRE tags, and content HTML encoded, always" onmouseover='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("code");' onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_3" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="code" onclick='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("code");' tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_3">Code block</label></span></td>
+	</tr><tr>
+		<td><span title="Clipboard text will be pasted within a quote block" onmouseover='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("quote");' onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_4" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="quote" onclick='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("quote");' tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_4">Quoted Text</label></span></td>
+	</tr><tr>
+		<td><span title="Sniff pasted text to see if it contains code, and wrap in PRE blocks if it does" onmouseover='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("auto");' onmouseout="editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste(editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.getPasteSetting());"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_5" name="ctl00$ctl00$MC$AMC$PostEntryObj$Content$OnPasteSetting" value="auto" onclick='editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.previewPaste("auto");' tabindex="8" type="radio"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting_5">Best guess</label></span></td>
+	</tr>
+</tbody></table>
+		</div>
+
+		<div id="expando" class="invisible">
+			<div class="header">To display as</div>
+			<table cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr><td class="MsgBd BdSel"><div id="pasteHtmlPreview" class="paste-preview"></div></td></tr>
+			</tbody></table>
+		</div>
+
+	</div>
+
+<script type="text/javascript">
+var editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content;
+$(document).ready(function() {
+    editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content = new TextEditor('#ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText', editorctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageTextConfig);
+    editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content.initialise();
+});
+</script><span id="ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal" style="color:Red;display:none;">The content must be at least 30 characters.</span>
+		</div>
+
+		
+        
+        
+
+		<div class="small-text padded-top">
+			<span class="small-text invisible"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml" name="ctl00$ctl00$MC$AMC$PostEntryObj$IgnoreHtml" tabindex="6" type="checkbox"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml">Treat my content as plain text, not as HTML</label></span>
+		</div>
+
+		
+		<h2>Preview <span id="refresh-count" style="display:none">0</span></h2>
+		<div id="Preview" class="preview">…</div>
+
+		
+		
+
+		
+		<br>
+		<p id="AjaxLogonErrors" class="error callout" style="display:none"></p>
+		
+
+<div id="LogOnContainer">
+
+<table class="member-signin" cellspacing="0">
+<tbody><tr>
+	<td id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_ExistHead" colspan="2"><h3>Existing Members</h3>
+		<div style="margin:-20px 0 10px" class="subdue">Sign in to your account</div>
+	</td>
+<td id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickSignHead" colspan="2"><h3 id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickTitle">...or Join us</h3>
+		<div style="margin:-20px 0 10px" class="subdue">Download, Vote, Comment, Publish.</div>
+	</td>
+
+</tr>
+
+<tr valign="top">
+
+	
+	<td>
+
+		<table>
+		<tbody><tr>
+			<td class="align-middle align-right nowrap">Your Email &nbsp;</td>
+			<td><input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$CurrentEmail" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_CurrentEmail" class="small-text" style="width:175px;" type="email"></td>
+		</tr>
+		<tr>
+			<td class="align-middle align-right nowrap">Password &nbsp;</td>
+			<td><input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$CurrentPassword" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_CurrentPassword" class="small-text" style="width:175px;" type="password"></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="align-middle align-right nowrap">
+				
+				<div><a id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_SendPassword" class="forgot small-text" href="https://www.codeproject.com/script/Membership/SendPassword.aspx?rp=/">Forgot your password?</a></div>
+			</td>
+		</tr>
+		</tbody></table>
+
+	</td>
+	<td width="70px">&nbsp;</td>
+
+	<td>
+
+		<table>
+		<tbody><tr>
+			<td class="align-middle align-right nowrap">Your Email &nbsp;</td>
+			<td class="align-right">
+				<input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$QuickEmail" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickEmail" class="small-text" style="width:175px;" type="email">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div id="NewEmailError" class="locked invisible small-text" style="margin-top: -10px; display: none;">This
+				email is in use. Do you need your <a id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_Password2" href="https://www.codeproject.com/script/Membership/SendPassword.aspx?rp=/">password</a>?</div>
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="align-middle align-right nowrap subdue">
+				Optional Password &nbsp;
+				<input name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$QuickPassword" id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickPassword" class="small-text" style="width:125px;" type="password">
+                <div id="password-strength-quick" style="margin-top: -10px; padding-bottom: 10px;"><span class="passStrengthify" style="display: inline-block; visibility: hidden;"><div><span style="font-size: smaller;">Strength<span style="margin-left: 1em; color: gray;">Too short</span></span></div><span style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; padding-right: 0px; background-color: gray;"></span><span style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; padding-right: 0px; background-color: gray;"></span><span style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; padding-right: 0px; background-color: gray;"></span><span style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; padding-right: 0px; background-color: gray;"></span><span style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; padding-right: 0px; background-color: gray;"></span><span style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; padding-right: 0px; background-color: gray;"></span><span style="height: 3px; width: 15px; margin-right: 3px; max-height: 3px; font-size: 1px; float: left; padding-right: 0px; background-color: gray;"></span></span></div>
+			</td>
+		</tr>
+        
+		<tr>
+			<td colspan="2" class="align-right small-text">
+				
+			</td>
+		</tr>
+		</tbody></table>
+
+	</td>
+	<td width="70px">&nbsp;</td>
+
+	
+</tr>
+
+
+
+</tbody></table>
+
+<div id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_Choices" style="margin-top:-10px;width:275px;margin-left:335px;" class="small-text subdue">
+    <input id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_TermsOfUse" name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$TermsOfUse" type="checkbox"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_TermsOfUse">I have read and agree to the <a target="_blank" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Service</a> and <a target="_blank" href="https://www.codeproject.com/info/privacy.aspx">Privacy Policy</a></label><br>
+    <span onchange="logonCtrlObject.OnNewslettersCheckChange(this);"><input id="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters" name="ctl00$ctl00$MC$AMC$PostEntryObj$MemberLogOn$AllNewsletters" checked="checked" type="checkbox"><label for="ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters">Please subscribe me to the CodeProject newsletters</label></span>
+</div>
+
+</div>
+
+<script type="text/javascript">
+    function LogonCtrlObject()
+    {
+        var clickedOptin = false;
+
+        this.OnCountryChange = function (CASL, subscribing) {
+        }
+
+        this.OnNewslettersCheckChange = function (checkbox) {
+            clickedOptin = true;
+        }
+
+        this.OnCountrySelectionChange = function (dropdown) {
+            var CASLCountries = [ "Afghanistan","Åland Islands","Algeria","American Samoa","Andorra","Angola","Anguilla","Anonymous Proxy","Antarctica","Aruba","Asia/Pacific Region","Benin","Bermuda","Bolivia","Bonaire, Sint Eustatius and Saba","Bouvet Island","British Crown Dependencies","British Indian Ocean Territory","Brunei Darussalam","Burundi","Canada","Cape Verde","Chad","Christmas Island","Cocos (Keeling) Islands","Comoros","Congo","Congo (the Democratic Republic of the)","Cook Islands","Cote D'Ivoire","Cuba","Curaçao","Djibouti","East Timor","Egypt","El Salvador","Equatorial Guinea","Eritrea","Ethiopia","Europe","Falkland Islands (Malvinas)","Faroe Islands","Fiji","France (Metropolitan)","French Guiana","French Polynesia","French Southern Territories","Gabon","Gibraltar","Greenland","Guadeloupe","Guam","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Heard Island and Mcdonald Islands","Holy See (Vatican City State)","Honduras","Iran (Islamic Republic of)","Iraq","Isle of Man","Jersey","Kiribati","Korea (Democratic People'S Republic of)","Kuwait","Kyrgyzstan","Lao People'S Democratic Republic","Lebanon","Lesotho","Liberia","Libyan Arab Jamahiriya","Macau","Madagascar","Malawi","Maldives","Mali","Marshall Islands","Martinique","Mauritania","Mayotte","Mexico","Micronesia (Federated States of)","Monaco","Mongolia","Montserrat","N/a","Nauru","Netherlands Antilles","New Caledonia","Nicaragua","Niger","Nigeria","Niue","Norfolk Island","Northern Mariana Islands","Oman","Other","Palau","Palestinian Territory (Occupied)","Panama","Papua New Guinea","Paraguay","Pitcairn","Reunion","Rwanda","Saint Barthélemy","Saint Helena","Saint Kitts and Nevis","Saint Martin (French)","Saint Pierre and Miquelon","Samoa","San Marino","Sao Tome and Principe","Satellite Provider","Senegal","Serbia and Montenegro","Seychelles","Sint Maarten","Solomon Islands","Somalia","South Georgia and the South Sandwich Islands","Sudan","Suriname","Svalbard and Jan Mayen","Swaziland","Syrian Arab Republic","Taiwan","Tajikistan","Timor-Leste","Togo","Tokelau","Turkmenistan","Tuvalu","United States Minor Outlying Islands","Uruguay","Uzbekistan","Vanuatu","Wallis and Futuna","Western Sahara","Yemen","Yugoslavia","Zaire","Zimbabwe",];
+            if (dropdown.selectedIndex >= 0) {
+                var country = dropdown[dropdown.selectedIndex].text;
+
+                var useCASL = false;
+                for (i = 0; i < CASLCountries.length; i++) {
+                    if (CASLCountries[i] == country) {
+                        useCASL = true;
+                        break;
+                    }
+                }
+
+                if (!clickedOptin)
+                    $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters').prop('checked', !useCASL);
+
+                logonCtrlObject.OnCountryChange(useCASL, $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_AllNewsletters').prop('checked'));
+            }
+        }
+    }
+
+    var logonCtrlObject = new LogonCtrlObject();
+</script>
+
+
+		
+		<div class="clearfix padded-top">
+		
+		<div id="AjaxSubmitGroup" style="">
+			<a href="javascript:void(0)" id="ctl00_ctl00_MC_AMC_PostEntryObj_AjaxSubmit" class="button-large safe" onclick="OnAjaxSubmit(); return false;">Submit your solution!</a>
+		</div>
+		</div>
+
+		
+		<div class="callout">
+	    	When answering a question please:<br>
+		    <ol class="spaced">
+			<li>Read the question carefully.</li>
+			<li>Understand that English isn't everyone's first language so be lenient of bad 
+			spelling and grammar.</li>
+			<li>If a question is poorly phrased then either ask for clarification, ignore it, or
+			<b>edit the question</b> and fix the problem. Insults are not welcome.</li>
+		    </ol>
+		    Let's work to help developers, not make them feel stupid.
+		</div>
+		
+
+	</div>
+	
+    
+	
+
+	
+    <div class="clearfix"></div>
+
+	
+</div>
+
+
+</div>
+<br style="clear:both">
+</div>
+
+
+<div id="ctl00_ctl00_MC_AMC_LicenseTerms" class="small-text" style="margin-top:20px;"><p class="small-text">This content, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+
+
+	<!-- Main Page Contents End -->
+
+	</div>
+
+</div>
+
+
+
+<div id="ctl00_ctl00_MC_NavRight" class="text-sidebar question">
+
+	
+
+<div class="align-right">
+    <div style="display:inline-block;position:relative;top:-5px">
+        
+    </div>
+    &nbsp;
+    <a id="ctl00_ctl00_MC_Tools_PrintLnk" title="Print" rel="nofollow" href="https://www.codeproject.com/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl?display=Print"><img src="file_path_files/print24.png" style="border:0" alt="Print" height="24px" width="24px"></a>
+
+     
+
+    <a id="ctl00_ctl00_MC_Tools_AnswersRSS" title="Quick Answers RSS feed" href="https://www.codeproject.com/webservices/QuestionRSS.aspx">
+        <img src="file_path_files/rss24.png" alt="Answers RSS" style="width:24px;height:24px;border:0pt none;">
+        </a>
+
+    
+
+</div>
+
+	
+
+	
+    
+
+	
+
+	<div class="padded-top" style="height:250px">
+		<div data-processed="true" class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros" data-tags="Javascript, HTML, jQuery"><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=300x250&c=250721"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=300x250&c=250721"  width="300px" height="250px" target="_blank"/></a></noscript></div>
+	</div>
+
+	
+
+	<table class="experts-list padded-top">
+		<tbody><tr><td colspan="2" class="header">Top Experts</td></tr>
+		<tr class="subheader"><td width="50%">Last 24hrs</td><td width="50%">This month</td></tr>
+		<tr>
+			<td>
+
+<div class="">
+
+
+
+<table class="experts-list">
+<tbody><tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=6122202">OriginalGriff</a></td>
+<td class="points" align="right"><span title="Points earned in period">190</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=6249272">cjmakwana</a></td>
+<td class="points" align="right"><span title="Points earned in period">90</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=2225683">Jochen Arndt</a></td>
+<td class="points" align="right"><span title="Points earned in period">70</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=34187">Richard Deeming</a></td>
+<td class="points" align="right"><span title="Points earned in period">55</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=2484827">AnvilRanger</a></td>
+<td class="points" align="right"><span title="Points earned in period">50</span></td>
+</tr>
+</tbody></table>
+</div></td>
+			<td>
+
+<div class="">
+
+
+
+<table class="experts-list">
+<tbody><tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=6122202">OriginalGriff</a></td>
+<td class="points" align="right"><span title="Points earned in period">1,875</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=4072603">ppolymorphe</a></td>
+<td class="points" align="right"><span title="Points earned in period">794</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=34187">Richard Deeming</a></td>
+<td class="points" align="right"><span title="Points earned in period">685</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=3164287">Kornfeld Eliyahu Peter</a></td>
+<td class="points" align="right"><span title="Points earned in period">651</span></td>
+</tr>
+
+<tr>
+
+<td class="name"><a id="MemberName" href="https://www.codeproject.com/script/Membership/View.aspx?mid=6003743">RickZeeland</a></td>
+<td class="points" align="right"><span title="Points earned in period">471</span></td>
+</tr>
+</tbody></table>
+</div></td>
+		</tr>
+	</tbody></table>
+
+	<div id="ctl00_ctl00_MC_Related" class="padded-top also-read">
+		<script type="text/javascript">document.write(unescape('%0d%0a    %3cdiv id%3d%22ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl00_header%22 class%3d%22header%22%3eAlso Read%3c%2fdiv%3e%0d%0a    %3cdiv class%3d%22content-list%22 style%3d%22margin-top%3a15px%22%3e%0d%0a%0d%0a    %3cdiv class%3d%22content-list-item clearfix%22%3e%0d%0a        %3cdiv class%3d%22thumbnail%22%3e%3ca id%3d%22ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl01_Thumbnail%22 href%3d%22https%3a%2f%2fwww.codeproject.com%2fResearchLibrary%2f254%2fGetting-the-Most-out-of-Your-Infrastructure-Dev-an%22%3e%3cimg src%3d%22https%3a%2f%2fwww.codeproject.com%2fscript%2fResearchLibrary%2fLogos%2fLibraryItemThumbnail_254_100x119.png%22 alt%3d%22%22 style%3d%22border-width%3a0px%3b%22 %2f%3e%3c%2fa%3e%3c%2fdiv%3e%0d%0a        %3cdiv class%3d%22text%22%3e%0d%0a            %3cdiv class%3d%22title%22%3e%3ca id%3d%22ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl01_Title%22 href%3d%22https%3a%2f%2fwww.codeproject.com%2fResearchLibrary%2f254%2fGetting-the-Most-out-of-Your-Infrastructure-Dev-an%22%3eGetting the Most out of Your Infrastructure%3a Dev and Test Best Practices%3c%2fa%3e%3c%2fdiv%3e%0d%0a            %0d%0a        %3c%2fdiv%3e%0d%0a    %3c%2fdiv%3e%0d%0a%0d%0a    %3cdiv class%3d%22content-list-item clearfix%22%3e%0d%0a        %3cdiv class%3d%22thumbnail%22%3e%3ca id%3d%22ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl02_Thumbnail%22 href%3d%22https%3a%2f%2fwww.codeproject.com%2fResearchLibrary%2f253%2fA-Decade-of-Cloud%22%3e%3cimg src%3d%22https%3a%2f%2fwww.codeproject.com%2fscript%2fResearchLibrary%2fLogos%2fLibraryItemThumbnail_253_100x130.png%22 alt%3d%22%22 style%3d%22border-width%3a0px%3b%22 %2f%3e%3c%2fa%3e%3c%2fdiv%3e%0d%0a        %3cdiv class%3d%22text%22%3e%0d%0a            %3cdiv class%3d%22title%22%3e%3ca id%3d%22ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl02_Title%22 href%3d%22https%3a%2f%2fwww.codeproject.com%2fResearchLibrary%2f253%2fA-Decade-of-Cloud%22%3eA Decade of Cloud%3c%2fa%3e%3c%2fdiv%3e%0d%0a            %0d%0a        %3c%2fdiv%3e%0d%0a    %3c%2fdiv%3e%0d%0a%0d%0a    %3c%2fdiv%3e%0d%0a'));</script>
+    <div id="ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl00_header" class="header">Also Read</div>
+    <div class="content-list" style="margin-top:15px">
+
+    <div class="content-list-item clearfix">
+        <div class="thumbnail"><a id="ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl01_Thumbnail" href="https://www.codeproject.com/ResearchLibrary/254/Getting-the-Most-out-of-Your-Infrastructure-Dev-an"><img src="file_path_files/LibraryItemThumbnail_254_100x119.png" alt="" style="border-width:0px;"></a></div>
+        <div class="text">
+            <div class="title"><a id="ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl01_Title" href="https://www.codeproject.com/ResearchLibrary/254/Getting-the-Most-out-of-Your-Infrastructure-Dev-an">Getting the Most out of Your Infrastructure: Dev and Test Best Practices</a></div>
+            
+        </div>
+    </div>
+
+    <div class="content-list-item clearfix">
+        <div class="thumbnail"><a id="ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl02_Thumbnail" href="https://www.codeproject.com/ResearchLibrary/253/A-Decade-of-Cloud"><img src="file_path_files/LibraryItemThumbnail_253_100x130.png" alt="" style="border-width:0px;"></a></div>
+        <div class="text">
+            <div class="title"><a id="ctl00_ctl00_MC_RelatedAds_RelatedResults_ctl02_Title" href="https://www.codeproject.com/ResearchLibrary/253/A-Decade-of-Cloud">A Decade of Cloud</a></div>
+            
+        </div>
+    </div>
+
+    </div>
+
+	</div>
+
+	
+		
+	<div style="margin:auto;width:160px;margin-top:10px" class="sticky-stop">
+		
+	</div>
+
+	<div class="padded-top related">
+		
+	<div id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl00_header" class="header">Related Questions</div>
+	<div class="content-list">	
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl02_Link" href="https://www.codeproject.com/Questions/714182/image-full-path-from-input-file">image full path from input file</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl03_Link" href="https://www.codeproject.com/Questions/564967/pathplusissueplusinplusfirefoxplusinplusinputplust">path issue in firefox in input type file</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl04_Link" href="https://www.codeproject.com/Questions/690950/get-full-path-of-a-file-using-jquery">get full path of a file using jquery</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl05_Link" href="https://www.codeproject.com/Questions/372512/How-to-get-full-path-in-file-in-html">How to get full path in file  in html</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl06_Link" href="https://www.codeproject.com/Questions/714481/input-type-file-from-specified-path">input type file from specified path</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl07_Link" href="https://www.codeproject.com/Questions/230991/Getting-full-file-path-using-input-tag-of-html">Getting full file path using input tag of html</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl08_Link" href="https://www.codeproject.com/Questions/532898/Supportplusforplusinputplustagplusinplusfirefoxplu">Support for input tag in firefox with full path</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl09_Link" href="https://www.codeproject.com/Questions/1167177/Not-getting-the-full-file-path-while-uploading-the">Not getting the full file path while uploading the file path using angularjs?</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl10_Link" href="https://www.codeproject.com/Questions/64770/How-to-get-Full-path-from-file-control">How to get Full path from file control???</a>
+		
+	</div>
+	
+	<div class="content-list-item">
+		<a id="ctl00_ctl00_MC_RelatedEntries_RelatedResults_ctl11_Link" href="https://www.codeproject.com/Questions/104589/Require-Full-Path-from-FileUpload">Require Full Path from FileUpload</a>
+		
+	</div>
+	
+	</div>
+	
+
+	</div>
+
+</div>
+
+
+</div>
+<br>
+
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1 = document.all ? document.all["ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1"] : document.getElementById("ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1");
+ctl00_ctl00_MC_AMC_PostEntryObj_ValidationSummary1.validationGroup = "ItemDetails";
+var ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal = document.all ? document.all["ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal"] : document.getElementById("ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal");
+ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal.errormessage = "The content must be at least 30 characters.";
+ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal.display = "Dynamic";
+ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal.validationGroup = "ItemDetails";
+ctl00_ctl00_MC_AMC_PostEntryObj_ContentVal.evaluationfunction = "CustomValidatorEvaluateIsValid";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+
+
+
+					
+
+					<!-- Main Page Contents End -->
+					<br clear="all">
+				</div>
+
+				<div class="theme1-background padded-top padded-bottom sticky-stop">
+					<div class="bottom-promo"> 
+						<div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="ros" data-loadonview="true" data-tags="Javascript, HTML, jQuery,pos_bottom"><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=728x90&c=250721"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/ros&sz=728x90&c=250721"  width="728px" height="90px" target="_blank"/></a></noscript></div>
+					</div>
+				</div>
+
+				<div class="extended tiny-text">
+					<div class="row">
+						<div class="float-left">
+							<a id="ctl00_ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise</a> | 
+							<a id="ctl00_ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+							<a id="ctl00_ctl00_Mobile">Mobile</a>
+							<br>
+							Web02 |
+							2.8.170609.2 |
+							Last Updated 4 May 2016
+						</div>
+						<div class="float-right align-right">
+							Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2017 <br>
+							All Rights Reserved.
+							<a id="ctl00_ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Service</a>
+						</div>
+
+						
+
+
+<div class="page-width">
+Layout: <a id="ctl00_ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Questions/602912/howplustoplusgetplusfullplusfilepluspathplusfrompl?PageFlow=Fluid">fluid</a>
+</div>
+
+
+					</div>
+				</div>
+	
+				<br clear="all">
+		
+					
+
+			
+
+	</div>
+	</div>
+	</div>
+
+	<div id="ctl00_ctl00_Address" class="tiny-text subdue align-center padded-top">
+	CodeProject, 
+	503-250 Ferrand Drive Toronto Ontario, M3C 3G8 Canada
+	+1 416-849-8900 x 100
+	</div>
+
+</div>
+<div id="page-bottom"></div>
+
+
+
+<script type="text/javascript" language="Javascript" src="file_path_files/editor.js"></script>
+<script type="text/javascript" language="Javascript" src="file_path_files/api.js"></script>
+<script type="text/javascript" language="Javascript" src="file_path_files/qa.js"></script>
+<script type="text/javascript" language="Javascript" src="file_path_files/TextAreaResizer.js"></script>
+<script type="text/javascript" language="Javascript" src="file_path_files/PasswordStrength.js"></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+$('#NewEntryGroup').show();
+$('#ctl00_ctl00_MC_AMC_AddChild2').hide();
+$('#ctl00_ctl00_MC_AMC_AddChild1').attr('href', '#NewEntryGroup');
+$('#ctl00_ctl00_MC_AMC_AddChild1').attr('name', 'anchorTarget');
+$(document).ready(function() { anchorAnimate() });
+
+$(document).ready(function () { processCodeBlocks.Initialise('#contentdiv', 400, true); });
+function UpdateSize(elmName, indicator) {
+ var elm = document.getElementById(elmName);
+ if (elm) {
+  var indElm = document.getElementById(indicator);
+  if (indElm) indElm.value = elm.value.length.toString();
+ }
+}
+
+
+                    function OnEdit() { 
+                        $('#Preview').html('');
+                        $('#AjaxSubmitErrors').hide();
+                        $('#AjaxLogonErrors').hide();
+                    }
+                    $('#TitleSize').prop('disabled', true);
+                    var validationData = {};
+                    validationData.postErrorDivId   = 'AjaxSubmitErrors';
+                    validationData.logonErrorDivId  = 'AjaxLogonErrors';
+                    validationData.generalErrorMsg  = 'An error occurred and we were unable to complete your request. The error has been logged and an administrator notified. Sorry :(';
+                    validationData.minContentLength = 30;
+                    validationData.tooShortMsg      = 'Please provide more content.';
+
+                    var newEntryData = {};
+                    newEntryData.postUrl          = '/script/Answers/WebServices/ProcessNewEntry.aspx';
+                    newEntryData.typeName         = 'answer';
+                    newEntryData.parentId         = 602912;
+                    newEntryData.parentTypeName   = 'answer';
+                    newEntryData.containerId      = 'PostEntryContainer';
+                    newEntryData.contentId        = 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText';
+                    newEntryData.whatHaveYouTriedId = 'ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageText';
+                    newEntryData.submitBtnId      = 'AjaxSubmit';
+                    newEntryData.helpTipsId       = 'ctl00_ctl00_MC_AMC_PostEntryObj_HelpTips';
+                    newEntryData.useWysiwygEditor = false;
+                    newEntryData.ignoreHtmlId     = 'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml';
+                    newEntryData.onPasteMode      = 'html';
+                    newEntryData.getEditorObject  = function(){ return editor_ctl00_ctl00_MC_AMC_PostEntryObj_Content; };
+                    newEntryData.recaptchaId      = 'g-recaptcha-response';
+                    
+                    var logonData = {};
+                    logonData.loggedIn    = false;
+                    logonData.postUrl     = 'https://www.codeproject.com/script/Membership/Ajax/ProcessLogonOrSignup.aspx';
+                    logonData.containerId = 'LogOnContainer';
+
+                    function OnAjaxSubmit() {
+                        TryPostNewEntry(validationData, newEntryData, logonData);
+                    }
+
+                    $(document).ready(function() {
+                        if (document.all || window.getSelection) {
+        			        $('#quote-button').show();
+                        }
+                    })
+if (RegisterPreviewRefresh)RegisterPreviewRefresh(1000, 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText', 'ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageText',false, 'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml', '/script/Articles/WebServices/ArticleServices.aspx/UpdateEditLockStatus', 0);var lastPreviewContent='';function RefreshPreview(previewHelper) {var ignore=$('#ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml')[0];
+var formatType=ignore.checked?'Text':'TextWithHtml';
+
+                        var htmlContent = GetEditorContent(false, 'ctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageText', 'ctl00_ctl00_MC_AMC_PostEntryObj_WhatHaveYouTried_MessageText');
+                        if (lastPreviewContent != htmlContent) {
+                            lastPreviewContent = htmlContent;
+                            postData = {
+                                'ParentId'         : newEntryData.parentId,
+                                'Content'          : htmlContent,
+                                'WysiwygEditorUsed': newEntryData.useWysiwygEditor,
+                                'IgnoreHtml'       : $('#' + newEntryData.ignoreHtmlId)[0].checked,
+                                'PasteMode'        : newEntryData.onPasteMode 
+                            };
+                            $.ajax({
+                                type:     'POST',
+                                cache:    false,
+                                dataType: 'json',
+                                data:      postData,
+                                timeout:   1000,
+                                async:     true,
+                                url:       '/script/Answers/Preview.aspx',
+                                success: function(data) {
+                                    if (!data || !data.html || data.html == '')
+                                        result = '<p class="error">Unexpected error when attempting to retrieve preview HTML.</p>';
+                                    else 
+                                        result = decodeURIComponent(data.html);
+
+                                    $('#Preview').html(result);
+                                },
+                                error: function (xhr, textStatus, errorThrown) {
+                                    errorThrown;
+                                }
+                            });
+                        }
+                        else if (htmlContent.length == 0) {
+                            $('#Preview').html('&hellip;');
+                        }
+                    }
+$('#ctl00_ctl00_MC_AMC_PostEntryObj_PostbackSubmitGroup').hide();
+                              $('#AjaxSubmitGroup').show();
+$(function ()
+                {
+                    $('.oauth').click(function () {
+                        $this = $(this);
+                        href = $this.attr('href');
+                        var myWindow = window.open(href, 'popup',
+                                    'width=800,height=600,location=0,menubar=0,resizeable=0,scrollbars=0,toolbar=0');
+                        myWindow.focus();
+                        var timer = setInterval(function () {
+                                        if (myWindow.closed) {
+                                            clearInterval(timer);
+                                            // window.location.reload(); // May do a POST reload, shows a warning
+                                            window.location = window.location; // force a GET reload
+                                        }
+                                    }, 200);
+                        return false;
+                    });
+                });
+(function() { 
+var _dma = document.createElement('script');
+    _dma.type = 'text/javascript';
+    _dma.async = true;
+    _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn2.developermedia.com/a.min.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+})();var retrievalService=function(n){n=n||{};var i=n.RetrievalServiceUrl||"/script/content/webservices/RetrieveContent.aspx/GetContent",r=n.RetrievalServiceRetries||3,u=n.RetrievalServiceTimeout||5e3,f=function(){$(window).bind("resize scroll",t);t()},t=function(){if(typeof DMAds=="undefined"){var n=$("[data-type='ad']");n.each(function(){var n=$(this),u=n.attr("data-format")||"",f=n.attr("data-publisher")||"",s=n.attr("data-zone")||"",t=n.attr("data-loadonview"),i=n.attr("data-noadx"),h=n.attr("data-tags")||"",c=n.find("iframe").length!==0||n.find("img").length!==0,r=n.attr("data-processed");t=typeof t=="string"&&t.toLowerCase()==="true";i=typeof i=="string"&&i.toLowerCase()==="true";r=typeof r=="string"&&r.toLowerCase()==="true";r||c||t&&!o(this)||(e(n,u,f,s,i,h),n.attr("data-processed","true"))})}},e=function(n,t,f,e,o,s){var h=new $.Deferred,c=JSON.stringify({format:t,publisher:f,zone:e,noAdX:o,tags:s});$.ajax({url:i,cache:!1,type:"POST",data:c,contentType:"application/json; charset=utf-8",dataType:"json",tryCount:0,retryLimit:r,timeout:u}).done(function(t){var i=t?t.d:null;h.resolve(i);i&&i.ClickUrl&&i.ImageData&&n.html('<a href="'+decodeURIComponent(i.ClickUrl)+'"><img src="data:image/png;base64,'+decodeURIComponent(i.ImageData)+'"></a>')}).fail(function(n,t){h.reject(t)})},o=function(n){var t,f,e,o;if(!s(n))return!1;var u=!1,i=0,r=0;try{t=n.getBoundingClientRect();typeof innerWidth=="number"?(i=window.innerWidth,r=window.innerHeight):document.documentElement&&(document.documentElement.clientWidth||document.documentElement.clientHeight)?(i=document.documentElement.clientWidth,r=document.documentElement.clientHeight):document.body&&(document.body.clientWidth||document.body.clientHeight)&&(i=document.body.clientWidth,r=document.body.clientHeight);f=-200;t.top===t.bottom&&(f+=n.height*-1);e=t.top>=0&&t.top-200<=r||t.top<=0&&t.top>=f;o=i>t.left&&t.right>=0;u=e&&o}catch(h){u=!0}return u},s=function(n){var t=!1,i;return n&&n.style.position!=="fixed"&&n.offsetParent?t=!0:n&&n.style.position==="fixed"&&(i=window.getComputedStyle(n),t=i&&i.display!=="none"),t&&h()},h=function(){var t=!0,n="";return typeof document.hidden!="undefined"?n="hidden":typeof document.mozHidden!="undefined"?n="mozHidden":typeof document.msHidden!="undefined"?n="msHidden":typeof document.webkitHidden!="undefined"&&(n="webkitHidden"),n!==null&&document[n]&&(t=!1),t};return{init:f}};$(document).ready(function(){var n=new retrievalService,t=function(){var t=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("MSXML2.XMLHTTP"),i;t.onreadystatechange=function(){try{t.readyState==4&&(t.status==200||n.init())}catch(i){}};try{i="cdn2.developermedia.com/a.min.js";t.open("GET",i,!0);t.send()}catch(r){}};setTimeout(n.init,250)});
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;
+$(document).ready(function() {
+ if(InitWatermark)InitWatermark('sb_tb', 'Search for articles, questions, tips');
+ var sbar = $('#sb_tb'); 
+ var sfilter = $('#SearchFilter');
+ if (sbar && sfilter) {
+  sfilter.removeClass('popup'); sfilter.hide(); sfilter.removeClass('open');
+  sbar.blur(function() {
+ if (!oSrchFlt) {sfilter.hide(); sfilter.removeClass('open');}
+ srchBoxFoc=false;
+ });
+  sbar.focus(function() {
+ oSrchFlt=false; srchBoxFoc=true;
+ sfilter.show(); sfilter.addClass('open');
+ });
+  sbar.mouseleave(function() { oSrchBox=false; });
+  sbar.mouseover(function() { oSrchBox=true; });
+  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox) { sfilter.hide(); sfilter.removeClass('open'); }});
+  sfilter.mouseover(function() { oSrchFlt=true; });
+ }
+});
+$('#usf').change(function() {$('#usfc').val('true');});
+$('#clear-rate_ctl00_ctl00_MC_AMC_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_RatePost_RSU').hide(); return false;});$("#ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_ctl00_MC_AMC_RatePost_RSU').fadeIn('fast'); },            function() { $('#ctl00_ctl00_MC_AMC_RatePost_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper() {
+  return rateItem(602912,2,4,false,true,0,'MediumStars');
+}
+
+                        function getVotesHistogram(objectId, objectTypeId, containerId, loadingId) {
+                            if (!$('#' + containerId).attr('alreadyRequested')){
+                                $.ajax({
+                                    url: '/script/Ratings/Ajax/Histogram.aspx?obid=' + objectId + '&obtid='+objectTypeId,
+                                    success: function (data) {
+                                        $('#' + containerId).html(data);
+                                        $('#' + loadingId).hide();
+                                    }
+                                });
+                                $('#' + containerId).attr('alreadyRequested', 'true');
+                            }
+                        }
+$(document).ready(function() {
+  new starRating('#ctl00_ctl00_MC_AMC_RatePost_VoteFormDiv', PostBack_ctl00_ctl00_MC_AMC_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_RatePost');
+  $('#ctl00_ctl00_MC_AMC_RatePost_RB').mouseenter(function() {     getVotesHistogram(602912,2   ,'ctl00_ctl00_MC_AMC_RatePost_Histogram','ctl00_ctl00_MC_AMC_RatePost_Loading');
+  });
+})
+
+$(document).ready(function() {
+  $('#ctl00_ctl00_MC_AMC_RatePost_SubmitRateBtn').hide();
+});
+
+$(document).ready(function() {
+  $('#ctl00_ctl00_MC_AMC_RatePost_SubmitRateBtn').hide();
+});
+function ChkRtctl00_ctl00_MC_AMC_RatePost(){}
+
+$('#clear-rate_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').hide(); return false;});$("#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').fadeIn('fast'); },            function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper() {
+  return rateItem(602933,2,5,false,true,0,'SmallStars');
+}
+$(document).ready(function() {
+  new starRating('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_VoteFormDiv', PostBack_ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost');
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_RB').mouseenter(function() {     getVotesHistogram(602933,2   ,'ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_Histogram','ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_Loading');
+  });
+})
+
+$(document).ready(function() {
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SubmitRateBtn').hide();
+});
+
+$(document).ready(function() {
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost_SubmitRateBtn').hide();
+});
+function ChkRtctl00_ctl00_MC_AMC_Answers_ctl00_A_RatePost(){}
+
+var reportingMemberId = 0;
+$('#clear-rate_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').click(function () {    $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').hide(); return false;});$("#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').fadeIn('fast'); },            function() { $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper() {
+  return rateItem(602918,2,5,false,true,0,'SmallStars');
+}
+$(document).ready(function() {
+  new starRating('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_VoteFormDiv', PostBack_ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RateItemWrapper,'ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost');
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_RB').mouseenter(function() {     getVotesHistogram(602918,2   ,'ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_Histogram','ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_Loading');
+  });
+})
+
+$(document).ready(function() {
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SubmitRateBtn').hide();
+});
+
+$(document).ready(function() {
+  $('#ctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost_SubmitRateBtn').hide();
+});
+function ChkRtctl00_ctl00_MC_AMC_Answers_ctl01_A_RatePost(){}
+
+var reportingMemberId = 0;
+var editorctl00_ctl00_MC_AMC_PostEntryObj_Content_MessageTextConfig = {
+                    PasteDialogId:          'ctl00_ctl00_MC_AMC_PostEntryObj_Content_pasteDialog',
+                    ShowPastePreviewWindow:  false,
+                    PastePreviewOverEditor:  true,
+                    LongMsgWarning:          true,
+                    LocalLinksWarning:       true,
+                    IgnoreHtmlId:           'ctl00_ctl00_MC_AMC_PostEntryObj_IgnoreHtml',
+                    AllowMarkdownId:        '',
+                    QuoteableElmId:         '',
+                    PasteSettingElmId:      'ctl00_ctl00_MC_AMC_PostEntryObj_Content_OnPasteSetting', 
+                    InitialPasteMode:       'html',
+                    EnsureContentValidation: true,
+                    OnSubmit:                null,
+                    SniffCodeUrl:            '/script/content/ajax/SniffCode.aspx',
+                    SniffCodeParameter:      'text',
+                    SanitiseHtmlUrl:         '/script/Forums/Preview.aspx',
+
+                    GetTitlePaths: [
+                        {
+                            'path'  : 'https://www.codeproject.com/kb',
+                            'url'   : '/script/articles/ajax/GetTitle.aspx',
+                            'param' : 'aurl'
+                        },
+
+                        {
+                            'path'  : 'https://www.codeproject.com/articles',
+                            'url'   : '/script/articles/ajax/GetTitle.aspx',
+                            'param' : 'aurl'
+                        },
+                        {
+                            'path'  : 'https://www.codeproject.com/articles',
+                            'url'   : '/script/articles/ajax/GetTitle.aspx',
+                            'param' : 'aurl'
+                        },
+                        {
+                            'path'  : 'https://www.codeproject.com/tips',
+                            'url'   : '/script/articles/ajax/GetTitle.aspx',
+                            'param' : 'aurl'
+                        },
+                        {
+                            'path'  : 'https://www.codeproject.com/reference',
+                            'url'   : '/script/articles/ajax/GetTitle.aspx',
+                            'param' : 'aurl'
+                        },
+
+                        {
+                            'path'  : 'https://www.codeproject.com/questions',
+                            'url'   : '/script/answers/ajax/GetTitle.aspx',
+                            'param' : 'aurl'
+                        },
+                        {
+                            'path'  : 'https://www.codeproject.com/answers',
+                            'url'   : '/script/answers/ajax/GetTitle.aspx',
+                            'param' : 'aurl'
+                        },
+
+                        {
+                            'path'  : 'https://www.codeproject.com/answers',
+                            'url'   : '/script/answers/ajax/GetTitle.aspx',
+                            'param' : 'aurl'
+                        },
+
+                        // Default - MUST be last option here.
+                        {
+                            'path'  : null,
+                            'url'   : '/script/content/ajax/GetTitle.aspx',
+                            'param' : 'rp'
+                        }
+                    ]
+                };
+$(document).ready(function() {$('textarea.resizable:not(.processed)').TextAreaResizer(false);});
+$(function() {
+                                    var lasttime=new Date().getTime();
+                                    $('#NewEmailError').hide();
+                                    var emailEle = $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickEmail');
+                                    emailEle.blur(function() {
+                                        var email = $.trim(emailEle.val());
+                                        if (email.length > 0)
+                                            checkEmail(email);
+                                    });
+                                    emailEle.keyup(function() {
+                                        var email = $.trim(emailEle.val());
+                                        var current=new Date().getTime();
+                                        if (email.length > 0 && (current-lasttime) > 1000) {
+                                            checkEmail(email);
+                                            lasttime=current;
+                                        }
+                                    });
+                                });
+                                function checkEmail(email) {
+                                    $.post('/script/Membership/Ajax/EmailExists.aspx?meml=' + escape(email),
+                                          function(data) {
+                                            if (data.toLowerCase() == 'true')
+                                                $('#NewEmailError').show();
+                                            else
+                                                $('#NewEmailError').hide();
+                                        });
+                                }
+$(document).ready(function() {
+  $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_QuickPassword').passStrengthify({
+      minimum:    8,
+      element:    $('#password-strength-quick'),
+      rawEntropy: false,
+      labels: {
+        tooShort:         'Too short',
+        passwordStrength: 'Strength'
+      }
+  });
+  $('#ctl00_ctl00_MC_AMC_PostEntryObj_MemberLogOn_ProPassword').passStrengthify({
+      minimum:    8,
+      element:    $('#password-strength-pro'),
+      rawEntropy: false,
+      labels: {
+        tooShort:         'Too short',
+        passwordStrength: 'Strength'
+      }
+  });
+});
+
+//]]>
+</script>
+
+
+
+
+<style type="text/css">.copied::after {  position: absolute;  display: inline-block;  content: 'copied'; color: #fff; background-color: #f90;  border-radius: 3px; padding:1px 3px; opacity: 0;  will-change: opacity, transform; animation: showcopied 1.5s ease; } @keyframes showcopied { 0% { opacity: 0; transform: translateX(-100%); } 70% { opacity: 1; transform: translateX(0); } 100% { opacity: 0; } } </style></body><iframe src="" style="display: none;"></iframe></html>
