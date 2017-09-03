@@ -40,7 +40,11 @@ app.use(bodyParser());
 var port = process.env.PORT || 3000;
 // Initializing routers
 app.get("/",(req,res)=>{
-  res.render("homepage");
+  if(req.isAuthenticated())
+    res.redirect('/feeds')
+  else{
+    res.render("homepage");
+  }
 });
 
 
@@ -73,23 +77,27 @@ app.get("/dashboard/:id",(req,res)=>{
 
 // Main page where all the date precides
 app.post('/login',passport.authenticate('local-login',{
-    successRedirect :  '/home',
-    failureRedirect : '/afhjguth',
+    successRedirect :  '/feeds',
+    failureRedirect : '/login',
     failureFlash : true
 })
 );
 app.post('/register',passport.authenticate('local-signup',{
-    successRedirect :  '/dashfboghard',
-    failureRedirect :  '/auth',
+    successRedirect :  '/feeds',
+    failureRedirect :  '/register',
 }))
 app.get('/register',function(req,res){
     if(req.isAuthenticated())
-      res.redirect('/home');
+      res.redirect('/feeds');
     else 
       res.render("login");
 })
 app.get('/login',(req,res)=>{
   res.render("login");
+})
+app.get('/logout',(req,res)=>{
+  req.logout();
+  res.redirect('/login')
 })
 
 // Query related things and use of APIs
