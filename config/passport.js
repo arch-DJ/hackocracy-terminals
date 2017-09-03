@@ -64,7 +64,7 @@ module.exports = (passport) => {
 
                 // set the user's local credentials
                 newUser.email          = email;
-                newUser.password       = newUser
+                newUser.password       = newUser.generateHash(password);
                 // save the user
                 newUser.save((err)=>{
                     if (err)
