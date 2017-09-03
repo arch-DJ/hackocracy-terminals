@@ -16,8 +16,8 @@
 </script>
 
 Search query by date of creation of query:-
-<input type = "date" name = "date" placeholder = "Enter date of creation of query" id="dateValue">
-<input type = "button" name = "submit" onclick="redirect()">
+<input type = "date" name = "date" placeholder = "Enter date of creation of query" id="dateValue" required>
+<input type = "submit" name = "submit" onclick="redirect()">
 
 </p>
 <br>

@@ -125,6 +125,9 @@ app.get('/getQuery/heading/:heading',(req,res)=>{
 
 app.get('/getQuery/all/:date',(req,res)=>{
   query_controller.getElementbyDate(req,(found)=>{
+    if(found.data==null)
+    res.render("404");
+    else
     res.render("querybydate",{"data":found.data});
   });
 });

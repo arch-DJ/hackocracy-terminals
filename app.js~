@@ -40,7 +40,7 @@ app.use(bodyParser());
 var port = process.env.PORT || 3000;
 // Initializing routers
 app.get("/",(req,res)=>{
-  res.render("../public/index");
+  res.render("homepage");
 });
 
 
@@ -125,7 +125,10 @@ app.get('/getQuery/heading/:heading',(req,res)=>{
 
 app.get('/getQuery/all/:date',(req,res)=>{
   query_controller.getElementbyDate(req,(found)=>{
-    res.render("querybydate",{"data":found.data});
+    if(found==null)
+    res.render("404");
+    else
+    res.render("404",{"data":found.data});
   });
 });
 

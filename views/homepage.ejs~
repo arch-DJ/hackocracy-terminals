@@ -151,9 +151,9 @@ Start Preloader
                     <li><a href="#services">Services</a></li>
                     <li><a href="#showcase">Portfolio</a></li>
                     <li><a href="#our-team">Team</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact-us">Contact</a></li>
+                    <li><a href="/login"> Login/Register </a><li>
                 </ul>
             </nav>
         <!-- /main nav -->
@@ -231,12 +231,12 @@ Start Preloader
         <div class="features-item">
         <!-- features media -->
     <div class="col-md-6 feature-media media-wrapper wow fadeInUp" data-wow-duration="500ms">
-    <iframe src="http://player.vimeo.com/video/108018156" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/watch?v=u6jgWxkbR7A" allowfullscreen></iframe>
     </div>
     <!-- /features media -->
         <!-- features content -->
     <div class="col-md-6 feature-desc wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-    <h3>Main Features of Meghna</h3>
+    <h3>Main Features of Political Social Network</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolores corporis maxime modi amet nisi quod delectus voluptas deleniti facere. Suscipit, modi ex magni quam nesciunt ullam nemo natus soluta!</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolores corporis maxime modi amet nisi quod delectus voluptas deleniti facere. Suscipit, modi ex magni quam nesciunt ullam nemo natus soluta!</p>
     <a href="#" class="btn btn-transparent">Learn More</a>
@@ -813,122 +813,9 @@ Start Preloader
 </div>       <!-- End row -->
 </div>   	<!-- End container -->
 </section>   <!-- End section -->
-<!-- Start Pricing section
-=========================================== -->
-<section id="pricing" class="bg-one">
-<div class="container">
-<div class="row">
-<!-- section title -->
-<div class="title text-center wow fadeInDown" data-wow-duration="500ms">
-<h2>Our Greatest<span class="color"> Plans</span></h2>
-<div class="border"></div>
-</div>
-<!-- /section title -->
-<!-- single pricing table -->
-<article class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp" data-wow-duration="200ms">
-<div class="pricing">
-<!-- plan name & value -->
-<div class="price-title">
-<h3>Free</h3>
-<p>From <strong class="value">$99</strong> month</p>
-</div>
-<!-- /plan name & value -->
-<!-- plan description -->
-<ul>
-<li>1GB Disk Space</li>
-<li>10 Email Account</li>
-<li>Script Installer</li>
-<li>1 GB Storage</li>
-<li>10 GB Bandwidth</li>
-<li>24/7 Tech Support</li>
-</ul>
-<!-- /plan description -->
-<!-- signup button -->
-<a class="btn btn-transparent" href="#">Signup</a>
-<!-- /signup button -->
-</div>
-</article>
-<!-- end single pricing table -->
-<!-- single pricing table -->
-<article class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="400ms">
-<div class="pricing">
-<!-- plan name & value -->
-<div class="price-title">
-<h3>Silver</h3>
-<p>From <strong class="value">$149</strong> month</p>
-</div>
-<!-- /plan name & value -->
-<!-- plan description -->
-<ul>
-<li>1GB Disk Space</li>
-<li>10 Email Account</li>
-<li>Script Installer</li>
-<li>1 GB Storage</li>
-<li>10 GB Bandwidth</li>
-<li>24/7 Tech Support</li>
-</ul>
-<!-- /plan description -->
-<!-- signup button -->
-<a class="btn btn-transparent" href="#">Signup</a>
-<!-- /signup button -->
-</div>
-</article>
-<!-- end single pricing table -->
-<!-- single pricing table -->
-<article class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="600ms">
-<div class="pricing">
-<!-- plan name & value -->
-<div class="price-title">
-<h3>Gold</h3>
-<p>From <strong class="value">$199</strong> month</p>
-</div>
-<!-- /plan name & value -->
-<!-- plan description -->
-<ul>
-<li>1GB Disk Space</li>
-<li>10 Email Account</li>
-<li>Script Installer</li>
-<li>1 GB Storage</li>
-<li>10 GB Bandwidth</li>
-<li>24/7 Tech Support</li>
-</ul>
-<!-- /plan description -->
-<!-- signup button -->
-<a class="btn btn-transparent" href="#">Signup</a>
-<!-- /signup button -->
-</div>
-</article>
-<!-- end single pricing table -->
-<!-- single pricing table -->
-<article class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="750ms">
-<div class="pricing kill-margin-bottom">
-<!-- plan name & value -->
-<div class="price-title">
-<h3>Platinum</h3>
-<p>From <strong class="value">$299</strong> month</p>
-</div>
-<!-- /plan name & value -->
-<!-- plan description -->
-<ul>
-<li>1GB Disk Space</li>
-<li>10 Email Account</li>
-<li>Script Installer</li>
-<li>1 GB Storage</li>
-<li>10 GB Bandwidth</li>
-<li>24/7 Tech Support</li>
-</ul>
-<!-- /plan description -->
-<!-- signup button -->
-<a class="btn btn-transparent" href="#">Signup</a>
-<!-- /signup button -->
-</div>
-</article>
-<!-- end single pricing table -->
-</div>       <!-- End row -->
-</div>   	<!-- End container -->
-</section>   <!-- End section -->
-<!-- Start Testimonial
-=========================================== -->
+<!--</section>   <!-- End section -->
+<!--<!-- Start Testimonial-->
+
 <section id="testimonial" class="parallax-section">
 <div class="container">
 <div class="row">				
@@ -1118,15 +1005,15 @@ Start Blog Section
 <!-- Contact Details -->
 <div class="contact-info col-md-6 wow fadeInUp" data-wow-duration="500ms">
 <h3>Contact Details</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, vero, provident, eum eligendi blanditiis ex explicabo vitae nostrum facilis asperiores dolorem illo officiis ratione vel fugiat dicta laboriosam labore adipisci.</p>
+<p>We are headquarterd at New Delhi India</p>
 <div class="contact-details">
 <div class="con-info clearfix">
 <i class="fa fa-home fa-lg"></i>
-<span>Khaja Road, Bayzid, Chittagong, Bangladesh</span>
+<span>New Delhi</span>
 </div>
 <div class="con-info clearfix">
 <i class="fa fa-phone fa-lg"></i>
-<span>Phone: +880-31-000-000</span>
+<span>Phone: +9504017526</span>
 </div>
 <div class="con-info clearfix">
 <i class="fa fa-fax fa-lg"></i>
@@ -1134,7 +1021,7 @@ Start Blog Section
 </div>
 <div class="con-info clearfix">
 <i class="fa fa-envelope fa-lg"></i>
-<span>Email: terminals</span>
+<span>Email: terminals@gmail.com</span>
 </div>
 </div>
 </div>
