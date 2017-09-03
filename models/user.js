@@ -1,4 +1,4 @@
-'use strict'
+/*'use strict'
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 //const bcrypt = require('bcryptjs');
@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 //var SALT_WORK_FACTOR = 15;
 
 /*Schema to store the addresses of the users*/
-var addressSchema =  new Schema({
+/*var addressSchema =  new Schema({
 	
 	address1 		: {type : String},
 	address2 		: {type : String,default : ''},
@@ -17,11 +17,11 @@ var addressSchema =  new Schema({
 	state 			: {type : String},
 	pincode 		: {type : Number},
 	wardNo 			: {type : Number}
-})
+})*/
 
 
 /*A user schema to store all its details*/
-var UserSchema = new Schema({
+/*var UserSchema = new Schema({
 	/*first_name		: {type : String ,default :'',required:true},
 	middle_name		: {type : String ,default :''},
 	last_name 		: {type : String ,default :''},
@@ -34,7 +34,7 @@ var UserSchema = new Schema({
 		}
 	},
 	user_name 		: {type : String,unique : true},	*/
-	email     		: {type : String},
+	/*email     		: {type : String},
 	                   
 	password 		: {type : String}
 	
@@ -51,7 +51,7 @@ var UserSchema = new Schema({
 	dateofbirth 		:{type : Date ,},
 	
 	gender 			:{type : String ,}	*/
-});
+/*});
 
 // Hashing password and protecting it from rainbow attack i.e maximum login limit
 /*UserSchema.pre('save',function(next){
@@ -79,5 +79,28 @@ UserSchema.methods.comparePassword =  function(candidatePassword , cb){
 	})
 }*/
 // User as a deconstructor will be added where-ever it will be used
-var User = mongoose.model('User',UserSchema,'user');
+/*var User = mongoose.model('User',UserSchema,'user');*/
 
+
+
+
+
+var mongoose = require('mongoose')
+const bcrypt   = require('bcrypt-nodejs');
+var Schema = mongoose.Schema;
+
+var userSchema = new Schema({
+	email 			: {type:String},
+	password 		: {type:String},
+})
+
+userSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+// checking if password is valid
+userSchema.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+};
+
+mongoose.model('User',userSchema,'users');

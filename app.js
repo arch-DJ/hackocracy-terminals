@@ -39,6 +39,15 @@ app.use(bodyParser());
 
 var port = process.env.PORT || 3000;
 // Initializing routers
+var isLoggedIn = function(req,res){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  else{
+    redirect('/');
+  }
+}
+
 app.get("/",(req,res)=>{
   if(req.isAuthenticated())
     res.redirect('/feeds')
@@ -48,12 +57,12 @@ app.get("/",(req,res)=>{
 });
 
 
-app.get("/feeds",(req,res)=>{
+app.get("/feeds",isLoggedIn,(req,res)=>{
   res.render("feeds");
 });
 
 //Requires authenticate specially for admins
-app.get("/adminportal",(req,res)=>{
+app.get("/adminportal",isLoggedIn,isAdmin,(req,res)=>{
   res.render("adminportal")
 });
 
