@@ -17,14 +17,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
-                        <h4 class="font-alt mb-0">Enter your Decision/Post</h4>
+                        <h4 class="font-alt mb-0">Enter your Suggestion/Query</h4>
                         <hr class="divider-w mt-10 mb-20">
                         <form action = "/queryposting" method = "post">
                              <div class="form-group">
                                     <input class="form-control input-lg" type="text" placeholder="Heading/Topic" name="heading" required/>
                                 </div>
-                               <div class = "form-group" required>
-                                    <select name="tags" >
+                               <div class = "form-group" >
+                                    <select name="tags" required >
                                         <option value="">Select tags</option>
                                         <% for(var i = 0 ; i < data.length ; i++) { %>
                                         <option value="<%= data[i].tags %>"><%= data[i] %></option>

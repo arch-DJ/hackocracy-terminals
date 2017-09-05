@@ -84,7 +84,7 @@ app.get("/feeds/:id",(req,res)=>{
 
 
 //Main page that comes after that of the logining the user in
-app.get("/dashboard/:id",(req,res)=>{
+app.get("/dashboard",(req,res)=>{
   res.render("dashboard");
 });
 
@@ -252,6 +252,19 @@ app.get('/getAdmin/:ministry',(req,res)=>{
     res.render("adminqueryministry",{"data":result.data});
   });
 });
+
+app.get('/sortqbydate3',(req,res)=>{
+ admin_controller.sortByCreatedDate(req,(result)=>{
+    res.render("sortbyCreatedDate1",{"data":result.data});
+  });
+});
+// Sort the date by date updatedAt
+app.get('/sortqbydate4',(req,res)=>{
+  admin_controller.sortByUpdatedDate(req,(result)=>{
+    res.render("soryByModifiedDate1",{"data":result.data});
+  });
+});
+
 
 // Starting the server on a particular port
 app.listen(port ,()=> {

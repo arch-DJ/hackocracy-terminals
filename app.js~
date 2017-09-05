@@ -222,7 +222,7 @@ app.get("/getAdmin/:tags",(req,res)=>{
   });
 });
 // All query according to the heading 
-app.get("/getAdmin/:heading",(req,res)=>{
+app.get("/getAdmin/heading/:heading",(req,res)=>{
   admin_controller.getElementByHeading(req,(result)=>{
     if(result.data.length==0){
       res.render("404");
@@ -252,6 +252,19 @@ app.get('/getAdmin/:ministry',(req,res)=>{
     res.render("adminqueryministry",{"data":result.data});
   });
 });
+
+app.get('/sortqbydate3',(req,res)=>{
+ admin_controller.sortByCreatedDate(req,(result)=>{
+    res.render("sortbyCreatedDate1",{"data":result.data});
+  });
+});
+// Sort the date by date updatedAt
+app.get('/sortqbydate4',(req,res)=>{
+  admin_controller.sortByUpdatedDate(req,(result)=>{
+    res.render("soryByModifiedDate1",{"data":result.data});
+  });
+});
+
 
 // Starting the server on a particular port
 app.listen(port ,()=> {
