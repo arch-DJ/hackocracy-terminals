@@ -24,7 +24,7 @@
                             <select name="tags" >
                                 <option value="">Select tags</option>
                                 <% for(var i = 0 ; i < data.length ; i++) { %>
-                                <option value=""><%= data[i] %></option>
+                                <option value="<%= data[i].tags %>"><%= data[i] %></option>
                                     <% } %>
                                 </select>
                                 </div>

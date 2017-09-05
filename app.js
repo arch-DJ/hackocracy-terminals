@@ -85,7 +85,10 @@ app.get("/feeds/:id",(req,res)=>{
 
 //Main page that comes after that of the logining the user in
 app.get("/dashboard",(req,res)=>{
-  res.render("dashboard");
+  library.getMinistry((result)=>{
+    res.render("dashboard",{"data":result});  
+  });
+  
 });
 
 // Main page where all the date precides

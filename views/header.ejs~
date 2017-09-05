@@ -66,7 +66,7 @@
           </div>
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown"><a class="dropdown-toggle" href="/query/all" data-toggle="dropdown">Query</a>
+              <li class="dropdown"><a class="dropdown-toggle" href="/getQuery/all" data-toggle="dropdown">Query</a>
                 <ul class="dropdown-menu">
                   <li><a href="index_mp_fullscreen_video_background.html">Default</a></li>
                   <li><a href="index_op_fullscreen_gradient_overlay.html">One Page</a></li>
