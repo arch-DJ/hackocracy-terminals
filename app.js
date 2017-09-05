@@ -222,7 +222,7 @@ app.get("/getAdmin/:tags",(req,res)=>{
   });
 });
 // All query according to the heading 
-app.get("/getAdmin/:heading",(req,res)=>{
+app.get("/getAdmin/heading/:heading",(req,res)=>{
   admin_controller.getElementByHeading(req,(result)=>{
     if(result.data.length==0){
       res.render("404");

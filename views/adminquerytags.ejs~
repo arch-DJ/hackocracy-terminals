@@ -1,0 +1,39 @@
+<% include header.ejs %>
+    <div class="main">
+        <% include title-admin.ejs %>
+            <section class="module">
+                <div class="container">
+                    <div class="row">
+                        </div>
+                    <hr class="divider-w pt-20">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                <% include help.ejs %>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                            <!--                <div class="form-group">-->
+                            <!--                  <button class="btn btn-round btn-g" type="submit">Apply</button>-->
+                            <!--                  <input type="hidden" value="" name="user">-->
+                            <!--                </form>-->
+                            <!--                </div>-->
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <h1 class="module-title font-alt">Queries</h1>
+                                    <% for(var i=0;i<data.length;i++){ %>
+                                    <h3><a href ="/getAdmin/heading/<%=data[i].heading %>"><%= data[i].heading %></a></h3>
+                                    Tags:-<a href="/getAdmin/<%= data[i].tags %>"><%= data[i].tags %></a><br><br>
+                                    Ministry :-<a href="/getAdmin/<%= data[i].ministry %>"><%= data[i].ministry %></a>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <hr class="divider-w">
+                                </div>
+                            </section>
+                            <% include footer.ejs %>
+                        </body>
+                    </html>

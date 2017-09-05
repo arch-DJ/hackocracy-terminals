@@ -1,0 +1,27 @@
+<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+    <option value="/getQuery/all">Select any option to filter</option>
+    <option value="/sortqbydate3">Sort By Date-Created</option>
+    <option value="/sortqbydate4">Sort By Date-Modified</option>
+</select>
+<br>
+<br>
+<p>
+<p>
+<script>
+    function redirect(){
+        var a = document.getElementById("dateValue").value;
+        location.href='/getAdmin/all/'+a;
+    }
+</script>
+Search posted by date of creation of post:-
+<input type = "date" name = "date" placeholder = "Enter date of creation of query" id="dateValue" required>
+<input type = "submit" name = "submit" onclick="redirect()">
+</p>
+<br>
+<br>
+<form>
+Search post by userid
+<input type = "text" name = "date" placeholder = "Enter userid">
+<input type = "submit" name = "submit">
+</form>
+
