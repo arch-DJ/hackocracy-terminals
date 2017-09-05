@@ -1,0 +1,50 @@
+<%include header.ejs %>
+<div class="main">
+    <section class="module bg-dark-30 about-page-header" data-background="assets/images/about_bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h1 class="module-title font-alt mb-0">GOVERNMENT POST</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="module">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <h4 class="font-alt mb-0">Enter your Decision/Post</h4>
+                    <hr class="divider-w mt-10 mb-20">
+                    <form class="form" role="form" action = "/adminposting" method="post">
+                        <div class="form-group">
+                            <input class="form-control input-lg" type="text" placeholder="Heading/Topic" name="heading"/>
+                        </div>
+                        <div class = "form-group">
+                        <label> tags </label>
+                            <select name="tags" >
+                                <option value="">Select tags</option>
+                                <% for(var i = 0 ; i < data.length ; i++) { %>
+                                <option value=""><%= data[i] %></option>
+                                    <% } %>
+                                </select>
+                                </div>
+                                
+                                <div class = "form-group">
+                                    <select name="ministry" >
+                                        <option value="">Select ministry</option>
+                                        <% for(var i = 0 ; i < data1.length ; i++) { %>
+                                        <option value="<%= data1[i].tags %>"><%= data1[i] %></option>
+                                            <% } %>
+                                        </select>
+                                        </div><div class = "form-group">
+                        <textarea class="form-control" rows="7" placeholder="Whole Issue/ Decision Details" name="message" required></textarea>
+                        </div>
+                         <div class = "form-group" style="text-align:center">
+                         <input align="center" style="width: 300px; margin: 0 auto;" type="submit" value="POST">
+                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<%include footer.ejs %>

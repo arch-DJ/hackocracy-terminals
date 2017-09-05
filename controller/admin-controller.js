@@ -11,10 +11,11 @@ var saveMessage = function(req){
         tags : req.body.tags,
         ministry : req.body.ministry
      });
+     console.log(req.body);
      saveQuery.save().then((query)=>{
        console.log("Data inserted to the AdminDatabase");
      },(err)=>{
-       console.log("Data not inserted");
+       console.log("Data not inserted",err);
      })
 
 };

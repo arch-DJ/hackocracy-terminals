@@ -149,12 +149,14 @@ Start Preloader
                     <li class="current"><a href="#body">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#showcase">Portfolio</a></li>
+                    <li><a href="#showcase">Portfolio/Ministries</a></li>
                     <li><a href="#our-team">Team</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact-us">Contact</a></li>
                     <li><a href="/login"> Login/Register </a><li>
-                </ul>
+                    <li><a href="/getQuery/all"> Queries </a><li>
+                    <li><a href="/getAdmin/all"> Major Issues </a><li>
+                 </ul>
             </nav>
         <!-- /main nav -->
                     </div>
@@ -237,8 +239,9 @@ Start Preloader
         <!-- features content -->
     <div class="col-md-6 feature-desc wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
     <h3>Main Features of Political Social Network</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolores corporis maxime modi amet nisi quod delectus voluptas deleniti facere. Suscipit, modi ex magni quam nesciunt ullam nemo natus soluta!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, dolores corporis maxime modi amet nisi quod delectus voluptas deleniti facere. Suscipit, modi ex magni quam nesciunt ullam nemo natus soluta!</p>
+    <p>We have two major objectives:-</p> 
+    <p>1. The decisions taken by the goverment has to be reached to the people of the country and people must have a say in the decisions taken by the government. So we have certain admins who post the major decisions taken up the goverment of India and people vote it according to their thinking. </p>
+    <p>2. People should reach out to the goverment if they want something to happen or anything they want to suggest the people of the goverment or they have some problems and they want </p>
     <a href="#" class="btn btn-transparent">Learn More</a>
     <a href="#" class="btn btn-transparent">Purchase Theme</a>
     </div>
@@ -281,7 +284,7 @@ Start Preloader
     <span data-speed="3000" data-to="320">320</span>
     </div>
     <i class="fa fa-users fa-3x"></i>
-    <h3>Happy Clients</h3>
+    <h3>Government Posts</h3>
     </div>
     </div>
     <!-- end first count item -->
@@ -292,7 +295,7 @@ Start Preloader
     <span data-speed="3000" data-to="565">565</span>
     </div>
     <i class="fa fa-check-square fa-3x"></i>
-    <h3>Projects completed</h3>
+    <h3>Query Submitted</h3>
     </div>
     </div>
     <!-- end second count item -->
@@ -315,7 +318,7 @@ Start Preloader
     <span data-speed="3000" data-to="2500">2500</span>
     </div>
     <i class="fa fa-coffee fa-3x"></i>
-    <h3>Cups of Coffee</h3>
+    <h3>Queries Answered</h3>
     </div>
     </div>
     <!-- end fourth count item -->
@@ -433,10 +436,10 @@ Start Preloader
         <ul id="og-grid" class="og-grid">
         <!-- single portfolio item -->	
     <li class="mix app">
-    <a href="javascript:void(0)" data-largesrc="img/portfolio/portx1.jpg" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
-    <img src="img/portfolio/portx1.jpg" alt="Meghna">
+    <a href="http://mhrd.gov.in/" data-largesrc="img/portfolio/hrd.jpg" data-title="Ministry of HRD" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
+    <img src="img/portfolio/hrd.jpg" alt="Meghna">
     <div class="hover-mask">
-    <h3>Azuki bean</h3>
+    <h3>Ministry of HRD</h3>
     <span>
     <i class="fa fa-plus fa-2x"></i>
     </span>
@@ -590,24 +593,25 @@ Start Preloader
         </ul> <!-- end og grid -->
     </div>  <!-- portfolio items wrapper -->
         </section>   <!-- End section -->
-            <!-- Start Team Skills
+            <!-- Start 
+            Team Skills
     =========================================== -->
         <section id="team-skills" class="parallax-section">
     <div class="container">
     <div class="row wow fadeInDown" data-wow-duration="500ms">
         <!-- section title -->
     <div class="title text-center">
-    <h2>Our <span class="color">Skills</span></h2>
+    <h2>Our <span class="color">Technologies used</span></h2>
     <div class="border"></div>
     </div>
     <!-- /section title -->
         <!-- skill set -->
     <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="500ms">
     <div class="skill-chart text-center">
-    <span class="chart" data-percent="80">
+    <span class="chart" data-percent="36">
     <span class="percent"></span>
     </span>
-    <h3><i class="fa fa-wordpress"></i> Wordpress</h3>
+    <h3><i class="fa fa-javascript"></i> Javascript</h3>
     <p>Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.</p>
     </div>
     </div>
@@ -615,7 +619,7 @@ Start Preloader
         <!-- skill set -->
     <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="200ms">
     <div class="skill-chart text-center">
-    <span class="chart" data-percent="90">
+    <span class="chart" data-percent="40">
     <span class="percent">86</span>
     </span>
     <h3><i class="fa fa-html5"></i> HTML 5</h3>
@@ -626,10 +630,10 @@ Start Preloader
         <!-- skill set -->
     <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="400ms">
     <div class="skill-chart text-center">
-    <span class="chart" data-percent="85">
+    <span class="chart" data-percent="19.3">
     <span class="percent"></span>
     </span>
-    <h3><i class="fa fa-android"></i> Android</h3>
+    <h3><i class="fa fa-css"></i> CSS</h3>
     <p>Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.</p>
     </div>
     </div>
@@ -637,10 +641,10 @@ Start Preloader
         <!-- skill set -->
     <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="600ms">
     <div class="skill-chart text-center">
-    <span class="chart" data-percent="70">
+    <span class="chart" data-percent="2.4">
     <span class="percent"></span>
     </span>
-    <h3><i class="fa fa-apple"></i> IOS</h3>
+    <h3><i class="fa fa-php"></i> PHP</h3>
     <p>Lorem ipsum has erroribus design color vituper bonorum depend you usedcom.bonorum dependan be used.</p>
     </div>
     </div>
@@ -669,7 +673,7 @@ Start Preloader
         <!-- member social profile -->
     <div class="mask">
     <ul class="clearfix">
-    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="http://facebook.com/chotu.kv"><i class="fa fa-facebook"></i></a></li>
     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
     <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
@@ -679,13 +683,13 @@ Start Preloader
     </div>
         <!-- member name & designation -->
     <div class="member-title">
-    <h3>Abul Mal Muhit</h3>
-    <span>CEO/Founder</span>
+    <h3>Shivam</h3>
+    <span>Leader/Backend-Developer</span>
     </div>
     <!-- /member name & designation -->
         <!-- about member -->
         <div class="member-info">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.</p>
+            <p>He is the leader of our team and the mainly focussed on the backend development of our site.</p>
         </div>
     <!-- /about member -->
             </article>
@@ -701,7 +705,7 @@ Start Preloader
 <!-- member social profile -->
 <div class="mask">
 <ul class="clearfix">
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://www.facebook.com/lal.rishav.3"><i class="fa fa-facebook"></i></a></li>
 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
@@ -711,13 +715,13 @@ Start Preloader
 </div>
 <!-- member name & designation -->
 <div class="member-title">
-<h3>Frank Miller</h3>
-<span>Manager</span>
+<h3>Lal Rishav</h3>
+<span>Developer/Mentor</span>
 </div>
 <!-- /member name & designation -->
 <!-- about member -->
     <div class="member-info">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.</p>
+        <p>Advanced Backend Developer of our team and guides all other team members.</p>
     </div>
 <!-- /about member -->
 </article>
@@ -733,7 +737,7 @@ Start Preloader
 <!-- member social profile -->
 <div class="mask">
 <ul class="clearfix">
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://www.facebook.com/divyansh.jamuaar"><i class="fa fa-facebook"></i></a></li>
 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
@@ -743,13 +747,13 @@ Start Preloader
 </div>
 <!-- member name & designation -->
 <div class="member-title">
-<h3>Michael Jonson</h3>
-<span>Web Developer</span>
+<h3>Divyansh Jamuaar</h3>
+<span>Manager</span>
 </div>
 <!-- /member name & designation -->
 <!-- about member -->
     <div class="member-info">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.</p>
+        <p>He is the manager of our core team responsible for the managing the whole project of our team.</p>
     </div>
 <!-- /about member -->
     </article>
@@ -765,7 +769,7 @@ Start Preloader
 <!-- member social profile -->
 <div class="mask">
 <ul class="clearfix">
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://www.facebook.com/profile.php?id=100013338341748"><i class="fa fa-facebook"></i></a></li>
 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
@@ -775,13 +779,13 @@ Start Preloader
 </div>
 <!-- member name & designation -->
 <div class="member-title">
-<h3>Mo. Kha. Alamgir</h3>
-<span>SEO Specialist</span>
+<h3>Ishaan Mishra</h3>
+<span>Frontend Developer</span>
 </div>
 <!-- /member name & designation -->
 <!-- about member -->
 <div class="member-info">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.</p>
+    <p>Main frontend developer of our team.</p>
 </div>
 <!-- /about member -->
 </article>
@@ -1025,33 +1029,33 @@ Start Blog Section
 </div>
 </div>
 </div>
-<!-- / End Contact Details -->
-<!-- Contact Form -->
-<div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-<form id="contact-form" method="post" action="sendmail.php" role="form">
-<div class="form-group">
-<input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
-</div>
-<div class="form-group">
-<input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
-</div>
-<div class="form-group">
-<input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
-</div>
-<div class="form-group">
-<textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>	
-</div>
-<div id="mail-success" class="success">
-Thank you. The Mailman is on His Way :)
-</div>
-<div id="mail-fail" class="error">
-Sorry, don't know what happened. Try later :(
-</div>
-<div id="cf-submit">
-<input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
-</div>						
-</form>
-</div>
+<!--<!-- / End Contact Details -->
+<!--<!-- Contact Form -->
+<!--<div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">-->
+<!--<form id="contact-form" method="post" action="sendmail.php" role="form">-->
+<!--<div class="form-group">-->
+<!--<input type="text" placeholder="Your Name" class="form-control" name="name" id="name">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<input type="email" placeholder="Your Email" class="form-control" name="email" id="email">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>	-->
+<!--</div>-->
+<!--<div id="mail-success" class="success">-->
+<!--Thank you. The Mailman is on His Way :)-->
+<!--</div>-->
+<!--<div id="mail-fail" class="error">-->
+<!--Sorry, don't know what happened. Try later :(-->
+<!--</div>-->
+<!--<div id="cf-submit">-->
+<!--<input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">-->
+<!--</div>						-->
+<!--</form>-->
+<!--</div>-->
 <!-- ./End Contact Form -->
 </div> <!-- end row -->
 </div> <!-- end container -->
@@ -1127,8 +1131,8 @@ Essential Scripts
 <!-- tweetie.min -->
 <script src="js/tweetie.min.js"></script>
 <!-- Google Map API -->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<!-- Highlight menu item -->
+<% include abc.ejs %>
+
 <script src="js/jquery.nav.js"></script>
 <!-- Sticky Nav -->
 <script src="js/jquery.sticky.js"></script>

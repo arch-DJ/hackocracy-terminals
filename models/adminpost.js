@@ -8,8 +8,8 @@ var adminpostSchema = new Schema ({
     userid : {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
     heading : {type : String , required : true},
     message : {type : String , required : true},
-    tags : {type : String , required : true},
-    ministry : {type : String , required : true}
+    tags : {type : String , required : false},
+    ministry : {type : String , required : false}
      
 },{timestamps:true}
 );

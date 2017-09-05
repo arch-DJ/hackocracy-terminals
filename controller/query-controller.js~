@@ -8,8 +8,19 @@ var insertQuery = function(req){
 	var queryInsert = new Query({
 	  query : req.body.query,
 	  heading : req.body.heading,
-	  tags : req.body.tags
+	  tags : req.body.tags,
+	  address :{address1: req.body.address1,
+	  address2 : req.body.address2,
+	  country : req.body.country,
+	  city : req.body.city,
+	  district: req.body.district,
+	  state : req.body.state,
+	  pincode : req.body.pincode,
+	  wardNo : req.body.wardNo
+	  }
+	  
 	});
+//	console.log(req.body.country);
 	queryInsert.save().then((e)=>{
 	  console.log("Date inserted to the query collection");
 	  
@@ -23,20 +34,18 @@ var insertQuery = function(req){
 var getAllElements = function(req,callback){
   Query.find().then((query)=>{
     if(query){
-      console.log(query._id.createdAt);
+      console.log(query.createdAt);
     callback({"data":query});
    }
-    else
-    callback({"data":null});
   },(err)=>{
     console.log("No query found");
-    callback({"data":null});
+    //callback({"data":null});
   });
 }
 
 // To put list of the queries posted by an user
 var getElementByUserId = function(req,callback){
-  Query.find({"userid":req.user._-id}).then((query)=>{
+  Query.find({"userid":req.user._id}).then((query)=>{
     callback({"data":query});
   },(err)=>{
     callback({"date":null});
@@ -47,17 +56,13 @@ var getElementByTags = function(req,callback){
   Query.find({"tags":req.params.tags}).then((query)=>{   // How to handle a tags when its a array
     callback({"data":query});
   },(err)=>{
-    callback({"data":null});
+    //callback({"data":null});
   });
 };
 
 // For searching a particular headings
 var getElementByHeading = function(req,callback){
   Query.find({"heading":req.params.heading}).then((query)=>{
-    if(!query)
-    {
-      return  callback({"data":null})
-    }
     callback({"data":query})
   },(err)=>{
     console.log("some error occurred");
@@ -68,9 +73,6 @@ var getElementByHeading = function(req,callback){
 // Get the elements by the date created
 var getElementbyDate=function(req,callback){
   Query.find({"createdAt":req.params.date}).then((query)=>{
-    if(!query){
-      return callback({"data":null});
-    }
     callback({"data":query})
    },(err)=>{
      callback({"data":null});
@@ -81,9 +83,6 @@ var getElementbyDate=function(req,callback){
 // API to to sort the message in the decreasing order of the createdDate
 var sortByCreatedDate = function(req,callback){
   Query.find({}).sort('-createdAt').then((query)=>{
-    if(!query){
-      return callback({"data":null});
-    }
     callback({"data":query});
   },(err)=>{
     callback({"data":null});
@@ -93,9 +92,6 @@ var sortByCreatedDate = function(req,callback){
 // API to sort the message according to the decreasing order of the modifiedDate
 var sortByUpdatedDate = function(req,callback){
   Query.find({}).sort('-updatedAt').then((query)=>{
-    if(!query){
-      return callback({"data":null});
-    }
     callback({"data":query});
   },(err)=>{
     callback({"data":null});

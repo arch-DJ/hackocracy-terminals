@@ -1,46 +1,64 @@
-<% include header.ejs %>
+
+    
+    
+    
+    <%include header.ejs %>
     <div class="main">
+        <section class="module bg-dark-30 about-page-header" data-background="assets/images/about_bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <h1 class="module-title font-alt mb-0">GOVERNMENT POST</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="module">
             <div class="container">
                 <div class="row">
-                                                        </div>
-                    <hr class="divider-w pt-20">
-                    <div class="row">
-                                    <div class="col-sm-12">
-                                            </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                                            </div>
-                    </div>
-                    <div class="col-sm-4">
-                <!--                <div class="form-group">-->
-                <!--                  <button class="btn btn-round btn-g" type="submit">Apply</button>-->
-                <!--                  <input type="hidden" value="" name="user">-->
-                <!--                </form>-->
-                <!--                </div>-->
-                    <div class="col-sm-6 col-sm-offset-3">
-                        <h1 class="module-title font-alt">POST YOUR QUERY</h1>
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h4 class="font-alt mb-0">Enter your Decision/Post</h4>
+                        <hr class="divider-w mt-10 mb-20">
                         <form action = "/queryposting" method = "post">
-                            Query:<input type = "text" name = "query" placeholder = "Enter your query"  required> <br>
-                            Heading:<input type = "text" name = "heading" placeholder = "Enter the heading of the query" required><br>
-                            Tag:<input type = "text" name = "tags" placeholder = "Write  the tag" required><br>
-                            Address Line 1:<input type ="text" name="address1" placeholder="Address"  required title="Please enter your address"><br>
-                            Address Line 2:<input type ="text" name="address2" placeholder="Address"  ><br>
-                            City:<input type ="text" name="city" placeholder="City" required  title="Please enter your city"><br>
-                            District:<input type ="text" name="district" placeholder="District" required  title="Please enter your district"><br>
-                            State:<input type="text" name="state" placeholder="State" required><br>
-                            Pin Code:<input type="phone" name="pincode" placeholder="Pin Code" required  title="Please enter the valid 6 digit Pin Code of your area"><br>
-                            Ward Number:<input type="phone" name="wardNo" required>
-                                <input type="submit" value="send">
+                             <div class="form-group">
+                                    <input class="form-control input-lg" type="text" placeholder="Heading/Topic" name="heading" required/>
+                                </div>
+                               <div class = "form-group" >
+                                    <select name="tags" required >
+                                        <option value="">Select tags</option>
+                                        <% for(var i = 0 ; i < data.length ; i++) { %>
+                                        <option value="<%= data[i].tags %>"><%= data[i] %></option>
+                                         <% } %>
+                                    </select>
+                                    </div>
+                                <div class = "form-group">
+                                <textarea class="form-control" rows="7" placeholder="Enter your whole query / suggestion" name="query" required></textarea>
+                                </div>
+                                <div class = "form-group">
+                                <input class = "form-control" type="text" placeholder="Address Line 1" name="address1" required/>
+                                </div>
+                                <div class = "form-group">
+                                    <input class = "form-control" type="text" placeholder="Address Line 2" name="address2" />
+                                    </div> 
+                                <div class = "form-group">
+                                    <input class = "form-control" type="text" placeholder="District" name="district" required/>
+                                    </div>
+                                <div class = "form-group">
+                                <%include states.ejs %>
+                                </div>    
+                                <div class = "form-group">
+                                <input class = "form-control" type = "number" placeholder="Pin Code" name = "pincode" min=100000 max=999999 required/>
+                                </div> 
+                                <div class = "form-group">
+                                <input class = "form-control" type="number" placeholder="Ward Number" name="wardNo" required />
+                                </div>
+                                    <div class = "form-group" style="text-align:center">
+                                    <input align="center" style="width: 300px; margin: 0 auto;" type="submit" value="POST">
+                                    </div>
                             </form>
-
+                        </div>
                     </div>
                 </div>
-                <hr class="divider-w">
-                            </div>
-        </section>
-        <% include footer.ejs %>
-    </body>
+            </section>
+        <%include footer.ejs %>
 </html>

@@ -40,7 +40,7 @@ exports.getTag = function(callback){
 		"Ministry of Housing and Urban Poverty Alleviation",
 		"Ministry of Human Resource Development"
 	]
-	callback({"data":tags,"data1":ministry});
+	callback({"data":tags},{"data1":ministry});
 }
 
 exports.getMinistry = function(callback){

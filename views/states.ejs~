@@ -1,0 +1,21 @@
+<div class = "form-group">
+<select name="country1" class="countries" id="countryId" required>
+    <option value="">Select Country</option><br>
+</select>
+<div>
+<br>
+<div class = "form-group">
+<select name="state" class="states" id="stateId" required>
+    <option value="">Select State</option><br>
+</select>
+</div>
+<br>
+<div class = "form-group">
+<select name="city" class="cities" id="cityId" required>
+    <option value="">Select City</option><br>
+</select>
+</div>
+<br>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="//geodata.solutions/includes/countrystatecity.js"></script>
+

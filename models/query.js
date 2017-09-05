@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
      	var addressSchema =  new Schema({
 		address1 		: {type : String,required : true},
 		address2 		: {type : String,default : ''},
+ 		country         : {type : String ,required : true},
 		city 			: {type : String,required : true},
 		district 		: {type : String,required : true},
 		state 			: {type : String,required : true},
@@ -14,8 +15,8 @@ var querySchema = new Schema ({
 	userid 		: {type:mongoose.Schema.Types.ObjectId, ref: 'User'},// The user folder must be included inside this folder??
 	query  		: {type : String },
 	tags   		: {type : String },
-	heading 	: {type : String,required : true},},
-	//address     : [addressShema]; // This is the address of the probleam area from where the user is posting
+	heading 	: {type : String,required : true},
+	address     : [addressSchema]}, // This is the address of the probleam area from where the user is posting
 			{ timestamps:true}
 );
 

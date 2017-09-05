@@ -9,11 +9,15 @@ const flash = require('connect-flash');
 
 const {User} = require("./models/user");// Now can access all the user.js Schema via that of User variable
 const {Query} = require("./models/query"); // Now can access all the function of the query.js schema
+const {Admin} = require("./models/adminpost");
 const query_controller = require("./controller/query-controller");
 const admin_controller = require("./controller/admin-controller");
+const library = require("./lib/lib");
 mongoose.connect("mongodb://localhost:27017/hackocracy");
 var db = mongoose.connection;
 var app = express();
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.text());
 
 const session = require('express-session')
 app.use(session({
@@ -39,18 +43,18 @@ app.use(bodyParser());
 
 var port = process.env.PORT || 3000;
 // Initializing routers
-var isLoggedIn = function(req,res){
+var isLoggedIn = function(req,res,next){
   if(req.isAuthenticated()){
-    return next();
+     next();
   }
   else{
-    redirect('/');
+    res.redirect('/');
   }
 }
 
 app.get("/",(req,res)=>{
   if(req.isAuthenticated())
-    res.redirect('/feeds')
+    res.redirect('/dashboard')
   else{
     res.render("homepage");
   }
@@ -58,11 +62,11 @@ app.get("/",(req,res)=>{
 
 
 app.get("/feeds",isLoggedIn,(req,res)=>{
-  res.render("feeds");
+  res.render("404");
 });
 
 //Requires authenticate specially for admins
-app.get("/adminportal",isLoggedIn,isAdmin,(req,res)=>{
+app.get("/adminportal",isLoggedIn,(req,res)=>{
   res.render("adminportal")
 });
 
@@ -86,7 +90,7 @@ app.get("/dashboard/:id",(req,res)=>{
 
 // Main page where all the date precides
 app.post('/login',passport.authenticate('local-login',{
-    successRedirect :  '/feeds',
+    successRedirect :  '/dashboard',
     failureRedirect : '/login',
     failureFlash : true
 })
@@ -97,7 +101,7 @@ app.post('/register',passport.authenticate('local-signup',{
 }))
 app.get('/register',function(req,res){
     if(req.isAuthenticated())
-      res.redirect('/feeds');
+      res.redirect('/dashboard');
     else 
       res.render("login");
 })
@@ -111,7 +115,11 @@ app.get('/logout',(req,res)=>{
 
 // Query related things and use of APIs
 app.get("/queryposting",(req,res)=>{
-  res.render("queryposting");
+  library.getTag((result)=>{
+    console.log(result.data[0]);
+    res.render("queryposting",{"data":result.data});
+    console.log(req.body.tags);
+  })
 //  var body = _.pick(req.body,[]);// Do be done according to the body page 
 });
 
@@ -122,6 +130,9 @@ app.post("/queryposting",(req,res)=>{
 // All feeds are included from here
 app.get("/getQuery/all",(req,res)=>{
   query_controller.getAllElements(req,(query)=>{
+    if(query.data.length==0)
+    res.render("404");
+    else
     res.render("queryall",{"data":query.data});
   });
 });
@@ -129,6 +140,9 @@ app.get("/getQuery/all",(req,res)=>{
 // Getting the query by a particular tag
 app.get('/getQuery/:tags',(req,res)=>{
   query_controller.getElementByTags(req,(found)=>{
+    if(found.data.length==0)
+    res.render("404");
+    else
     res.render("querybytags",{"data":found.data});
   });
 });
@@ -142,7 +156,8 @@ app.get('/getQuery/heading/:heading',(req,res)=>{
 
 app.get('/getQuery/all/:date',(req,res)=>{
   query_controller.getElementbyDate(req,(found)=>{
-    if(found.data==null)
+    console.log(found.data);
+    if(found.data.length==0)
     res.render("404");
     else
     res.render("querybydate",{"data":found.data});
@@ -152,6 +167,10 @@ app.get('/getQuery/all/:date',(req,res)=>{
 // Getting the query according to the a particular id
 app.get('/getQuery/:id',(req,res)=>{
   query_controller.getElementByUserId(req,(found)=>{
+    if(found.data.length==0){
+      res.render("404");
+    }
+    else
     res.render("querybyid",{"data":found.data});
   })
 })
@@ -170,7 +189,10 @@ app.get('/sortqbydate2',(req,res)=>{
 });
 // Calling the admin related queries
 app.get("/adminposting",(req,res)=>{
-  res.render("adminposting");
+  library.getTag((result)=>{
+    console.log(result.data[0]);
+    res.render("adminposting",{"data":result.data,"data1":result.data1});
+  })
 });
 app.post('/adminposting',(req,res)=>{
   admin_controller.saveMessage(req);
@@ -184,18 +206,28 @@ app.get('/getAdmin/all',(req,res)=>{
 // All query for any particular user
 app.get('/getAdmin/:id',(req,res)=>{
   admin_controller.getElementByUserId(req,(result)=>{
+    if(result.data.length==0)
+    res.render("404");
+    else
     res.render("adminqueryid",{"data":result.data});
   });
 });
 // All query according to the particular tags
 app.get("/getAdmin/:tags",(req,res)=>{
   admin_controller.getElementByTags(req,(result)=>{
+    if(result.data.length==0)
+    res.render("404");
+    else
     res.render("adminquerytags",{"data":result.data});
   });
 });
 // All query according to the heading 
 app.get("/getAdmin/:heading",(req,res)=>{
   admin_controller.getElementByHeading(req,(result)=>{
+    if(result.data.length==0){
+      res.render("404");
+    }
+    else
     res.render("adminqueryheading",{"data":result.data});
   });
 });
@@ -203,12 +235,20 @@ app.get("/getAdmin/:heading",(req,res)=>{
 // All query according to the date
 app.get('/getAdmin/:date',(req,res)=>{
   admin_controller.getElementbyDate(req,(result)=>{
+    if(result.data.length==0)
+    res.render("404");
+    else
     res.render("adminquerydate",{"data":result.data});
   });
 });
 // All query access to the ministry
 app.get('/getAdmin/:ministry',(req,res)=>{
   admin_controller.getElementByMinistry(req,(result)=>{
+    if(result.data.length==0)
+    {
+      res.render("404");
+    }
+    else
     res.render("adminqueryministry",{"data":result.data});
   });
 });
