@@ -6,6 +6,7 @@ var Query = mongoose.model('Query');
 var insertQuery = function(req){
 //	console.log(req.body);
 	var queryInsert = new Query({
+    userid : req.user._id,
 	  query : req.body.query,
 	  heading : req.body.heading,
 	  tags : req.body.tags,
@@ -46,9 +47,15 @@ var getAllElements = function(req,callback){
 // To put list of the queries posted by an user
 var getElementByUserId = function(req,callback){
   Query.find({"userid":req.user._id}).then((query)=>{
-    callback({"data":query});
+    
   },(err)=>{
     callback({"date":null});
+  }).populate("userid").exec(function(err,story){
+    if(err)
+      throw err
+    else
+      callback({"data":story});
+    data.userid.username
   });  
 };
 // Get list of query via a particular tags
