@@ -780,12 +780,12 @@ Start Preloader
 <!-- member name & designation -->
 <div class="member-title">
 <h3>Ishaan Mishra</h3>
-<span>Frontend Developer</span>
+<span>Developer</span>
 </div>
 <!-- /member name & designation -->
 <!-- about member -->
 <div class="member-info">
-    <p>Main frontend developer of our team.</p>
+    <p>Supportive developer of our team.</p>
 </div>
 <!-- /about member -->
 </article>

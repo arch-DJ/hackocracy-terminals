@@ -1,42 +1,246 @@
-<% include header.ejs %>
-    <div class="main">
-        <% include title-admin.ejs %>
-            <section class="module">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Blog | Meghna - Responsive Multipurpose Parallax Theme</title>
+    <meta name="description" content="description">
+<!-- Mobile Specific Meta
+================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+<!-- CSS
+================================================== -->
+<!-- Fontawesome Icon font -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- bootstrap.min css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+<!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.css">		
+<!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+<!-- Media Queries -->
+    <link rel="stylesheet" href="css/responsive.css">
+<!--
+Google Font
+=========================== -->                    
+<!-- Oswald / Title Font -->
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+<!-- Ubuntu / Body Font -->
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+<!-- Modernizer Script for old Browsers -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body class="blog-page">
+<!--
+Start Preloader
+==================================== -->
+<div id="loading-mask">
+<div class="loading-img">
+<img alt="Meghna Preloader" src="img/preloader.gif"  />
+</div>
+</div>
+    <!--
+    End Preloader
+    ==================================== -->
+        <!-- 
+    Fixed Navigation
+    ==================================== -->
+    <header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+            <h1 id="logo">
+            <img src="img/logo-meghna.png" alt="Meghna" />
+            </h1>
+            </a>
+                </div>
+                    <nav class="collapse navbar-collapse navbar-right" >
+                <ul id="nav" class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#our-team">Team</a></li>
+                    <li><a href="/#showcase">Portfolio</a></li>
+                    <li><a href="/#blog">Blog</a></li>
+                    <li><a href="/#contact-us">Contact</a></li>
+                </ul>
+                    </nav><!-- /.navbar-collapse -->
+                </div>
+            </header>
+            <!--
+            End Fixed Navigation
+            ==================================== -->
+                <!-- Start Blog Banner
+            ==================================== -->
+            <section id="blog-banner">
                 <div class="container">
                     <div class="row">
-                        </div>
-                    <hr class="divider-w pt-20">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                <% include help.ejs %>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                            <!--                <div class="form-group">-->
-                            <!--                  <button class="btn btn-round btn-g" type="submit">Apply</button>-->
-                            <!--                  <input type="hidden" value="" name="user">-->
-                            <!--                </form>-->
-                            <!--                </div>-->
-                                <div class="col-sm-6 col-sm-offset-3">
-                                    <h1 class="module-title font-alt">Posts</h1>
-                                    <% for(var i=0;i<data.length;i++){ %>
-                                    <h3><a href ="/getAdmin/heading/<%=data[i].heading %>"><%= data[i].heading %></a></h3>
-                                     <h4>Query </h4> <%= data[i].message %> <br><br> 
-                                        <p>Date Modified :-<%= data[i].updatedAt%> </p>
-                                        <p>Date Created :- <%= data[i].createdAt%> </p>
-                                    Tags:-<a href="/getAdmin/<%= data[i].tags %>"><%= data[i].tags %></a><br><br>
-                                    Ministry :-<a href="/getAdmin/<%= data[i].ministry %>"><%= data[i].ministry %></a>
-                                    <% } %>
-                                </div>
-                            </div>
-                            <hr class="divider-w">
-                                </div>
-                            </section>
-                            <% include footer.ejs %>
-                        </body>
-                    </html>
+                        <div class="col-lg-12 text-center">
+                            <div class="blog-icon">
+                        <i class="fa fa-book fa-4x"></i>
+                    </div>
+                    <div class="blog-title">
+                        <h1>Welcome to Our Blog</h1>
+                    </div>
+                        </div>     <!-- End col-lg-12 -->
+                    </div>	    <!-- End row -->
+                    </div>       <!-- End container -->
+                    </section>    <!-- End Section -->
+                    <!-- Start Blog Post Section
+                        ==================================== -->
+                        <section id="blog-page">
+                            <div class="container">
+                                <div class="row">
+                                                                            <div id="blog-posts" class="col-md-8 col-sm-8">
+                                            <div class="post-item">
+                                                                                                <!-- Single Post -->
+                                                    <article class="entry wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">                               
+                                                        <div class="post-thumb">
+                                                            <a href="single-post.html">
+                                                        <img src="img/blog/3D-beach-art.jpg" alt="3D Beach Art | Meghna" class="img-responsive">
+                                                        </a>
+                                                            </div>
+                                                        <div class="post-excerpt">
+                                                        <h3><a href="/getAdmin/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
+                                                        <p>
+                                                         <%=data[0].message%>        
+                                                        </p>
+                                                        </blockquote>
+                                                                                                                </div>
+                                                        <div class="post-meta">
+                                                        <span class="post-date">
+                                                        <i class="fa fa-calendar"></i><%=data[0].createdAt%>
+                                                        <span class="comments">
+                                                        <i class="fa fa-comments"></i>18 Comments
+                                                        </span>
+                                                        <span class="post-view">
+                                                        <i class="fa fa-eye"></i>265 Views
+                                                        </span>
+                                                        <span class="author">
+                                                        <i class="fa fa-user"></i><a href="#">Admin</a>
+                                                        </span>
+                                                        <span class="post-tags">
+                                                        <i class="fa fa-tags"></i><a href=" getAdmin/tags/<%=data[0].tags%>s"><%=data[0].tags%></a>
+                                                        </span>
+                                                        </div>
+                                                            </article>
+                                                            
+                                                              <div id="comments" class="comments-section">
+                                                                <h4>4 Comments</h4>
+                                                                <ol class="comment-list">
+                                                                    <li id="comment-1">
+                                                                        <div class="comment-wrap">
+                                                                            <div class="author-avatar pull-left">
+                                                                                <img src="img/blog/user.jpg" alt="">
+                                                                            </div>
+                                                                            <div class="author-comment">
+                                                                                <cite class="pull-left"><a href="#">Smithson</a></cite>
+                                                                                <a href="" class="replay pull-right">Replay</a>
+                                                                                <div style="clear:both"></div>
+                                                                                <div class="comment-meta">
+                                                                                    <i class="fa fa-calendar"></i> 26 aug 2013 at 07:30 PM 
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="comment-content">
+                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellendus. Culpa nam aut vel. Ab, excepturi minus, quasi debitis quaerat animi, enim quod repellat minima dolores facere veniam quam quo!</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <ul>
+                                                                            <li id="comment-2">
+                                                                                <div class="comment-wrap">
+                                                                                    <div class="author-avatar pull-left">
+                                                                                        <img src="img/blog/user.jpg" alt="">
+                                                                                    </div>
+                                                                                    <div class="author-comment">
+                                                                                        <cite class="pull-left"><a href="#">Smithson</a></cite>
+                                                                                        <a href="" class="replay pull-right">Replay</a>
+                                                                                        <div style="clear:both"></div>
+                                                                                        <div class="comment-meta">
+                                                                                            <i class="fa fa-calendar"></i> 26 aug 2013 at 07:30 PM 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="comment-content">
+                                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellendus. Culpa nam aut vel. Ab, excepturi minus, quasi debitis quaerat animi, enim quod repellat minima dolores facere veniam quam quo!</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li id="comment-3">
+                                                                                <div class="comment-wrap">
+                                                                                    <div class="author-avatar pull-left">
+                                                                                        <img src="img/blog/user.jpg" alt="">
+                                                                                    </div>
+                                                                                    <div class="author-comment">
+                                                                                        <cite class="pull-left"><a href="#">Smithson</a></cite>
+                                                                                        <a href="" class="replay pull-right">Replay</a>
+                                                                                        <div style="clear:both"></div>
+                                                                                        <div class="comment-meta">
+                                                                                            <i class="fa fa-calendar"></i> 26 aug 2013 at 07:30 PM 
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="comment-content">
+                                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellendus. Culpa nam aut vel. Ab, excepturi minus, quasi debitis quaerat animi, enim quod repellat minima dolores facere veniam quam quo!</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <div class="comment-wrap">
+                                                                            <div class="author-avatar pull-left">
+                                                                                <img src="img/blog/user.jpg" alt="">
+                                                                            </div>
+                                                                            <div class="author-comment">
+                                                                                <cite class="pull-left"><a href="#">Smithson</a></cite>
+                                                                                <a href="" class="replay pull-right">Replay</a>
+                                                                                <div style="clear:both"></div>
+                                                                                <div class="comment-meta">
+                                                                                    <i class="fa fa-calendar"></i> 26 aug 2013 at 07:30 PM 
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="comment-content">
+                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellendus. Culpa nam aut vel. Ab, excepturi minus, quasi debitis quaerat animi, enim quod repellat minima dolores facere veniam quam quo!</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                                                                                        <div class="comment-reply-form">
+                                                                <h3>Leave a Replay</h3>
+                                                                    <form id="comment-form" method="post" action="#">
+                                                                        <div class="form-group">
+                                                                            <input type="text" class="form-control" placeholder="Name *" id="name" name="name" required>
+                                                                        </div>
+                                                                        <!-- End .form-group -->
+                                                                        <div class="form-group">
+                                                                            <input type="email" class="form-control" placeholder="E-mail *" id="email" name="email" required>
+                                                                        </div>
+                                                                        <!-- End .form-group -->
+                                                                        <div class="form-group">
+                                                                            <input type="text" class="form-control" placeholder="Website" id="website" name="website">
+                                                                        </div>
+                                                                        <!-- End .form-group -->
+                                                                        <div class="form-group">
+                                                                            <textarea class="form-control" placeholder="Message *" id="message" name="message" rows="5" cols="5" required></textarea>
+                                                                        </div>
+                                                                        <!-- End .form-group -->
+                                                                        <div class="form-group">
+                                                                            <input type="submit" id="post-comment" value="Post Comment" class="btn btn-transparent">
+                                                                        </div>
+                                                                        <!-- End .form-group -->
+                                                                    </form>
+                                                                </div>
+                                                                <!-- End Single Post -->
+                                                                                                                            </div>
+                                                            </div>
+                                                            

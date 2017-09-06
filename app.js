@@ -201,7 +201,7 @@ app.post('/adminposting',(req,res)=>{
   admin_controller.saveMessage(req);
 });
 // All admin queries
-app.get('/getAdmin/all',(req,res)=>{
+app.get('/getAdmin',(req,res)=>{
   admin_controller.getAllElements(req,(result)=>{
     res.render("admin",{"data":result.data});
   })
@@ -209,14 +209,23 @@ app.get('/getAdmin/all',(req,res)=>{
 // All query for any particular user
 app.get('/getAdmin/:id',(req,res)=>{
   admin_controller.getElementByUserId(req,(result)=>{
-    if(result.data.length==0)
-    res.render("404");
-    else
+    
+    
     res.render("adminqueryid",{"data":result.data});
   });
 });
+
+// All message accoriding to the particular message id 
+app.get('/getAdmin/mid/:mid',(req,res)=>{
+  admin_controller.getElementById(req,(result)=>{
+    if(result.data.length==0)
+    res.render("404");
+    else
+    res.render("adminqueryheading",{"data":result.data});
+  });
+});
 // All query according to the particular tags
-app.get("/getAdmin/:tags",(req,res)=>{
+app.get("/getAdmin/tags/:tags",(req,res)=>{
   admin_controller.getElementByTags(req,(result)=>{
     if(result.data.length==0)
     res.render("404");

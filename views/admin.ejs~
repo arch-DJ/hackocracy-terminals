@@ -134,7 +134,7 @@ Start Preloader
                                                                     <i class="fa fa-user"></i><a href="/getAdmin">Admin</a>
                                                                     </span>
                                                                     <span class="post-tags">
-                                                                    <i class="fa fa-tags"></i><a href="/getAdmin/<%=data[i].tags %>"><%=data[i].tags%>
+                                                                    <i class="fa fa-tags"></i><a href="/getAdmin/<%=data[i].tags %>"><%data[]
                                                                     </span>
                                                                     </div>
                                                                         </article>

@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 //var {Query} = require("./../models/query");
 require('../models/adminpost');
+const {ObjectId} = require('mongodb');
+//var ObjectID = require('mongodb').ObjectID
 var AdminPost = mongoose.model('AdminPost');
 
 // API to save the messages in the database
@@ -46,6 +48,20 @@ var getElementByUserId = function(req,callback){
       console.log("Error found in finding the data");
     });
 };
+// API to find the whole post according to the message is for showing the blog
+ var getElementById = function(req,callback){
+   var x = new ObjectId(req.params.mid);
+   console.log(typeof(x));
+   AdminPost.find({"_id": req.params.mid}).then((result)=>{
+     if(!result){
+       return callback({"data":null})
+     }
+     callback({"data":result});
+     },(err)=>{
+       callback({"data":null});
+       console.log("Error found in finding the data");
+     });
+   };
 
 // API to find the message according to the tags for using 
 var getElementByTags = function(req,callback){
@@ -132,6 +148,7 @@ module.exports = {
     getElementByUserId,
     getElementbyDate ,
     sortByCreatedDate,
-    sortByUpdatedDate
+    sortByUpdatedDate,
+    getElementById
 }
   

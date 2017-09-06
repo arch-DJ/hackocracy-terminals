@@ -2,11 +2,11 @@ const _ = require("lodash");
 const mongoose = require("mongoose");
 //var {Query} = require("./../models/query");
 var Query = mongoose.model('Query');
-var {User}=require("./../models/user")
+var {User}=require("./../models/user");
 var insertQuery = function(req){
 //	console.log(req.body);
 	var queryInsert = new Query({
-    userid : req.User._id,
+    userid : req.user._id,
 	  query : req.body.query,
 	  heading : req.body.heading,
 	  tags : req.body.tags,
