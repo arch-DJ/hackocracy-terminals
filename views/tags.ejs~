@@ -1,7 +1,0 @@
-<div class = "form-group">
-<select name="country" class="countries" id="countryId">
-    <option value="">Select Country</option>
-    <% for(var i = 0 ; i < data.length ; i++) { %>
-    <option value="<%= data[i].tags %>"><%= data[i].
-</select>
-</div>
