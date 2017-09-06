@@ -86,7 +86,7 @@ app.get("/feeds/:id",(req,res)=>{
 //Main page that comes after that of the logining the user in
 app.get("/dashboard",(req,res)=>{
   library.getMinistry((result)=>{
-    res.render("dashboard",{"data":result});  
+    res.render("dashboard",{"data":result.data});  
   });
   
 });

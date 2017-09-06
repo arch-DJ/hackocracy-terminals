@@ -86,7 +86,7 @@ app.get("/feeds/:id",(req,res)=>{
 //Main page that comes after that of the logining the user in
 app.get("/dashboard",(req,res)=>{
   library.getMinistry((result)=>{
-    res.render("dashboard",{"data":result});  
+    res.render("dashboard",{"data":result}.data);  
   });
   
 });
@@ -225,7 +225,7 @@ app.get('/getAdmin/mid/:mid',(req,res)=>{
   });
 });
 // All query according to the particular tags
-app.get("/getAdmin/:tags",(req,res)=>{
+app.get("/getAdmin/tags/:tags",(req,res)=>{
   admin_controller.getElementByTags(req,(result)=>{
     if(result.data.length==0)
     res.render("404");

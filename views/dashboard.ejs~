@@ -72,8 +72,13 @@
                                 </ul>
                             </li>
                             </li>
-                            <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Ministry-Linked</a>
-                                    
+                            <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Ministries-Linked</a>
+                                    <ul class="dropdown-menu">
+                                    <% for(var i = 0 ; i < 10 ; i++) { %>
+                                            <li><a href="/getAdmin/data[i]"><%=data[i]%></a></li>
+                                            
+                                    <% } %>               
+                                    </ul> 
                             </li>
                             <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Blog</a>
                                 <ul class="dropdown-menu" role="menu">
