@@ -85,8 +85,13 @@ app.get("/feeds/:id",(req,res)=>{
 
 //Main page that comes after that of the logining the user in
 app.get("/dashboard",(req,res)=>{
+	var pageInfo = {}
+
+	pageInfo.flash = req.flash("message")
+	console.log(pageInfo)
   library.getMinistry((result)=>{
-    res.render("dashboard",{"data":result.data});  
+  	pageInfo.data = result.data;
+    res.render("dashboard",pageInfo);  
   });
   
 });
@@ -127,7 +132,17 @@ app.get("/queryposting",(req,res)=>{
 });
 
 app.post("/queryposting",(req,res)=>{
-  query_controller.insertQuery(req);
+  query_controller.insertQuery(req,(found)=>{
+  	if(found.data){
+  	req.flash("message","You have inserted your query")
+  res.redirect('/dashboard')
+ }
+ 
+  });
+
+   req.flash("message","You have inserted your query")
+  res.redirect('/dashboard')
+ 
 });
 
 // All feeds are included from here

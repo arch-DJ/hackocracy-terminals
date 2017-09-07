@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 //var {Query} = require("./../models/query");
 var Query = mongoose.model('Query');
 var {User}=require("./../models/user");
-var insertQuery = function(req){
+var insertQuery = function(req,callback){
 //	console.log(req.body);
 	var queryInsert = new Query({
     userid : req.user._id,
@@ -24,9 +24,10 @@ var insertQuery = function(req){
 //	console.log(req.body.country);
 	queryInsert.save().then((e)=>{
 	  console.log("Date inserted to the query collection");
-	  
+	  callback({"res":true})
 	},(err)=>{
 	  console.log(err);
+    callback({"res":false})
 	});
 };
 
@@ -54,7 +55,7 @@ var getElementByUserId = function(req,callback){
     if(err)
       throw err
     else
-      callback({"data":story});
+      callback({"data":story,"res":true});
     data.userid.username
   });  
 };
