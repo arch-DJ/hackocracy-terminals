@@ -44,5 +44,5 @@ var getElementNonAdmin = function (req,callback){
 models.exports = {
   getElementAdmin,
   getElementNonAdmin,
-  getAllElements
+  
 }
