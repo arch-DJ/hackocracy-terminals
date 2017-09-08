@@ -293,6 +293,35 @@ app.get('/sortqbydate4',(req,res)=>{
     res.render("soryByModifiedDate1",{"data":result.data});
   });
 });
+app.get('/demo',function(req,res){
+ // var abc;
+ /* admin_controller.getAllElements(req,(found)=>{
+    
+  })*/
+  //var pageInfo = {}
+ /* async.each([admin_controller,query_controller],function(item,callback){
+
+    if(item == "admin_controller"){
+      item.getAllElements(req,(found)=>{
+        pageInfo.admin = found.data;
+      })
+    }
+    else if(){
+      item.getAllElements(req,(found)=>{
+        pageInfo.query = found.data;
+      })
+    }
+    callback()
+
+  },function(){
+    res.render("gkhblj",pageInfo)
+  })*/
+  /*async.each([a,b,c],function(item){
+    query_controller.item(req,(found)=>{
+      
+    })
+  })*/
+})
 
 
 // Starting the server on a particular port
