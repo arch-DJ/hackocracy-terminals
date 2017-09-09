@@ -97,102 +97,102 @@ Start Preloader
             ==================================== -->
                 <!-- Start Blog Banner
             ==================================== -->
-            <section id="blog-banner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="blog-icon">
-                        <i class="fa fa-book fa-4x"></i>
-                    </div>
-                    <div class="blog-title">
-                        <h1>Welcome to Our Blog</h1>
-                    </div>
-                        </div>     <!-- End col-lg-12 -->
-                    </div>	    <!-- End row -->
-                    </div>       <!-- End container -->
-                    </section>    <!-- End Section -->
-                    <!-- Start Blog Post Section
-                        ==================================== -->
-                        <section id="blog-page">
-                            <div class="container">
-                                <div class="row">
-                                                                            <div id="blog-posts" class="col-md-8 col-sm-8">
-                                            <div class="post-item">
-                                                                                                <!-- Single Post -->
-                                                    <article class="entry wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">                               
-                                                        <div class="post-thumb">
-                                                            <a href="single-post.html">
-                                                        <img src="/img/blog/3D-beach-art.jpg" alt="3D Beach Art | Meghna" class="img-responsive">
-                                                        </a>
+<section id="blog-banner">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 text-center">
+<div class="blog-icon">
+<i class="fa fa-book fa-4x"></i>
+</div>
+<div class="blog-title">
+<h1>Welcome to Our Blog</h1>
+</div>
+</div>     <!-- End col-lg-12 -->
+</div>	    <!-- End row -->
+</div>       <!-- End container -->
+</section>    <!-- End Section -->
+<!-- Start Blog Post Section
+==================================== -->
+<section id="blog-page">
+<div class="container">
+<div class="row">
+            <div id="blog-posts" class="col-md-8 col-sm-8">
+<div class="post-item">
+                                <!-- Single Post -->
+<article class="entry wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">                               
+<div class="post-thumb">
+<a href="single-post.html">
+<img src="/img/blog/3D-beach-art.jpg" alt="3D Beach Art | Meghna" class="img-responsive">
+</a>
+</div>
+<div class="post-excerpt">
+<h3><a href="/getAdmin/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
+<p>
+<%=data[0].message%>        
+</p>
+<input type="button" value="Upvote" style="color: black" onclick="giveVote('up','<%= data[0]._id %>')">
+<input type="button" value="Down vote" style="color: black" onclick="giveVote('down','<%= data[0]._id %>')">
+</blockquote>
+                                                </div>
+<div class="post-meta">
+<span class="post-date">
+<i class="fa fa-calendar"></i><%=data[0].createdAt%>
+<span class="comments">
+<i class="fa fa-comments"></i><%= upVotes %> Upvotes
+</span>
+<span class="post-view">
+<i class="fa fa-eye"></i><%= downVotes %> Downvotes
+</span>
+<span class="author">
+<i class="fa fa-user"></i><a href="#">Admin</a>
+</span>
+<span class="post-tags">
+<i class="fa fa-tags"></i><a href=" getAdmin/tags/<%=data[0].tags%>"><%=data[0].tags%></a>
+</span>
+</div>
+</article>
+
+<div id="comments" class="comments-section">
+<h4><%=commentcount%> Comments</h4>
+<% for(var i = 0 ;  i < comment.length ; i++){%>    
+<ol class="comment-list">
+    <li id="comment-<%=i%>">
+        <div class="comment-wrap">
+            <div class="author-avatar pull-left">
+                <img src="/img/blog/user.jpg" alt="">
+            </div>
+            <div class="author-comment">
+                <cite class="pull-left"><a href="#"><%= comment[i].userid.email %></a></cite>
+                <div style="clear:both"></div>
+                <div class="comment-meta">
+                    <i class="fa fa-calendar"></i>&nbsp&nbsp<%=comment[i].createdAt%> 
+                </div>
+            </div>
+            <div class="comment-content">
+                <p><%=comment[i].comment%></p>
+            </div>
+        </div>
+   </li>
+   <% }%>                 
+        <div class="comment-reply-form">
+<h3>Leave a Reply</h3>
+    <form id="comment-form" method="post" action="/commentposting">
+        <div class = "form-group">
+        <!-- End .form-group -->
+        <div class = "form-group">
+           <input type = "hidden" name = "admin" value = "<%=data[0]._id%>">
+           </div>
+        <div class="form-group">
+            <textarea class="form-control" placeholder="Please Comment Here Your Opinion" name="comment" rows="5" cols="5" required></textarea>
+        </div>
+        <!-- End .form-group -->
+        <div class="form-group">
+            <input type="submit" id="post-comment" value="Post Comment" class="btn btn-transparent">
+        </div>
+        <!-- End .form-group -->
+    </form>
+</div>
+<!-- End Single Post -->
                                                             </div>
-                                                        <div class="post-excerpt">
-                                                        <h3><a href="/getAdmin/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
-                                                        <p>
-                                                         <%=data[0].message%>        
-                                                        </p>
-                                                        <input type="button" value="Upvote" style="color: black" onclick="giveVote('up','<%= data[0]._id %>')">
-                                                        <input type="button" value="Down vote" style="color: black" onclick="giveVote('down','<%= data[0]._id %>')">
-                                                        </blockquote>
-                                                                                                                </div>
-                                                        <div class="post-meta">
-                                                        <span class="post-date">
-                                                        <i class="fa fa-calendar"></i><%=data[0].createdAt%>
-                                                        <span class="comments">
-                                                        <i class="fa fa-comments"></i><%= upVotes %> Upvotes
-                                                        </span>
-                                                        <span class="post-view">
-                                                        <i class="fa fa-eye"></i><%= downVotes %> Downvotes
-                                                        </span>
-                                                        <span class="author">
-                                                        <i class="fa fa-user"></i><a href="#">Admin</a>
-                                                        </span>
-                                                        <span class="post-tags">
-                                                        <i class="fa fa-tags"></i><a href=" getAdmin/tags/<%=data[0].tags%>"><%=data[0].tags%></a>
-                                                        </span>
-                                                        </div>
-                                                            </article>
-                                                            
-                                                              <div id="comments" class="comments-section">
-                                                                <h4><%=commentcount%> Comments</h4>
-                                                                <% for(var i = 0 ;  i < comment.length ; i++){%>    
-                                                                <ol class="comment-list">
-                                                                    <li id="comment-<%=i%>">
-                                                                        <div class="comment-wrap">
-                                                                            <div class="author-avatar pull-left">
-                                                                                <img src="/img/blog/user.jpg" alt="">
-                                                                            </div>
-                                                                            <div class="author-comment">
-                                                                                <cite class="pull-left"><a href="#">Smithson</a></cite>
-                                                                                <div style="clear:both"></div>
-                                                                                <div class="comment-meta">
-                                                                                    <i class="fa fa-calendar"></i><%=comment.createdAt%> 
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="comment-content">
-                                                                                <p><%=comment.comment%> yahoo</p>
-                                                                            </div>
-                                                                        </div>
-                                                                   </li>
-                                                                   <% }%>                 
-                                                                        <div class="comment-reply-form">
-                                                                <h3>Leave a Reply</h3>
-                                                                    <form id="comment-form" method="post" action="/commentposting">
-                                                                        <div class = "form-group">
-                                                                        <!-- End .form-group -->
-                                                                        <div class = "form-group">
-                                                                           <input type = "hidden" name = "admin" value = "<%=data[0]._id%>">
-                                                                           </div>
-                                                                        <div class="form-group">
-                                                                            <textarea class="form-control" placeholder="Please Comment Here Your Opinion" name="comment" rows="5" cols="5" required></textarea>
-                                                                        </div>
-                                                                        <!-- End .form-group -->
-                                                                        <div class="form-group">
-                                                                            <input type="submit" id="post-comment" value="Post Comment" class="btn btn-transparent">
-                                                                        </div>
-                                                                        <!-- End .form-group -->
-                                                                    </form>
-                                                                </div>
-                                                                <!-- End Single Post -->
-                                                                                                                            </div>
-                                                            </div>
-                                                            
+</div>
+

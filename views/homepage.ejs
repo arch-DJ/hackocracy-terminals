@@ -835,7 +835,9 @@ Start Blog Section
 <!-- /section title -->
 <div class="clearfix">
 <!-- single blog post -->
-<% for(var i = 0 ; i < 4 ; i++) { %>
+<% if(data.length >= 4){ %>
+
+<% for(var i = 0 ; i < data.length ; i++) { %>
 <article class="col-md-3 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
 <div class="note">
 <div class="media-wrapper">
@@ -848,6 +850,7 @@ Start Blog Section
 </div>						
 </article>
 <%}%>
+<% } %>
 
 <div class="all-post text-center">
 <a class="btn btn-transparent" href="/getAdmin">View All Post</a>

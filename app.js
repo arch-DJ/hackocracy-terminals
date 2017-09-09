@@ -270,6 +270,8 @@ app.get('/getAdmin/mid/:mid',(req,res)=>{
 				var items3 = [comment_ctrl_admin];
 				async.each(items3,function(item,callback){
 					item.getAllCommentByAdmin(req,(found)=>{
+						console.log("--------------")
+						console.log(found)
 						pageInfo.comment = found.data;
 						callback()
 					})
