@@ -5,6 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
 <meta http-equiv="Content-Type" content="/text/html; charset=UTF-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Blog | Meghna - Responsive Multipurpose Parallax Theme</title>
     <meta name="description" content="description">
@@ -36,8 +38,22 @@ Google Font
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
 <!-- Modernizer Script for old Browsers -->
     <script src="/js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript">
+
+        function giveVote(voteType,qid){
+            
+            var parameters = {}
+            parameters.qid = qid
+            parameters.vote = voteType
+            console.log(parameters)
+            $.get('/enterVote',parameters,function(data){
+
+            })
+        }
+    </script>
     </head>
     <body class="blog-page">
+
 <!--
 Start Preloader
 ==================================== -->
@@ -114,16 +130,18 @@ Start Preloader
                                                         <p>
                                                          <%=data[0].message%>        
                                                         </p>
+                                                        <input type="button" value="Upvote" style="color: black" onclick="giveVote('up','<%= data[0]._id %>')">
+                                                        <input type="button" value="Down vote" style="color: black" onclick="giveVote('down','<%= data[0]._id %>')">
                                                         </blockquote>
                                                                                                                 </div>
                                                         <div class="post-meta">
                                                         <span class="post-date">
                                                         <i class="fa fa-calendar"></i><%=data[0].createdAt%>
                                                         <span class="comments">
-                                                        <i class="fa fa-comments"></i>18 Comments
+                                                        <i class="fa fa-comments"></i><%= upVotes %> Upvotes
                                                         </span>
                                                         <span class="post-view">
-                                                        <i class="fa fa-eye"></i>265 Views
+                                                        <i class="fa fa-eye"></i><%= downVotes %> Downvotes
                                                         </span>
                                                         <span class="author">
                                                         <i class="fa fa-user"></i><a href="#">Admin</a>

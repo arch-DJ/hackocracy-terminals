@@ -8,7 +8,7 @@ var commentSchema = new Schema ({
 	adminid     : {type: mongoose.Schema.Types.ObjectId, ref: 'AdminPost'},// That query file must be included inside this file ??
 	comment 	: {type : String , required :true}
 	},
-			  {timestamps:true}
+	{timestamps:true}
 );
 
 var Comment = mongoose.model("Comment",commentSchema,'comment');
