@@ -126,32 +126,34 @@ Start Preloader
 </a>
 </div>
 <div class="post-excerpt">
-<h3><a href="/getAdmin/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
-<p>
-<%=data[0].message%>        
-</p>
+<h3><a href="getAdmin/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
+<p><%=data[0].message%></p>
+<blockquote>
 <input type="button" value="Upvote" style="color: black" onclick="giveVote('up','<%= data[0]._id %>')">
 <input type="button" value="Down vote" style="color: black" onclick="giveVote('down','<%= data[0]._id %>')">
-</blockquote>
-                                                </div>
+</p>
+</div>
 <div class="post-meta">
 <span class="post-date">
 <i class="fa fa-calendar"></i><%=data[0].createdAt%>
+</span>
 <span class="comments">
-<i class="fa fa-comments"></i><%= upVotes %> Upvotes
+<i class="fa fa-comments"></i><%=commentcount%>
+</span>
+<span class="post-view">
+<i class="fa fa-eye"></i><%= upVotes %> Upvotes
 </span>
 <span class="post-view">
 <i class="fa fa-eye"></i><%= downVotes %> Downvotes
 </span>
 <span class="author">
-<i class="fa fa-user"></i><a href="#">Admin</a>
+<i class="fa fa-user"></i><a href="#"><%= data[0].userid %></a>
 </span>
 <span class="post-tags">
-<i class="fa fa-tags"></i><a href=" getAdmin/tags/<%=data[0].tags%>"><%=data[0].tags%></a>
+<i class="fa fa-tags"></i><a href="#"><%=data[0].tags%>
 </span>
 </div>
-</article>
-
+    </article>
 <div id="comments" class="comments-section">
 <h4><%=commentcount%> Comments</h4>
 <% for(var i = 0 ;  i < comment.length ; i++){%>    

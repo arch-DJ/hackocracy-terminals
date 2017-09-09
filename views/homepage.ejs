@@ -837,7 +837,7 @@ Start Blog Section
 <!-- single blog post -->
 <% if(data.length >= 4){ %>
 
-<% for(var i = 0 ; i < data.length ; i++) { %>
+<% for(var i = 0 ; i < 4; i++) { %>
 <article class="col-md-3 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
 <div class="note">
 <div class="media-wrapper">
@@ -852,6 +852,21 @@ Start Blog Section
 <%}%>
 <% } %>
 
+<% if(data.length < 4){ %>
+<% for(var i = 0 ; i < data.length; i++) { %>
+<article class="col-md-3 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
+<div class="note">
+<div class="media-wrapper">
+<img src="img/blog/amazing-caves-coverimage.jpg" alt="amazing caves coverimage" class="img-responsive">
+</div>
+<div class="excerpt">
+<h3><%=data[i].heading%></h3>
+<a class="btn btn-transparent" href="getAdmin/mid/<%=data[i]._id%>">Read more</a>
+</div>
+</div>						
+</article>
+<%}%>
+<% } %>
 <div class="all-post text-center">
 <a class="btn btn-transparent" href="/getAdmin">View All Post</a>
 </div>

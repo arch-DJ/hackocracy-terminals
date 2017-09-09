@@ -52,15 +52,18 @@ var getElementByUserId = function(req,callback){
  var getElementById = function(req,callback){
    var x = new ObjectId(req.params.mid);
    console.log(typeof(x));
-   AdminPost.find({"String(_id)": req.params.mid}).then((result)=>{
-     if(!result){
-       return callback({"data":null})
+   AdminPost.find({"_id": req.params.mid},(err,result)=>{
+     if(err)
+     throw err
+     else{
+       
      }
-     callback({"data":result});
-     },(err)=>{
-       callback({"data":null});
-       console.log("Error found in finding the data");
-     });
+   }).populate("userid").exec(function(err,result){
+     if(err)
+     throw err
+     else{
+     callback({"data":result}) 
+     }})
    };
 
 // API to find the message according to the tags for using 

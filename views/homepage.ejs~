@@ -154,7 +154,7 @@ Start Preloader
                     <li><a href="#contact-us">Contact</a></li>
                     <li><a href="/login"> Login/Register </a><li>
                     <li><a href="/getQuery/all"> Queries </a><li>
-                    <li><a href="/getAdmin/all"> Major Issues(Government Posts) </a><li>
+                    <li><a href="/getAdmin"> Major Issues(Government Posts) </a><li>
                  </ul>
             </nav>
         <!-- /main nav -->
@@ -835,7 +835,9 @@ Start Blog Section
 <!-- /section title -->
 <div class="clearfix">
 <!-- single blog post -->
-<% for(var i = 0 ; i < 4 ; i++) { %>
+<% if(data.length >= 4){ %>
+
+<% for(var i = 0 ; i < data.length ; i++) { %>
 <article class="col-md-3 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
 <div class="note">
 <div class="media-wrapper">
@@ -848,7 +850,22 @@ Start Blog Section
 </div>						
 </article>
 <%}%>
-
+<% } %>
+<% else if(data.length < 4){ %>
+<% for(var i = 0 ; i < data.length; i++) { %>
+<article class="col-md-3 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
+<div class="note">
+<div class="media-wrapper">
+<img src="img/blog/amazing-caves-coverimage.jpg" alt="amazing caves coverimage" class="img-responsive">
+</div>
+<div class="excerpt">
+<h3><%=data[i].heading%></h3>
+<a class="btn btn-transparent" href="getAdmin/mid/<%=data[i]._id%>">Read more</a>
+</div>
+</div>						
+</article>
+<%}%>
+<% } %>
 <div class="all-post text-center">
 <a class="btn btn-transparent" href="/getAdmin">View All Post</a>
 </div>
