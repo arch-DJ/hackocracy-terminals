@@ -26,7 +26,7 @@ var getElementAdmin = function (req,callback){
   },(err)=>{
     console.log("Some error occured");
     callback({"data":null});
-  } ; 
+  }); 
 };
 //  If the priority of the user group is 2 that is not Admin;
 var getElementNonAdmin = function (req,callback){
@@ -38,11 +38,36 @@ var getElementNonAdmin = function (req,callback){
   },(err)=>{
     console.log("Some error occured");
     callback({"data":null});
-  } ; 
+  }) ; 
+};
+// list of non banned users
+var getElementNonBanned = function (req,callback){
+  User.find({"isBanned":false}).then((result)=>{
+    if(!result){
+      return callback({"data":result});
+    }
+    callback({"data":result});
+  },(err)=>{
+    console.log("Some error occured");
+    callback({"data":null});
+  }) ; 
 };
 
+var getElementBanned = function (req,callback){
+  User.find({"isBanned":false}).then((result)=>{
+    if(!result){
+      return callback({"data":result});
+    }
+    callback({"data":result});
+  },(err)=>{
+    console.log("Some error occured");
+    callback({"data":null});
+  }) ; 
+};
 models.exports = {
   getElementAdmin,
   getElementNonAdmin,
-  getAllElements
+  getAllElements,
+  getElementBanned,
+  getElementNonBanned
 }

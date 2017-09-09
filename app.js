@@ -12,6 +12,7 @@ const {Query} = require("./models/query"); // Now can access all the function of
 const {Admin} = require("./models/adminpost");
 const {Vote} = require("./models/vote");
 const {Comment}= require("./models/comment");
+const {CommentAdmin} = require("./models/commentadmin");// Admin Comment controller
 const comments  = require("./controller/comments");// Comment controller
 const query_controller = require("./controller/query-controller");
 const admin_controller = require("./controller/admin-controller");

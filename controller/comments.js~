@@ -19,10 +19,7 @@ var insertComment = function(req,callback){
 var getAllCommentByQuery = function(req,callback){
   comment.find({"queryid":req.params.qid}).then((result)=>{
     if(!result){
-      return callback({"data":null});
+      return callback({"data":})
     }
-    callback({"data":result});
-  },(err)=>{
-    console.log("some Error occurred");
-  });
+  })
 };

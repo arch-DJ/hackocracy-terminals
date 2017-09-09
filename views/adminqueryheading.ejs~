@@ -233,7 +233,7 @@ Start Preloader
                                                                 <h3>Leave a Reply</h3>
                                                                     <form id="comment-form" method="post" action="/commentposting">
                                                                         <div class = "form-group">
-                                                                        <textarea class= "form-control" type="hidden" name="admin" value ="<%=data[0]._id%>"> 
+                                                                        <textarea class= "form-control" type="hidden" name="admin" value ="<%=data[0]._id"> 
                                                                         <!-- End .form-group -->
                                                                         <div class="form-group">
                                                                             <textarea class="form-control" placeholder="Message *" id="message" name="message" rows="5" cols="5" required></textarea>

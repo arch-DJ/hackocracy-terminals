@@ -5,7 +5,7 @@ const Schema =  mongoose.Schema;
 var commentSchema = new Schema ({
 	userid 		: {type:mongoose.Schema.Types.ObjectId, ref: 'User'},
 	queryid 	: {type:mongoose.Schema.Types.ObjectId, ref: 'Query'},
-	adminid     : {type: mongoose.Schema.Types.ObjectId, ref: 'AdminPost'},// That query file must be included inside this file ??
+	//adminid     : {type: mongoose.Schema.Types.ObjectId, ref: 'AdminPost'},// That query file must be included inside this file ??
 	comment 	: {type : String , required :true}
 	},
 	{timestamps:true}
