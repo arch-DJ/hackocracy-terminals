@@ -141,16 +141,19 @@ Start Preloader
 <i class="fa fa-comments"></i><%=commentcount%>
 </span>
 <span class="post-view">
-<i class="fa fa-eye"></i><%= upVotes %> Upvotes
+<i class="fa fa-eye"></i><%= upVotes %> Upvote
 </span>
 <span class="post-view">
-<i class="fa fa-eye"></i><%= downVotes %> Downvotes
+<i class="fa fa-eye"></i><%= downVotes %> Down vote
 </span>
 <span class="author">
 <i class="fa fa-user"></i><a href="#"><%= data[0].userid %></a>
 </span>
 <span class="post-tags">
-<i class="fa fa-tags"></i><a href="#"><%=data[0].tags%>
+<i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[0].tags%>"><%=data[0].tags%></a>
+</span>
+<span class="post-tags">
+<i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[0].ministry%>"><%=data[0].ministry%></a>
 </span>
 </div>
     </article>
