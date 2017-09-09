@@ -16,6 +16,7 @@ const {CommentAdmin} = require("./models/commentadmin");// Admin Comment control
 const comments  = require("./controller/comments");// Comment controller
 const query_controller = require("./controller/query-controller");
 const admin_controller = require("./controller/admin-controller");
+const comment_ctrl_admin = require("./controller/commentadmin");
 const library = require("./lib/lib");
 const vote = require("./controller/vote");
 mongoose.connect("mongodb://localhost:27017/hackocracy");
@@ -62,7 +63,9 @@ app.get("/",(req,res)=>{
 	if(req.isAuthenticated())
 		res.redirect('/dashboard')
 	else{
-		res.render("homepage");
+		admin_controller.sortByCreatedDate(req,(result)=>{
+			res.render("homepage",{"data":result.data});
+		});
 	}
 });
 
@@ -257,9 +260,31 @@ app.get('/getAdmin/mid/:mid',(req,res)=>{
 				callback()
 			})
 		},function(){
+			var items2 = [comment_ctrl_admin];
+			async.each(items2,function(item,callback){
+				item.countComments(req,(found)=>{
+					pageInfo.commentcount = found.data;
+					callback()
+				});
+			},function(){
+				var items3 = [comment_ctrl_admin];
+				async.each(items3,function(item,callback){
+					item.getAllCommentByAdmin(req,(found)=>{
+						pageInfo.comment = found.data;
+						callback()
+					})
+				},function(){
 			res.render("adminqueryheading",pageInfo);
 		})
 	})
+})
+})
+});
+
+app.post("/commentposting",(req,res)=>{
+	comment_ctrl_admin.insertComment(req,(found)=>{
+		console.log(found.data);
+	});
 })
 app.get("/enterVote",function(req,res){
 	vote.insertVote(req,function(data){

@@ -112,7 +112,7 @@
                             </li>
                             <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Government Posts</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/getAdmin"><i class="fa fa-bolt"></i>All Posts</a></li>
+                                    <li><a href="/getAdmin/all"><i class="fa fa-bolt"></i>All Posts</a></li>
                                     <li><a href="/sortqbydate3"><i class="fa fa-link fa-sm"></i> Posts Sorted By the Created Date</a></li>
                                 </ul>
                             </li>

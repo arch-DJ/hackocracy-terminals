@@ -26,3 +26,8 @@ var getAllCommentByQuery = function(req,callback){
     console.log("some Error occurred");
   });
 };
+
+module.exports = {
+  insertComment,
+  getAllCommentByQuery
+}

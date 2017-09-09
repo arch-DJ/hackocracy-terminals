@@ -147,96 +147,43 @@ Start Preloader
                                                         <i class="fa fa-user"></i><a href="#">Admin</a>
                                                         </span>
                                                         <span class="post-tags">
-                                                        <i class="fa fa-tags"></i><a href=" getAdmin/tags/<%=data[0].tags%>s"><%=data[0].tags%></a>
+                                                        <i class="fa fa-tags"></i><a href=" getAdmin/tags/<%=data[0].tags%>"><%=data[0].tags%></a>
                                                         </span>
                                                         </div>
                                                             </article>
                                                             
                                                               <div id="comments" class="comments-section">
-                                                                <h4>4 Comments</h4>
+                                                                <h4><%=commentcount%> Comments</h4>
+                                                                <% for(var i = 0 ;  i < comment.length ; i++){%>    
                                                                 <ol class="comment-list">
-                                                                    <li id="comment-1">
+                                                                    <li id="comment-<%=i%>">
                                                                         <div class="comment-wrap">
                                                                             <div class="author-avatar pull-left">
                                                                                 <img src="/img/blog/user.jpg" alt="">
                                                                             </div>
                                                                             <div class="author-comment">
                                                                                 <cite class="pull-left"><a href="#">Smithson</a></cite>
-                                                                                <a href="" class="replay pull-right">Replay</a>
                                                                                 <div style="clear:both"></div>
                                                                                 <div class="comment-meta">
-                                                                                    <i class="fa fa-calendar"></i> 26 aug 2013 at 07:30 PM 
+                                                                                    <i class="fa fa-calendar"></i><%=comment.createdAt%> 
                                                                                 </div>
                                                                             </div>
                                                                             <div class="comment-content">
-                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellendus. Culpa nam aut vel. Ab, excepturi minus, quasi debitis quaerat animi, enim quod repellat minima dolores facere veniam quam quo!</p>
+                                                                                <p><%=comment.comment%></p>
                                                                             </div>
                                                                         </div>
-                                                                        <ul>
-                                                                            <li id="comment-2">
-                                                                                <div class="comment-wrap">
-                                                                                    <div class="author-avatar pull-left">
-                                                                                        <img src="/img/blog/user.jpg" alt="">
-                                                                                    </div>
-                                                                                    <div class="author-comment">
-                                                                                        <cite class="pull-left"><a href="#">Smithson</a></cite>
-                                                                                        <a href="" class="replay pull-right">Replay</a>
-                                                                                        <div style="clear:both"></div>
-                                                                                        <div class="comment-meta">
-                                                                                            <i class="fa fa-calendar"></i> 26 aug 2013 at 07:30 PM 
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="comment-content">
-                                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellendus. Culpa nam aut vel. Ab, excepturi minus, quasi debitis quaerat animi, enim quod repellat minima dolores facere veniam quam quo!</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                            <li id="comment-3">
-                                                                                <div class="comment-wrap">
-                                                                                    <div class="author-avatar pull-left">
-                                                                                        <img src="/img/blog/user.jpg" alt="">
-                                                                                    </div>
-                                                                                    <div class="author-comment">
-                                                                                        <cite class="pull-left"><a href="#">Smithson</a></cite>
-                                                                                        <a href="" class="replay pull-right">Replay</a>
-                                                                                        <div style="clear:both"></div>
-                                                                                        <div class="comment-meta">
-                                                                                            <i class="fa fa-calendar"></i> 26 aug 2013 at 07:30 PM 
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="comment-content">
-                                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellendus. Culpa nam aut vel. Ab, excepturi minus, quasi debitis quaerat animi, enim quod repellat minima dolores facere veniam quam quo!</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <div class="comment-wrap">
-                                                                            <div class="author-avatar pull-left">
-                                                                                <img src="/img/blog/user.jpg" alt="">
-                                                                            </div>
-                                                                            <div class="author-comment">
-                                                                                <cite class="pull-left"><a href="#">Smithson</a></cite>
-                                                                                <a href="" class="replay pull-right">Replay</a>
-                                                                                <div style="clear:both"></div>
-                                                                                <div class="comment-meta">
-                                                                                    <i class="fa fa-calendar"></i> 26 aug 2013 at 07:30 PM 
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="comment-content">
-                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellendus. Culpa nam aut vel. Ab, excepturi minus, quasi debitis quaerat animi, enim quod repellat minima dolores facere veniam quam quo!</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-                                                                </ol>
-                                                            </div>
-                                                                                                                        <div class="comment-reply-form">
+                                                                   </li>
+                                                                   <% }%>                 
+                                                                        <div class="comment-reply-form">
                                                                 <h3>Leave a Reply</h3>
                                                                     <form id="comment-form" method="post" action="/commentposting">
                                                                         <div class = "form-group">
-                                                                        <textarea class= "form-control" type="hidden" name="admin" value ="<%=data[0]._id"> 
                                                                         <!-- End .form-group -->
+                                                                        <div class = "form-group">
+                                                                           <input type = "hidden" name = "admin" value = "<%=data[0]._id%>">
+                                                                           </div>
                                                                         <div class="form-group">
-                                                                            <textarea class="form-control" placeholder="Message *" id="message" name="message" rows="5" cols="5" required></textarea>
+                                                                            <textarea class="form-control" placeholder="Please Comment Here Your Opinion" name="comment" rows="5" cols="5" required></textarea>
                                                                         </div>
                                                                         <!-- End .form-group -->
                                                                         <div class="form-group">

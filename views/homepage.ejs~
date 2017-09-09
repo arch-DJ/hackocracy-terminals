@@ -154,7 +154,7 @@ Start Preloader
                     <li><a href="#contact-us">Contact</a></li>
                     <li><a href="/login"> Login/Register </a><li>
                     <li><a href="/getQuery/all"> Queries </a><li>
-                    <li><a href="/getAdmin"> Major Issues(Government Posts) </a><li>
+                    <li><a href="/getAdmin/all"> Major Issues(Government Posts) </a><li>
                  </ul>
             </nav>
         <!-- /main nav -->
