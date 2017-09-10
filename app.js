@@ -21,7 +21,7 @@ const library = require("./lib/lib");
 const vote = require("./controller/vote");
 require("./models/reply")
 const reply = require("./controller/reply")
-mongoose.connect("mongodb://localhost:27017/hackocracy");
+mongoose.connect(process.env.MONGOLAB_URI||"mongodb://localhost:27017/hackocracy");
 var db = mongoose.connection;
 var app = express();
 var async = require('async')

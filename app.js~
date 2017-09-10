@@ -19,6 +19,8 @@ const admin_controller = require("./controller/admin-controller");
 const comment_ctrl_admin = require("./controller/commentadmin");
 const library = require("./lib/lib");
 const vote = require("./controller/vote");
+require("./models/reply")
+const reply = require("./controller/reply")
 mongoose.connect("mongodb://localhost:27017/hackocracy");
 var db = mongoose.connection;
 var app = express();
@@ -77,7 +79,7 @@ callback();
         callback()	
         })
     },function(){
-            res.render("queryall",pageInfo);
+            res.render("homepage",pageInfo);
         
 })
 })
@@ -156,6 +158,10 @@ app.post("/queryposting",(req,res)=>{
  
 });
 
+app.post("/replyposting",function(req,res){
+	reply.insert(req);
+})
+
 // All feeds are included from here
 app.get("/getQuery",(req,res)=>{
 	pageInfo={};
@@ -223,44 +229,45 @@ app.get('/getQuery/tags/:tags',(req,res)=>{
 // Getting the query by a particular headings
 app.get('/getQuery/mid/:qid',isLoggedIn,(req,res)=>{
 	var items = [query_controller]
-var pageInfo = {}
-var cnt = 0;
-async.each(items,function(item,callback){
-item.getElementById(req,(result)=>{
-if(result.data.length == 0)
-res.render("404")
-else{
-pageInfo.data = result.data;
-callback()
-}
-})
-},function(){
-var items1 = [vote];
-async.each(items1,function(item,callback){
-item.calculateVotes(req,function(found){
-pageInfo.upVotes = found.upVote;
-pageInfo.downVotes = found.downVote;
-callback()
-})
-},function(){
-var items2 = [comment_ctrl_query];
-async.each(items2,function(item,callback){
-item.countComments(req,(found)=>{
-pageInfo.commentcount = found.data;
-callback()
-});
-},function(){
-var items3 = [comment_ctrl_query];
-async.each(items3,function(item,callback){
-item.getAllCommentByQuery(req,(found)=>{
-console.log("--------------")
-console.log(found)
-pageInfo.comment = found.data;
-callback()
-})
-},function(){
-res.render("querybyheading",pageInfo);
-})
+	var pageInfo = {}
+	pageInfo.isAdmin = req.user.group == 1;
+	var cnt = 0;
+	async.each(items,function(item,callback){
+		item.getElementById(req,(result)=>{
+			if(result.data.length == 0)
+				res.render("404")
+			else{
+				pageInfo.data = result.data;
+				callback()
+			}
+		})
+	},function(){
+		var items1 = [vote];
+		async.each(items1,function(item,callback){
+		item.calculateVotes(req,function(found){
+		pageInfo.upVotes = found.upVote;
+		pageInfo.downVotes = found.downVote;
+		callback()
+	})
+	},function(){
+		var items2 = [comment_ctrl_query];
+		async.each(items2,function(item,callback){
+		item.countComments(req,(found)=>{
+		pageInfo.commentcount = found.data;
+		callback()
+		});
+	},function(){
+		var items3 = [comment_ctrl_query];
+		async.each(items3,function(item,callback){
+		item.getAllCommentByQuery(req,(found)=>{
+		console.log("--------------")
+		console.log(found)
+		pageInfo.comment = found.data;
+		callback()
+		})
+	},function(){
+		res.render("querybyheading",pageInfo);
+	})
 })
 })
 })
@@ -354,6 +361,14 @@ app.post('/adminposting',(req,res)=>{
 	}
 	});
 });
+
+app.get("/replies",(req,res)=>{
+	var pageInfo = {};
+	reply.getPopulatedReply(req,(found)=>{
+		pageInfo.data = found.data;
+		res.render("replies",pageInfo)
+	})
+})
 // All admin queries
 app.get('/getAdmin',(req,res)=>{
     pageInfo={};
