@@ -226,10 +226,35 @@ app.post('/adminposting',(req,res)=>{
 });
 // All admin queries
 app.get('/getAdmin',(req,res)=>{
-	admin_controller.getAllElements(req,(result)=>{
-		res.render("admin",{"data":result.data});
+    pageInfo={};
+    var items = [admin_controller];
+    async.each(items,function(item,callback){
+	item.getAllElements(req,(result)=>{
+	    pageInfo.data=result.data;
+	    callback();	
 	})
-});
+    },function(){
+        var items2 = [library];
+        async.each(items2,function(item,callback){
+        item.getTag((result)=>{
+        pageInfo.tags=result.data;
+        callback()	
+        })
+    },function(){
+        async.each(items,function(item,callback){
+         item.sortByCreatedDate(req,(result)=>{
+             pageInfo.sortdate=result.data;
+             console.log("sorting by data",result.data)
+             callback()
+         })       
+        },function(){
+    
+        res.render("admin",pageInfo);
+       })    
+    })
+   })
+  });
+	
 // All query for any particular user
 app.get('/getAdmin/:id',(req,res)=>{
 	admin_controller.getElementByUserId(req,(result)=>{
@@ -276,7 +301,9 @@ app.get('/getAdmin/mid/:mid',(req,res)=>{
 						callback()
 					})
 				},function(){
+				
 			res.render("adminqueryheading",pageInfo);
+
 		})
 	})
 })

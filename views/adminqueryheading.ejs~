@@ -8,7 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Blog | Meghna - Responsive Multipurpose Parallax Theme</title>
+    <title>Blog | Welcome to Political Social Network</title>
     <meta name="description" content="description">
 <!-- Mobile Specific Meta
 ================================================== -->
@@ -141,13 +141,13 @@ Start Preloader
 <i class="fa fa-comments"></i><%=commentcount%>
 </span>
 <span class="post-view">
-<i class="fa fa-eye"></i><%= upVotes %> Upvotes
+<i class="fa fa-eye"></i><%= upVotes %> Upvote
 </span>
 <span class="post-view">
-<i class="fa fa-eye"></i><%= downVotes %> Downvotes
+<i class="fa fa-eye"></i><%= downVotes %> Down vote
 </span>
 <span class="author">
-<i class="fa fa-user"></i><a href="#"><%= data[0].userid %></a>
+<i class="fa fa-user"></i><a href="#"><%= data[0].userid.email %></a>
 </span>
 <span class="post-tags">
 <i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[0].tags%>"><%=data[0].tags%></a>

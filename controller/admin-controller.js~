@@ -8,6 +8,7 @@ var AdminPost = mongoose.model('AdminPost');
 // API to save the messages in the database
 var saveMessage = function(req){
      var saveQuery = new AdminPost({
+        userid  : req.user._id,
         heading : req.body.heading,
         message : req.body.message,
         tags : req.body.tags,
@@ -54,15 +55,17 @@ var getElementByUserId = function(req,callback){
    console.log(typeof(x));
    AdminPost.find({"_id": req.params.mid},(err,result)=>{
      if(err)
-     throw err
+      throw err
      else{
        
      }
-   }).populate("userid").exec(function(err,result){
+   }).populate("userid").exec(function(err,results){
      if(err)
-     throw err
+        throw err
      else{
-     callback({"data":result}) 
+      console.log("@@@@@@@@@@@@@@@@@@@@@@@")
+       console.log(results);
+        callback({"data":results}) 
      }})
    };
 

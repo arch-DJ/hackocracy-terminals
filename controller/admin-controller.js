@@ -25,16 +25,20 @@ var saveMessage = function(req){
 
 // API to find the all the messages posted by the admins
 var getAllElements = function(req,callback){
-  AdminPost.find().then((result)=>{
-        if(!result){
-        return  callback({"data":null});
+    AdminPost.find({},function(err,result){
+        if(err){
+        throw err;
         }
-        callback({"data":result});
-  },(err)=>{
-    callback({"data":null});
-    console.log("No result found and error found sorry");
-      });
-    
+    else{
+            }
+    }).populate("userid").exec(function(err,results){
+        if(err){
+            throw err;
+        }
+        else{
+            callback({"data":results});
+        }  
+    })
 };
 
 // API to find the message according to the user for using it in the dashboard
