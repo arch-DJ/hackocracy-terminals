@@ -76,9 +76,6 @@ app.get("/adminportal",isLoggedIn,(req,res)=>{
 	res.render("adminportal")
 });
 
-app.get("/publicportal",(req,res)=>{
-	res.render("publicportal");
-});
 // Submission of questions or the query
 
 
@@ -275,14 +272,34 @@ app.get('/getQuery/all/:date',(req,res)=>{
 
 // Getting the query according to the a particular id
 app.get('/getQuery/:id',(req,res)=>{
-	query_controller.getElementByUserId(req,(found)=>{
-		if(found.data.length==0){
-			res.render("404");
-		}
-		else
-		res.render("querybyid",{"data":found.data});
-	})
+	pageInfo={};
+    var items = [query_controller];
+    async.each(items,function(item,callback){
+item.getElementByUserId(req,(result)=>{
+pageInfo.data=result.data;
+callback();	
 })
+    },function(){
+        var items2 = [library];
+        async.each(items2,function(item,callback){
+        item.getTag((result)=>{
+        pageInfo.tags=result.data;
+        callback()	
+        })
+    },function(){
+        async.each(items,function(item,callback){
+            item.sortByCreatedDate(req,(result)=>{
+                pageInfo.sortdate=result.data;
+                console.log("sorting by data",result.data)
+                callback()
+            })       
+        },function(){
+            res.render("querybyid",pageInfo);
+        })    
+    })
+    })
+    });
+
 
 // Sort the date by date createdAt
 app.get('/sortqbydate1',(req,res)=>{

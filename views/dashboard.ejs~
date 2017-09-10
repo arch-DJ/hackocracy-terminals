@@ -130,7 +130,7 @@
                                 <h2 class="module-title font-alt">Welcome to Your Dashboard</h2>
                                 <div class="module-subtitle font-serif large-text">Here you could see the things and stats done by you
                                     <div class="text-center">
-                                        <div class="btn-group mt-30"><a class="btn btn-border-d btn-circle" href="/getQuery/"><i class="fa fa-android"></i> Your Posted Queries</a><a class="btn btn-border-d btn-circle" href="/getQuery"><i class="fa fa-apple"></i> All Queries</a><a class="btn btn-border-d btn-circle" href="queryposting"><i class="fa fa-windows"></i> Post your Query</a></div>
+                                        <div class="btn-group mt-30"><a class="btn btn-border-d btn-circle" href="/getQuery/mid/<%= user._id%>"><i class="fa fa-android"></i> Your Posted Queries</a><a class="btn btn-border-d btn-circle" href="/getQuery"><i class="fa fa-apple"></i> All Queries</a><a class="btn btn-border-d btn-circle" href="queryposting"><i class="fa fa-windows"></i> Post your Query</a></div>
                                     </div>
                                 </div>
                             </div>

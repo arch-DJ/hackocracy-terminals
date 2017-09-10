@@ -69,7 +69,7 @@ var getElementById = function(req,callback){
 var getElementByUserId = function(req,callback){
    var x = new ObjectId(req.params.mid);
    console.log(typeof(x));
-   Query.find({"userid": req.user._id},(err,result)=>{
+   Query.find({"userid": req.user.id},(err,result)=>{
      if(err)
       throw err
      else{
@@ -143,6 +143,7 @@ module.exports = {
 // getElementByQuery,
  getElementByTags,
  getElementById,
+ getElementByUserId,
  getElementbyDate,
  sortByCreatedDate,
  sortByUpdatedDate
