@@ -75,7 +75,7 @@
                             <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Ministries-Linked</a>
                                     <ul class="dropdown-menu">
                                     <% for(var i = 0 ; i < data.length ; i++) { %>
-                                            <li><a href="/getAdmin/data[i]"><%=data[i]%></a></li>
+                                            <li><a href="/getAdmin/ministry/data[i]"><%=data[i]%></a></li>
                                             
                                     <% } %>               
                                     </ul> 
@@ -104,7 +104,7 @@
                 </div>
             </nav>
             <% if(flash.length > 0){%>
-                <h1><%= flash %></h1>
+                <b><%= flash %></b>
             <% } %>
             <section class="home-section home-fade home-full-height bg-dark-60 landing-header" id="home" data-background="assets/images/landing/landing_bg.jpg">
                 <div class="titan-caption">

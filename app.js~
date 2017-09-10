@@ -55,39 +55,43 @@ var isLoggedIn = function(req,res,next){
 		 next();
 	}
 	else{
-		res.redirect('/');
+		res.redirect('/no');
 	}
 }
 
 app.get("/",(req,res)=>{
-	admin_controller.sortByCreatedDate(req,(result)=>{
-			res.render("homepage",{"data":result.data});
-		});
-	
+    pageInfo={};
+    var items = [admin_controller];
+    async.each(items,function(item,callback){
+item.sortByCreatedDate(req,(result)=>{
+pageInfo.data=result.data;
+callback();	
+})
+    },function(){
+        var items2 = [library];
+        async.each(items2,function(item,callback){
+        item.getTag((result)=>{
+        pageInfo.tags=result.data;
+        pageInfo.ministry=result.data1;
+        pageInfo.website=result.data2;
+        callback()	
+        })
+    },function(){
+            res.render("queryall",pageInfo);
+        
+})
+})
 });
 
-
-app.get("/feeds",isLoggedIn,(req,res)=>{
-	res.render("404");
+app.get("/no",(req,res)=>{
+   res.render("nologin"); 
 });
-
 //Requires authenticate specially for admins
 app.get("/adminportal",isLoggedIn,(req,res)=>{
 	res.render("adminportal")
 });
-
-// Submission of questions or the query
-
-
-// Query initilization according to that of catogory
-app.get("/feeds/:id",(req,res)=>{
-	
-});
-
-
-
 //Main page that comes after that of the logining the user in
-app.get("/dashboard",(req,res)=>{
+app.get("/dashboard",isLoggedIn,(req,res)=>{
 		var pageInfo = {}
 
 		pageInfo.flash = req.flash("message")
@@ -108,7 +112,7 @@ app.post('/login',passport.authenticate('local-login',{
 })
 );
 app.post('/register',passport.authenticate('local-signup',{
-		successRedirect :  '/feeds',
+		successRedirect :  '/dashboard',
 		failureRedirect :  '/register',
 }))
 app.get('/register',function(req,res){
@@ -126,7 +130,7 @@ app.get('/logout',(req,res)=>{
 })
 
 // Query related things and use of APIs
-app.get("/queryposting",(req,res)=>{
+app.get("/queryposting",isLoggedIn,(req,res)=>{
 	library.getTag((result)=>{
 		console.log(result.data[0]);
 		res.render("queryposting",{"data":result.data});
@@ -217,7 +221,7 @@ app.get('/getQuery/tags/:tags',(req,res)=>{
     })
     });
 // Getting the query by a particular headings
-app.get('/getQuery/mid/:qid',(req,res)=>{
+app.get('/getQuery/mid/:qid',isLoggedIn,(req,res)=>{
 	var items = [query_controller]
 var pageInfo = {}
 var cnt = 0;
@@ -305,7 +309,7 @@ callback();
 
 
 
-app.post("/commentposting1",(req,res)=>{
+app.post("/commentposting1",isLoggedIn,(req,res)=>{
 	comment_ctrl_query.insertComment(req,(found)=>{
 		console.log(found.data);
 		if(found.res){
@@ -333,7 +337,7 @@ app.get('/sortqbydate2',(req,res)=>{
 	});
 });
 // Calling the admin related queries
-app.get("/adminposting",(req,res)=>{
+app.get("/adminposting",isLoggedIn,(req,res)=>{
 	library.getTag((result)=>{
 		console.log(result.data[0]);
 		res.render("adminposting",{"data":result.data,"data1":result.data1});
@@ -389,7 +393,7 @@ app.get('/getAdmin/:id',(req,res)=>{
 });
 
 // All message accoriding to the particular message id 
-app.get('/getAdmin/mid/:mid',(req,res)=>{
+app.get('/getAdmin/mid/:mid',isLoggedIn,(req,res)=>{
 	var items = [admin_controller]
 	var pageInfo = {}
 	var cnt = 0;
@@ -430,7 +434,7 @@ app.get('/getAdmin/mid/:mid',(req,res)=>{
 				function(){
 				var items5 = [library];
 				async.each(items5,function(item,callback){
-					item.getTag(req,(found)=>{
+					item.getTag((found)=>{
 						console.log("--------------")
 						console.log(found)
 						pageInfo.tags = found.data;
@@ -446,7 +450,7 @@ app.get('/getAdmin/mid/:mid',(req,res)=>{
 })
 });
 
-app.post("/commentposting",(req,res)=>{
+app.post("/commentposting",isLoggedIn,(req,res)=>{
 	comment_ctrl_admin.insertComment(req,(found)=>{
 		console.log(found.data);
 		if(found.res){
@@ -460,7 +464,7 @@ app.post("/commentposting",(req,res)=>{
  
 	});
 })
-app.get("/enterVote",function(req,res){
+app.get("/enterVote",isLoggedIn,function(req,res){
 	vote.insertVote(req,function(data){
 		console.log(data)
 	})
@@ -503,15 +507,15 @@ app.get("/getAdmin/tags/:tags",(req,res)=>{
 })
 });
 // All query according to the heading 
-app.get("/getAdmin/heading/:heading",(req,res)=>{
-	admin_controller.getElementByHeading(req,(result)=>{
-		if(result.data.length==0){
-			res.render("404");
-		}
-		else
-		res.render("adminqueryheading",{"data":result.data});
-	});
-});
+//app.get("/getAdmin/heading/:heading",(req,res)=>{
+//	admin_controller.getElementByHeading(req,(result)=>{
+//		if(result.data.length==0){
+//			res.render("404");
+//		}
+//		else
+//		res.render("adminqueryheading",{"data":result.data});
+//	});
+//});
 
 // All query according to the date
 app.get('/getAdmin/:date',(req,res)=>{
