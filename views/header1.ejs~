@@ -75,7 +75,8 @@ Start Preloader
                         <li><a href="/#showcase">Ministries Linked</a></li>
                         <li><a href="/#blog">Blog</a></li>
                         <li><a href="/#contact-us">Contact</a></li>
-                        <li><a href="/getQuery">All Query<
+                        <li><a href="/getQuery">All Query</a></li>
+                        <li><a href="/getAdmin">All Government Posts</a></li>
                     </ul>
                                     </nav><!-- /.navbar-collapse -->
                 </div>

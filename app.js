@@ -93,7 +93,7 @@ app.get("/dashboard",(req,res)=>{
 		pageInfo.flash = req.flash("message")
 		pageInfo.user = req.user;
 		console.log(pageInfo)
-	library.getMinistry((result)=>{
+	    library.getMinistry((result)=>{
 		pageInfo.data = result.data;
 		res.render("dashboard",pageInfo);  
 	});
@@ -137,15 +137,18 @@ app.get("/queryposting",(req,res)=>{
 
 app.post("/queryposting",(req,res)=>{
 	query_controller.insertQuery(req,(found)=>{
-		if(found.data){
+		if(found.res){
 		req.flash("message","You have inserted your query")
+	res.redirect('/dashboard')
+ }
+ else{
+      req.flash("message","Your  query has not been inserted try again")
 	res.redirect('/dashboard')
  }
  
 	});
 
-	 req.flash("message","You have inserted your query")
-	res.redirect('/dashboard')
+	
  
 });
 
@@ -301,6 +304,22 @@ callback();
     });
 
 
+
+app.post("/commentposting1",(req,res)=>{
+	comment_ctrl_query.insertComment(req,(found)=>{
+		console.log(found.data);
+		if(found.res){
+		req.flash("message","You have inserted your query")
+	res.redirect('/dashboard')
+ }
+ else{
+      req.flash("message","Your  query has not been inserted try again")
+	res.redirect('/dashboard')
+ }
+ 
+		
+	});
+})
 // Sort the date by date createdAt
 app.get('/sortqbydate1',(req,res)=>{
 	query_controller.sortByCreatedDate(req,(result)=>{
@@ -321,7 +340,15 @@ app.get("/adminposting",(req,res)=>{
 	})
 });
 app.post('/adminposting',(req,res)=>{
-	admin_controller.saveMessage(req);
+	admin_controller.saveMessage(req,(found)=>{
+	   if(found.res){
+		req.flash("message","You have inserted your query")
+	res.redirect('/dashboard')}
+	else{
+	    req.flash("message","You have not inserted your query")
+	res.redirect('/dashboard')
+	}
+	});
 });
 // All admin queries
 app.get('/getAdmin',(req,res)=>{
@@ -399,10 +426,20 @@ app.get('/getAdmin/mid/:mid',(req,res)=>{
 						pageInfo.comment = found.data;
 						callback()
 					})
-				},function(){
+				},
+				function(){
+				var items5 = [library];
+				async.each(items5,function(item,callback){
+					item.getTag((found)=>{
+						console.log("--------------")
+						console.log(found)
+						pageInfo.tags = found.data;
+						callback()
+					})
+			},function(){
 				
 			res.render("adminqueryheading",pageInfo);
-
+})
 		})
 	})
 })
@@ -412,6 +449,15 @@ app.get('/getAdmin/mid/:mid',(req,res)=>{
 app.post("/commentposting",(req,res)=>{
 	comment_ctrl_admin.insertComment(req,(found)=>{
 		console.log(found.data);
+		if(found.res){
+		req.flash("message","You have inserted your query")
+	res.redirect('/dashboard')
+ }
+ else{
+      req.flash("message","Your  query has not been inserted try again")
+	res.redirect('/dashboard')
+ }
+ 
 	});
 })
 app.get("/enterVote",function(req,res){

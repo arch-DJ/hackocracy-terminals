@@ -6,7 +6,7 @@ const {ObjectId} = require('mongodb');
 var AdminPost = mongoose.model('AdminPost');
 
 // API to save the messages in the database
-var saveMessage = function(req){
+var saveMessage = function(req,callback){
      var saveQuery = new AdminPost({
         userid  : req.user._id,
         heading : req.body.heading,
@@ -17,8 +17,10 @@ var saveMessage = function(req){
      console.log(req.body);
      saveQuery.save().then((query)=>{
        console.log("Data inserted to the AdminDatabase");
+       callback({"res":true})
      },(err)=>{
        console.log("Data not inserted",err);
+       callback({"res":false});
      })
 
 };

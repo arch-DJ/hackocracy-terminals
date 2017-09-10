@@ -11,8 +11,10 @@ var insertComment = function(req,callback){
   });
   newComment.save().then((result)=>{
     console.log("data inserted into the comment query database");
+    callback({"res":true});
   },(err)=>{
     console.log("data not insertComment");
+    callback({"res":false});
   });
 };
 
@@ -28,7 +30,7 @@ var getAllCommentByQuery = function(req,callback){
 };
 
 var countComments = function(req,callback){
-  comment.count({"adminid":req.params.mid}, function( err, count){
+  comment.count({"queryid":req.params.mid}, function( err, count){
         console.log( "Number of comments: ", count );
         callback({"data":count});
     });  

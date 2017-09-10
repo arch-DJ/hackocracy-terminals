@@ -6,7 +6,7 @@ const {ObjectId} = require('mongodb');
 var AdminPost = mongoose.model('AdminPost');
 
 // API to save the messages in the database
-var saveMessage = function(req){
+var saveMessage = function(req,callback){
      var saveQuery = new AdminPost({
         userid  : req.user._id,
         heading : req.body.heading,
@@ -17,6 +17,7 @@ var saveMessage = function(req){
      console.log(req.body);
      saveQuery.save().then((query)=>{
        console.log("Data inserted to the AdminDatabase");
+       callback({"res":true})
      },(err)=>{
        console.log("Data not inserted",err);
      })
@@ -114,20 +115,15 @@ var getElementbyDate=function(req,callback){
 
 //API to find the message according to the ministry
 var getElementByMinistry=function(req,callback){
-  AdminPost.find({"ministry":req.params.ministry},function(err,result){
-        if(err){
-        throw err;
-        }
-    else{
-            }
-    }).populate("userid").exec(function(err,results){
-        if(err){
-            throw err;
-        }
-        else{
-            callback({"data":results});
-        }  
-    })
+  AdminPost.find({"ministry":req.params.ministry}).then((query)=>{
+   if(!query){
+     return callback({"data":null});
+   }
+   callback({"data":query});
+  },(err)=>{
+    callback({"data":null});
+    console.log("Some error occurred");
+  });
 };
 
 // API to to sort the message in the decreasing order of the createdDate
