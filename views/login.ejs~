@@ -1,7 +1,7 @@
 <% include header.ejs %>
 
 <div class="main">
-<section class="module bg-dark-30" data-background="img/portfolio/landing.jpg">">
+<section class="module bg-dark-30" data-background="img/portfolio/landing/jpg">">
 <div class="container">
 <div class="row">
 <div class="col-sm-6 col-sm-offset-3">

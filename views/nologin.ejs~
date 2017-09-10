@@ -1,5 +1,5 @@
 <% include header.ejs %>
-<section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="img/portfolio/landing.jpg">
+<section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="/img/portfolio/landing/jpg">
     <div class="titan-caption">
         <div class="caption-content">
             <div class="font-alt mb-30 titan-title-size-4">Not Logged In</div>
