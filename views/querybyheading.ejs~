@@ -83,7 +83,6 @@ Start Preloader
                 <ul id="nav" class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="/#about">About Us</a></li>
-                    <li><a href="/#services">Services</a></li>
                     <li><a href="/#our-team">Team</a></li>
                     <li><a href="/#showcase">Portfolio</a></li>
                     <li><a href="/#blog">Blog</a></li>
@@ -105,7 +104,7 @@ Start Preloader
 <i class="fa fa-book fa-4x"></i>
 </div>
 <div class="blog-title">
-<h1>Welcome to Our Blog/Government Posts</h1>
+<h1>Welcome to Our Blog/Your Posts</h1>
 </div>
 </div>     <!-- End col-lg-12 -->
 </div>	    <!-- End row -->
@@ -127,7 +126,7 @@ Start Preloader
 </div>
 <div class="post-excerpt">
 <h3><a href="getAdmin/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
-<p><%=data[0].message%></p>
+<p><%=data[0].query%></p>
 <blockquote>
 <input type="button" value="Upvote" style="color: black" onclick="giveVote('up','<%= data[0]._id %>')">
 <input type="button" value="Down vote" style="color: black" onclick="giveVote('down','<%= data[0]._id %>')">
@@ -151,9 +150,6 @@ Start Preloader
 </span>
 <span class="post-tags">
 <i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[0].tags%>"><%=data[0].tags%></a>
-</span>
-<span class="post-tags">
-<i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[0].ministry%>"><%=data[0].ministry%></a>
 </span>
 </div>
     </article>
@@ -180,12 +176,12 @@ Start Preloader
    </li>
    <% }%>                 
         <div class="comment-reply-form">
-<h3>Leave a Reply</h3>
+<h3>Leave a comment</h3>
     <form id="comment-form" method="post" action="/commentposting">
         <div class = "form-group">
         <!-- End .form-group -->
         <div class = "form-group">
-           <input type = "hidden" name = "admin" value = "<%=data[0]._id%>">
+           <input type = "hidden" name = "query" value = "<%=data[0]._id%>">
            </div>
         <div class="form-group">
             <textarea class="form-control" placeholder="Please Comment Here Your Opinion" name="comment" rows="5" cols="5" required></textarea>
@@ -193,6 +189,25 @@ Start Preloader
         <!-- End .form-group -->
         <div class="form-group">
             <input type="submit" id="post-comment" value="Post Comment" class="btn btn-transparent">
+        </div>
+        <!-- End .form-group -->
+    </form>
+</div>
+<! -- Another reply button -- !>
+        <div class="comment-reply-form">
+<h3>Leave a reply</h3>
+    <form id="comment-form" method="post" action="/replyposting">
+        <div class = "form-group">
+        <!-- End .form-group -->
+        <div class = "form-group">
+           <input type = "hidden" name = "query" value = "<%=data[0]._id%>">
+           </div>
+        <div class="form-group">
+            <textarea class="form-control" placeholder="Please Reply Here Your Opinion" name="reply" rows="5" cols="5" required></textarea>
+        </div>
+        <!-- End .form-group -->
+        <div class="form-group">
+            <input type="submit" id="post-comment" value="Post Reply" class="btn btn-transparent">
         </div>
         <!-- End .form-group -->
     </form>

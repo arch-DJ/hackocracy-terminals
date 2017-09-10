@@ -837,7 +837,7 @@ Start Blog Section
 <!-- single blog post -->
 <% if(data.length >= 4){ %>
 
-<% for(var i = 0 ; i < data.length ; i++) { %>
+<% for(var i = 0 ; i < 4; i++) { %>
 <article class="col-md-3 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
 <div class="note">
 <div class="media-wrapper">
@@ -851,7 +851,8 @@ Start Blog Section
 </article>
 <%}%>
 <% } %>
-<% else if(data.length < 4){ %>
+
+<% if(data.length < 4){ %>
 <% for(var i = 0 ; i < data.length; i++) { %>
 <article class="col-md-3 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
 <div class="note">

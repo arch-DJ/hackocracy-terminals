@@ -27,7 +27,15 @@ var getAllCommentByQuery = function(req,callback){
   });
 };
 
+var countComments = function(req,callback){
+  comment.count({"queryid":req.params.mid}, function( err, count){
+        console.log( "Number of comments: ", count );
+        callback({"data":count});
+    });  
+};
+
 module.exports = {
+  countComments,
   insertComment,
   getAllCommentByQuery
 }

@@ -127,12 +127,12 @@
                                                                         </div>
                                                                         </div>
                                                                         </article>
-                                                                        fjklfsdf
+                                                                        
                                                                                                                                                 <article class="tab-pane tab-post" id="recent">
                                                                                                                                                                 
                                                                                                                                                         
-                                                         ghghjkhjlk               <div class="clearfix">
-                                                                        <%for(var i = 0 ; i < 2 ; i++){%>
+                                                  <div class="clearfix">
+                                                                        <% for(var i = 0 ; i < 2 ; i++){%>
                                                                         <div class="tab-thumb">
                                                                                                                                                
                                                                             <img src="/img/blog/amazing-caves-coverimage.jpg" class="img-responsive" alt="amazing-caves-coverimage | Meghna">

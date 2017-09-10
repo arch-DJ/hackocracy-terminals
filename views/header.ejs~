@@ -68,7 +68,7 @@
             <ul class="nav navbar-nav navbar-right">
             <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Query</a>
                   <ul class="dropdown-menu">
-                    <li><a href="/getQuery">All Queries</a></li>
+                    <li><a href="/getQuery/all">All Queries</a></li>
                     <li><a href="/sortqbydate1">Query-Sorted By Created Date</a></li>
                     <li><a href="/queryposting">Post-Your-Query</a></li>
                   </ul>

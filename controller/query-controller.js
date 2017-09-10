@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 //var {Query} = require("./../models/query");
 var Query = mongoose.model('Query');
 var {User}=require("./../models/user");
+var {ObjectId} = require("mongodb");
 var insertQuery = function(req,callback){
 //	console.log(req.body);
 	var queryInsert = new Query({
@@ -46,19 +47,25 @@ var getAllElements = function(req,callback){
 }
 
 // To put list of the queries posted by an user
-var getElementByUserId = function(req,callback){
-  Query.find({"userid":req.user._id}).then((query)=>{
-    
-  },(err)=>{
-    callback({"date":null});
-  }).populate("userid").exec(function(err,story){
-    if(err)
+var getElementById = function(req,callback){
+   var x = new ObjectId(req.params.mid);
+   console.log(typeof(x));
+   Query.find({"_id": req.params.qid},(err,result)=>{
+     if(err)
       throw err
-    else
-      callback({"data":story,"res":true});
-    data.userid.username
-  });  
-};
+     else{
+       
+     }
+   }).populate("userid").exec(function(err,results){
+     if(err)
+        throw err
+     else{
+      console.log("@@@@@@@@@@@@@@@@@@@@@@@")
+       console.log(results);
+        callback({"data":results}) 
+     }})
+   };
+
 // Get list of query via a particular tags
 var getElementByTags = function(req,callback){
   Query.find({"tags":req.params.tags}).then((query)=>{   // How to handle a tags when its a array
@@ -116,7 +123,7 @@ module.exports = {
  getElementByHeading,
 // getElementByQuery,
  getElementByTags,
- getElementByUserId,
+ getElementById,
  getElementbyDate,
  sortByCreatedDate,
  sortByUpdatedDate

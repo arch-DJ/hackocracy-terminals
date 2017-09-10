@@ -44,7 +44,7 @@ var getAllCommentByAdmin = function(req,callback){
 }
 
 var countComments = function(req,callback){
-  comment.count({}, function( err, count){
+  comment.count({"adminid":req.params.mid}, function( err, count){
         console.log( "Number of comments: ", count );
         callback({"data":count});
     });  

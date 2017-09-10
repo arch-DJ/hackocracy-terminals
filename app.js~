@@ -13,7 +13,7 @@ const {Admin} = require("./models/adminpost");
 const {Vote} = require("./models/vote");
 const {Comment}= require("./models/comment");
 const {CommentAdmin} = require("./models/commentadmin");// Admin Comment controller
-const comments  = require("./controller/comments");// Comment controller
+const comment_ctrl_query  = require("./controller/comments");// Comment controller
 const query_controller = require("./controller/query-controller");
 const admin_controller = require("./controller/admin-controller");
 const comment_ctrl_admin = require("./controller/commentadmin");
@@ -155,13 +155,33 @@ app.post("/queryposting",(req,res)=>{
 });
 
 // All feeds are included from here
-app.get("/getQuery/all",(req,res)=>{
-	query_controller.getAllElements(req,(query)=>{
-		if(query.data.length==0)
-		res.render("404");
-		else
-		res.render("queryall",{"data":query.data});
-	});
+app.get("/getQuery",(req,res)=>{
+	pageInfo={};
+    var items = [query_controller];
+    async.each(items,function(item,callback){
+item.getAllElements(req,(result)=>{
+pageInfo.data=result.data;
+callback();	
+})
+    },function(){
+        var items2 = [library];
+        async.each(items2,function(item,callback){
+        item.getTag((result)=>{
+        pageInfo.tags=result.data;
+        callback()	
+        })
+    },function(){
+        async.each(items,function(item,callback){
+            item.sortByCreatedDate(req,(result)=>{
+                pageInfo.sortdate=result.data;
+                console.log("sorting by data",result.data)
+                callback()
+            })       
+        },function(){
+            res.render("queryall",pageInfo);
+    })    
+})
+})
 });
 
 // Getting the query by a particular tag
@@ -174,10 +194,49 @@ app.get('/getQuery/:tags',(req,res)=>{
 	});
 });
 // Getting the query by a particular headings
-app.get('/getQuery/heading/:heading',(req,res)=>{
-	query_controller.getElementByHeading(req,(found)=>{
-		res.render("querybyheading",{"data":found.data});
-	});
+app.get('/getQuery/mid/:qid',(req,res)=>{
+	var items = [query_controller]
+var pageInfo = {}
+var cnt = 0;
+async.each(items,function(item,callback){
+item.getElementById(req,(result)=>{
+if(result.data.length == 0)
+res.render("404")
+else{
+pageInfo.data = result.data;
+callback()
+}
+})
+},function(){
+var items1 = [vote];
+async.each(items1,function(item,callback){
+item.calculateVotes(req,function(found){
+pageInfo.upVotes = found.upVote;
+pageInfo.downVotes = found.downVote;
+callback()
+})
+},function(){
+var items2 = [comment_ctrl_query];
+async.each(items2,function(item,callback){
+item.countComments(req,(found)=>{
+pageInfo.commentcount = found.data;
+callback()
+});
+},function(){
+var items3 = [comment_ctrl_query];
+async.each(items3,function(item,callback){
+item.getAllCommentByQuery(req,(found)=>{
+console.log("--------------")
+console.log(found)
+pageInfo.comment = found.data;
+callback()
+})
+},function(){
+res.render("querybyheading",pageInfo);
+})
+})
+})
+})
 });
 // Getting the query by a particular date posted:
 
@@ -379,15 +438,33 @@ app.get('/getAdmin/:date',(req,res)=>{
 });
 // All query access to the ministry
 app.get('/getAdmin/ministry/:ministry',(req,res)=>{
-	admin_controller.getElementByMinistry(req,(result)=>{
-		if(result.data.length==0)
-		{
-			res.render("404");
-		}
-		else
-		res.render("adminqueryministry",{"data":result.data});
-	});
-});
+	 pageInfo={};
+    var items = [admin_controller];
+    async.each(items,function(item,callback){
+        item.getElementByMinistry(req,(result)=>{
+        pageInfo.data=result.data;
+        callback();	
+        })
+    },function(){
+        var items2 = [library];
+        async.each(items2,function(item,callback){
+        item.getTag((result)=>{
+        pageInfo.tags=result.data;
+        callback()	
+        })
+    },function(){
+        async.each(items,function(item,callback){
+            item.sortByCreatedDate(req,(result)=>{
+                pageInfo.sortdate=result.data;
+                console.log("sorting by data",result.data)
+                callback()
+            })       
+        },function(){
+            res.render("adminquerytags",pageInfo);
+        })    
+    })
+    })
+    });
 
 app.get('/sortqbydate3',(req,res)=>{
  admin_controller.sortByCreatedDate(req,(result)=>{
