@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 //var {Query} = require("./../models/query");
 var Query = mongoose.model('Query');
 var {User}=require("./../models/user");
+var {ObjectId} = require("mongodb");
 var insertQuery = function(req,callback){
 //	console.log(req.body);
 	var queryInsert = new Query({
@@ -50,6 +51,25 @@ var getElementById = function(req,callback){
    var x = new ObjectId(req.params.mid);
    console.log(typeof(x));
    Query.find({"_id": req.params.qid},(err,result)=>{
+     if(err)
+      throw err
+     else{
+       
+     }
+   }).populate("userid").exec(function(err,results){
+     if(err)
+        throw err
+     else{
+      console.log("@@@@@@@@@@@@@@@@@@@@@@@")
+       console.log(results);
+        callback({"data":results}) 
+     }})
+   };
+
+var getElementByUserId = function(req,callback){
+   var x = new ObjectId(req.params.mid);
+   console.log(typeof(x));
+   Query.find({"userid": req.params.qid},(err,result)=>{
      if(err)
       throw err
      else{

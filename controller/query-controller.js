@@ -66,6 +66,25 @@ var getElementById = function(req,callback){
      }})
    };
 
+var getElementByUserId = function(req,callback){
+   var x = new ObjectId(req.params.mid);
+   console.log(typeof(x));
+   Query.find({"userid": req.user._id},(err,result)=>{
+     if(err)
+      throw err
+     else{
+       
+     }
+   }).populate("userid").exec(function(err,results){
+     if(err)
+        throw err
+     else{
+      console.log("@@@@@@@@@@@@@@@@@@@@@@@")
+       console.log(results);
+        callback({"data":results}) 
+     }})
+   };
+
 // Get list of query via a particular tags
 var getElementByTags = function(req,callback){
   Query.find({"tags":req.params.tags}).then((query)=>{   // How to handle a tags when its a array

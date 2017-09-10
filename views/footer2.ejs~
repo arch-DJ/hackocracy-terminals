@@ -4,7 +4,7 @@
                                                                         </div>
                                                                         <div class="widget-content">
                                                                         <% for(var i = 0 ; i < tags.length ; i++){%>
-                                                                            <a class="tag" href="getAdmin/tags/<%=tags[i]%>"><%=tags[i]%></a>
+                                                                            <a class="tag" href="getQuery/tags/<%=tags[i]%>"><%=tags[i]%></a>
                                                                         <%}%>
                                                                         </div>
                                                                             </aside>

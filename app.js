@@ -60,13 +60,10 @@ var isLoggedIn = function(req,res,next){
 }
 
 app.get("/",(req,res)=>{
-	if(req.isAuthenticated())
-		res.redirect('/dashboard')
-	else{
-		admin_controller.sortByCreatedDate(req,(result)=>{
+	admin_controller.sortByCreatedDate(req,(result)=>{
 			res.render("homepage",{"data":result.data});
 		});
-	}
+	
 });
 
 
@@ -97,6 +94,7 @@ app.get("/dashboard",(req,res)=>{
 		var pageInfo = {}
 
 		pageInfo.flash = req.flash("message")
+		pageInfo.user = req.user;
 		console.log(pageInfo)
 	library.getMinistry((result)=>{
 		pageInfo.data = result.data;
@@ -185,14 +183,39 @@ callback();
 });
 
 // Getting the query by a particular tag
-app.get('/getQuery/:tags',(req,res)=>{
-	query_controller.getElementByTags(req,(found)=>{
-		if(found.data.length==0)
-		res.render("404");
-		else
-		res.render("querybytags",{"data":found.data});
-	});
-});
+app.get('/getQuery/tags/:tags',(req,res)=>{
+	pageInfo={};
+    var items = [query_controller];
+    async.each(items,function(item,callback){
+        item.getElementByTags(req,(result)=>{
+        if(result.data.length==0)
+        {
+            res.render("404");
+        }
+        else{
+        pageInfo.data=result.data;
+        callback();}	
+        })
+    },function(){
+        var items2 = [library];
+        async.each(items2,function(item,callback){
+        item.getTag((result)=>{
+        pageInfo.tags=result.data;
+        callback()	
+        })
+    },function(){
+        async.each(items,function(item,callback){
+            item.sortByCreatedDate(req,(result)=>{
+                pageInfo.sortdate=result.data;
+                console.log("sorting by data",result.data)
+                callback()
+            })       
+        },function(){
+            res.render("querybytags",pageInfo);
+        })    
+    })
+    })
+    });
 // Getting the query by a particular headings
 app.get('/getQuery/mid/:qid',(req,res)=>{
 	var items = [query_controller]

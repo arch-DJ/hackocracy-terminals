@@ -8,7 +8,7 @@
         Document Title
         =============================================
         -->
-        <title>Titan | Multipurpose HTML5 Template</title>
+        <title>Political Social Network</title>
         <!--  
         Favicons
         =============================================
@@ -66,7 +66,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Query</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/getQuery">All Queries</a></li>
+                                    <li><a href="/getQuery  ">All Queries</a></li>
                                     <li><a href="/sortqbydate1">Query-Sorted By Created Date</a></li>
                                     <li><a href="/queryposting">Post-Your-Query</a></li>
                                 </ul>
@@ -84,28 +84,8 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Standard</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="blog_standard_left_sidebar.html">Left Sidebar</a></li>
-                                            <li><a href="blog_standard_right_sidebar.html">Right Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Grid</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="blog_grid_col_2.html">2 Columns</a></li>
-                                            <li><a href="blog_grid_col_3.html">3 Columns</a></li>
-                                            <li><a href="blog_grid_col_4.html">4 Columns</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Masonry</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="blog_grid_masonry_col_2.html">2 Columns</a></li>
-                                            <li><a href="blog_grid_masonry_col_3.html">3 Columns</a></li>
-                                            <li><a href="blog_grid_masonry_col_4.html">4 Columns</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Single</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="blog_single_left_sidebar.html">Left Sidebar</a></li>
-                                            <li><a href="blog_single_right_sidebar.html">Right Sidebar</a></li>
+                                            <li><a href="/getQuery">Query-Blog</a></li>
+                                            <li><a href="/getAdmin">Admin-Posted-Blog</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -116,53 +96,7 @@
                                     <li><a href="/sortqbydate3"><i class="fa fa-link fa-sm"></i> Posts Sorted By the Created Date</a></li>
                                 </ul>
                             </li>
-                                                       <!--li.dropdown.navbar-cart-->
-                            <!--    a.dropdown-toggle(href='#', data-toggle='dropdown')-->
-                            <!--        span.icon-basket-->
-                            <!--        |-->
-                            <!--        span.cart-item-number 2-->
-                            <!--    ul.dropdown-menu.cart-list(role='menu')-->
-                            <!--        li-->
-                            <!--            .navbar-cart-item.clearfix-->
-                            <!--                .navbar-cart-img-->
-                            <!--                    a(href='#')-->
-                            <!--                        img(src='assets/images/shop/product-9.jpg', alt='')-->
-                            <!--                .navbar-cart-title-->
-                            <!--                    a(href='#') Short striped sweater-->
-                            <!--                    |-->
-                            <!--                    span.cart-amount 2 &times; $119.00-->
-                            <!--                    br-->
-                            <!--                    |-->
-                            <!--                    strong.cart-amount $238.00-->
-                            <!--        li-->
-                            <!--            .navbar-cart-item.clearfix-->
-                            <!--                .navbar-cart-img-->
-                            <!--                    a(href='#')-->
-                            <!--                        img(src='assets/images/shop/product-10.jpg', alt='')-->
-                            <!--                .navbar-cart-title-->
-                            <!--                    a(href='#') Colored jewel rings-->
-                            <!--                    |-->
-                            <!--                    span.cart-amount 2 &times; $119.00-->
-                            <!--                    br-->
-                            <!--                    |-->
-                            <!--                    strong.cart-amount $238.00-->
-                            <!--        li-->
-                            <!--            .clearfix-->
-                            <!--                .cart-sub-totle-->
-                            <!--                    strong Total: $476.00-->
-                            <!--        li-->
-                            <!--            .clearfix-->
-                            <!--                a.btn.btn-block.btn-round.btn-font-w(type='submit') Checkout-->
-                            <!--li.dropdown-->
-                            <!--    a.dropdown-toggle(href='#', data-toggle='dropdown') Search-->
-                            <!--    ul.dropdown-menu(role='menu')-->
-                            <!--        li-->
-                            <!--            .dropdown-search-->
-                            <!--                form(role='form')-->
-                            <!--                    input.form-control(type='text', placeholder='Search...')-->
-                            <!--                    |-->
-                            <!--                    button.search-btn(type='submit')-->
-                            <!--                        i.fa.fa-search-->
+                                                       
                             <li class="dropdown"><a  href="/logout" >Logout</a>
                             </li>
                         </ul>
@@ -196,7 +130,7 @@
                                 <h2 class="module-title font-alt">Welcome to Your Dashboard</h2>
                                 <div class="module-subtitle font-serif large-text">Here you could see the things and stats done by you
                                     <div class="text-center">
-                                        <div class="btn-group mt-30"><a class="btn btn-border-d btn-circle" href="#"><i class="fa fa-android"></i> Your Posted Queries</a><a class="btn btn-border-d btn-circle" href="#"><i class="fa fa-apple"></i> Your comments</a><a class="btn btn-border-d btn-circle" href="queryposting"><i class="fa fa-windows"></i> Post your Query</a></div>
+                                        <div class="btn-group mt-30"><a class="btn btn-border-d btn-circle" href="/getQuery/"><i class="fa fa-android"></i> Your Posted Queries</a><a class="btn btn-border-d btn-circle" href="/getQuery"><i class="fa fa-apple"></i> All Queries</a><a class="btn btn-border-d btn-circle" href="queryposting"><i class="fa fa-windows"></i> Post your Query</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -208,7 +142,7 @@
                         <div class="row">
                             <div class="col-sm-6"><img src="assets/images/landing/why_choose.png" alt=""></div>
                             <div class="col-sm-6">
-                                <h2 class="module-title font-alt align-left">Why Titan is best</h2>
+                                <h2 class="module-title font-alt align-left">Why Your Dashboard is Important</h2>
                                 <p class="module-subtitle font-serif align-left">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="btn btn-border-w btn-round video-pop-up" href="https://www.youtube.com/watch?v=TTxZj3DZiIM"><i class="icon-video"></i> Watch our video</a>
                             </div>
@@ -266,41 +200,6 @@
                         </div>
                     </div>
                 </section>
-                <section class="module-small free-trial">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-sm-8 col-sm-offset-2">
-                                <h2 class="font-alt">Start your &nbsp;<span class="color-golden">free 30 days trial</span> now</h2>
-                                <p class="color-light font-15">Aliquam mattis efficitur massa vel commodo. Nam non euismod ante. Proin consequat sem quis massa rhoncus, vel convallis eros tincidunt. Ut consequat eget nulla eu ultrices.</p>
-                            </div>
-                        </div>
-                        <div><a class="btn btn-warning btn-circle" href="#">Try For Free</a></div>
-                    </div>
-                </section>
-                <section>
-                    <div class="container">
-                        <div class="row landing-image-text">
-                            <div class="col-sm-6 col-sm-push-6"><img class="center-block" src="assets/images/landing/ipad.png" alt=""></div>
-                            <div class="col-sm-6 col-sm-pull-6">
-                                <h2 class="font-alt">Keep the conversation going</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><a class="btn btn-border-d btn-circle" href="#">Try free version</a>
-                            </div>
-                        </div>
-                        <div class="row landing-image-text">
-                            <div class="col-sm-6"><img class="center-block" src="assets/images/landing/iphone-mockup.png" alt=""></div>
-                            <div class="col-sm-6">
-                                <h2 class="font-alt">How it works</h2>
-                                <p class="font-serif">Lorem ipsum dolor sitamet consectetur adipisicing elit ullamut consequatur repellendus amet nemo dignissimos possimus eius fugiat</p>
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
-                                    <li>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                                    <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
-                                    <li>Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-                                </ul><a class="btn btn-border-d btn-circle" href="#">Download App</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 <section class="module bg-dark parallax-bg landing-screenshot" data-background="assets/images/landing/screenshot_bg.png">
                     <div class="container">
                         <div class="row">
@@ -333,21 +232,12 @@
                         </div>
                     </div>
                 </section>
-                <section class="module download pb-0">
-                    <div class="container text-center">
-                        <h2 class="module-title font-alt">Why are you waiting for?</h2>
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3">
-                                <p class="module-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</p><a href="#"><img class="image-button" src="assets/images/landing/apple-store-icon.png"></a><a href="#"><img class="image-button" src="assets/images/landing/playstore-icon.png"></a><a href="#"><img class="image-button" src="assets/images/landing/windows-store-icon.png"></a>
-                            </div>
-                        </div><img src="assets/images/landing/landscap-mockup.jpg">
-                    </div>
-                </section>
+               
                 <footer class="footer bg-dark">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">
-                                <p class="copyright font-alt">&copy; 2017&nbsp;<a href="index.html">TitaN</a>, All Rights Reserved</p>
+                                <p class="copyright font-alt">&copy; 2017&nbsp;<a href="index.html">Terminals</a>, All Rights Reserved</p>
                             </div>
                             <div class="col-sm-6">
                                 <div class="footer-social-links"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
@@ -378,3 +268,4 @@
         <script src="assets/js/main.js"></script>
     </body>
 </html>
+<% include footer.ejs %>

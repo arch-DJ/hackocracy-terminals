@@ -216,5 +216,5 @@ Start Preloader
                                                             </div>
 </div>
 </section>
-<%include footer1.ejs %>
+<%include footer.ejs %>
 

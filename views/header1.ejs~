@@ -71,11 +71,11 @@ Start Preloader
                     <ul id="nav" class="nav navbar-nav">
                         <li><a href="/">Home</a></li>
                         <li><a href="/#about">About Us</a></li>
-                        <li><a href="/#services">Services</a></li>
                         <li><a href="/#our-team">Team</a></li>
-                        <li><a href="/#showcase">Portfolio</a></li>
+                        <li><a href="/#showcase">Ministries Linked</a></li>
                         <li><a href="/#blog">Blog</a></li>
                         <li><a href="/#contact-us">Contact</a></li>
+                        <li><a href="/getQuery">All Query<
                     </ul>
                                     </nav><!-- /.navbar-collapse -->
                 </div>
