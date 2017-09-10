@@ -30,9 +30,8 @@
                                                             <article class="entry wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">
                                                                                                                                     <div class="post-thumb">
                                                                     
-                                                                        <a href="/getAdmin/<%= data[i]._id %>">
+                                                                        <a href="/getAdmin/<%= data[i]._id %>"></a>
                                                                     <img src="img/blog/3D-beach-art.jpg" alt="3D Beach Art | Meghna" class="img-responsive">
-                                                                    </a>
                                                                         </div>
                                                                     <div class="post-excerpt">
                                                                     <h3><a href="/getAdmin/mid/<%= data[i]._id %>">Post with featured image</a></h3>
@@ -47,10 +46,10 @@
                                                                     <i class="fa fa-user"></i><%=data[i].userid.email %>
                                                                     </span>
                                                                     <span class="post-tags">
-                                                                    <i class="fa fa-tags"></i><a href="/getAdmin/<%=data[i].tags %>"><%=data[i].tags%>
+                                                                    <i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[i].tags %>"><%=data[i].tags%></a>
 																	</span>
 																	<span class="post-tags">
-										             				<i class="fa fa-tags"></i><a href="/getAdmin/<%=data[i].ministry %>"><%=data[i].ministry%>						
+										             				<i class="fa fa-tags"></i><a href="/getAdmin/ministry/<%=data[i].ministry %>"><%=data[i].ministry%>	</a>					
                                                                     </span>
                                                                     
                                                                     </div>
@@ -147,28 +146,13 @@
                                                                             <%}%>
                                                                         </div>
                                                                         </div>
-</article>	
-
-                                                                        <!-- /tab content -->
-                                                                            </aside>
-                                                                            <!-- End Single Widget -->
-                                                                                                                                                                                                                                                                                       
-                                                                            <aside class="widget wow fadeInDown">
-                                                                        <div class="widget-title">
-                                                                            <h3>Tag Cloud</h3>
-                                                                        </div>
-                                                                        <div class="widget-content">
-                                                                        <% for(var i = 0 ; i < tags.length ; i++){%>
-                                                                            <a class="tag" href="getAdmin/tags/<%=tags[i]%>"><%=tags[i]%></a>
-                                                                        <%}%>
-                                                                        </div>
-                                                                            </aside>
-                                                                            <!-- End Single Widget -->
-                                                                                                                                                    </div>
-                                                                        <!-- End Widget Section -->
-                                                                                                                                        </div>	    <!-- End row -->
-                                                                    </div>       <!-- End container -->
-
+</article>
+</aside>
+	                                                                                                                          
+	                                 
+                                                                             <aside class="widget wow fadeInDown">
+                                                                          
+</aside>                                                                        <!-- End Widget Section -->
                                                                     </section>    <!-- End Section -->
                                                                     <%include footer1.ejs %>
                                                                     

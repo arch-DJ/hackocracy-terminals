@@ -330,12 +330,32 @@ app.get("/enterVote",function(req,res){
 });*/
 // All query according to the particular tags
 app.get("/getAdmin/tags/:tags",(req,res)=>{
-	admin_controller.getElementByTags(req,(result)=>{
-		if(result.data.length==0)
-		res.render("404");
-		else
-		res.render("adminquerytags",{"data":result.data});
-	});
+	 pageInfo={};
+    var items = [admin_controller];
+    async.each(items,function(item,callback){
+            item.getElementByTags(req,(result)=>{
+            pageInfo.data=result.data;
+            callback();	
+            })
+    },function(){
+        var items2 = [library];
+        async.each(items2,function(item,callback){
+        item.getTag((result)=>{
+        pageInfo.tags=result.data;
+        callback()	
+        })
+    },function(){
+        async.each(items,function(item,callback){
+            item.sortByCreatedDate(req,(result)=>{
+                pageInfo.sortdate=result.data;
+                console.log("sorting by data",result.data)
+                callback()
+            })       
+        },function(){
+            res.render("adminquerytags",pageInfo);
+    })    
+})
+})
 });
 // All query according to the heading 
 app.get("/getAdmin/heading/:heading",(req,res)=>{
@@ -358,7 +378,7 @@ app.get('/getAdmin/:date',(req,res)=>{
 	});
 });
 // All query access to the ministry
-app.get('/getAdmin/:ministry',(req,res)=>{
+app.get('/getAdmin/ministry/:ministry',(req,res)=>{
 	admin_controller.getElementByMinistry(req,(result)=>{
 		if(result.data.length==0)
 		{

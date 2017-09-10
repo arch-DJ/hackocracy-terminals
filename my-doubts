@@ -14,3 +14,19 @@
 15. Date not being added to the frontend
 14. Banning any user.
 15. Next not defined
+
+ <aside class="widget wow fadeInDown">
+                                                                        <div class="widget-title">
+                                                                            <h3>Tag Cloud</h3>
+                                                                        </div>
+                                                                        <div class="widget-content">
+                                                                        <% for(var i = 0 ; i < tags.length ; i++){%>
+                                                                            <a class="tag" href="getAdmin/tags/<%=tags[i]%>"><%=tags[i]%></a>
+                                                                        <%}%>
+                                                                        </div>
+                                                                            </aside>
+                                                                            <!-- End Single Widget -->
+                                                                                                                                                    </div>
+                                                                        <!-- End Widget Section -->
+                                                                                                                                        </div>	    <!-- End row -->
+                                                                    </div>       

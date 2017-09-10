@@ -200,4 +200,5 @@ Start Preloader
 <!-- End Single Post -->
                                                             </div>
 </div>
+<%include footer1.ejs %>
 
