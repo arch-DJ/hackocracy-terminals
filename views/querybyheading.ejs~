@@ -177,7 +177,7 @@ Start Preloader
    <% }%>                 
         <div class="comment-reply-form">
 <h3>Leave a comment</h3>
-    <form id="comment-form" method="post" action="/commentposting">
+    <form id="comment-form" method="post" action="/commentposting1">
         <div class = "form-group">
         <!-- End .form-group -->
         <div class = "form-group">
