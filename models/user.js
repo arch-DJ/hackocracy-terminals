@@ -92,6 +92,8 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
 	email 			: {type:String},
 	password 		: {type:String},
+	group			: {type:Number,default:2},
+	isBanned		: {type:Boolean,default:false}			
 })
 
 userSchema.methods.generateHash = function(password) {

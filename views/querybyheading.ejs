@@ -198,13 +198,15 @@ Start Preloader
     </form>
 </div>
 <! -- Another reply button -- !>
+<% if(isAdmin) {%>
         <div class="comment-reply-form">
 <h3>Leave a reply</h3>
     <form id="comment-form" method="post" action="/replyposting">
         <div class = "form-group">
         <!-- End .form-group -->
         <div class = "form-group">
-           <input type = "hidden" name = "query" value = "<%=data[0]._id%>">
+           <input type = "hidden" name = "qid" value = "<%=data[0]._id%>">
+           <input type="hidden" name="uid" value="<%= data[0].userid._id %>">
            </div>
         <div class="form-group">
             <textarea class="form-control" placeholder="Please Reply Here Your Opinion" name="reply" rows="5" cols="5" required></textarea>
@@ -216,6 +218,7 @@ Start Preloader
         <!-- End .form-group -->
     </form>
 </div>
+<% } %>
 <!-- End Single Post -->
                                                             </div>
 </div>
