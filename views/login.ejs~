@@ -4,16 +4,17 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-6 col-sm-offset-3">
-<p>
+
 <h1 class="module-title font-alt mb-0">Login-Register</h1>
 </div>
 </div>
 </div>
 </section>
+<h1>
 <% if(flash.length > 0){%>
                 <b><%= flash %></b>
             <% } %>
-</p>
+</h1>
 <section class="module">
 <div class="container">
 <div class="row">
@@ -29,8 +30,6 @@
 </div>
 <div class="form-group">
 <button class="btn btn-round btn-b">Login</button>
-</div>
-<div class="form-group"><a href="">Forgot Password?</a></div>
 </form>
 </div>
 <div class="col-sm-5">

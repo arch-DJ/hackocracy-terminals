@@ -121,7 +121,13 @@ app.get('/register',function(req,res){
 		if(req.isAuthenticated())
 			res.redirect('/dashboard');
 		else 
-			res.render("login");
+			{
+			    pageInfo = {}
+			    pageInfo.flash = req.flash("errorMessages");
+			    res.render("login",pageInfo);
+			
+			
+			}
 })
 app.get('/login',(req,res)=>{
     pageInfo = {}
