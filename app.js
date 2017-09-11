@@ -124,7 +124,9 @@ app.get('/register',function(req,res){
 			res.render("login");
 })
 app.get('/login',(req,res)=>{
-	res.render("login");
+    pageInfo = {}
+    pageInfo.flash = req.flash("errorMessages");
+	res.render("login",pageInfo);
 })
 app.get('/logout',(req,res)=>{
 	req.logout();

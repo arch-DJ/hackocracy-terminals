@@ -1,15 +1,19 @@
 <% include header.ejs %>
-
 <div class="main">
-<section class="module bg-dark-30" data-background="img/portfolio/landing/jpg">">
+<section class="module bg-dark-30" data-background="img/portfolio/landing.jpg">">
 <div class="container">
 <div class="row">
 <div class="col-sm-6 col-sm-offset-3">
+<p>
 <h1 class="module-title font-alt mb-0">Login-Register</h1>
 </div>
 </div>
 </div>
 </section>
+<% if(flash.length > 0){%>
+                <b><%= flash %></b>
+            <% } %>
+</p>
 <section class="module">
 <div class="container">
 <div class="row">
@@ -42,9 +46,6 @@
 <div class="form-group">
 <input class="form-control" id="password" type="password" name="password" placeholder="Password" required/>
 </div>
-<!--<div class="form-group">
-<input class="form-control" id="re-password" type="password" name="re-password" placeholder="Re-enter Password" required/>
-</div>
 <div class="form-group">
 <input class="form-control" id="p1" type="text" name="first_name" placeholder="first-name" required/>
 </div>
@@ -55,11 +56,9 @@
 <input class="form-control" id="p7" type="text" name="last_name" placeholder="last-name" required/>
 </div>
 <div class = "form-group">
-<input class="form-control"id="p3" type="number" name="mobilenumber" placeholder="mobile number" required min='7000000000' max='9999999999'/>
+<input class="form-control"id="p3" type="number" name="mobile_number" placeholder="mobile number" required min='7000000000' max='9999999999'/>
 </div>
-<div class="form-group">
-<input class="form-control"id="p5" type="number" name="aadhar_number" placeholder="AadharNumber" required min='100000000000' max= '999999999999'/>
-</div>
+
 <div class="form-group">
 <input class="form-control" id="p1" type="textbox" name="address1" placeholder="Address Line1" required/>
 </div>
@@ -71,7 +70,7 @@
   <input class = "form-control" type ="text" name="district" placeholder="District" required  title="Please enter your district"><br>
   <input class = "form-control"type="text" name="state" placeholder="State" required><br>
   <input class = "form-control" type="phone" name="pincode" placeholder="Pin Code" required  title="Please enter the valid 6 digit Pin Code of your area"><br>
-  <input class = "form-control"type="number" name="wardNo" placeholder = "wardNo"required>
+  <input class = "form-control"type="number" name="ward_no" placeholder = "wardNo"required>
 </div>    
 <div class="form-group">
 <input class="form-control" id="p1" type="text" name="profession" placeholder="profession" required/>
@@ -81,7 +80,7 @@ Gender:-
 <input type="radio" name="gender" value="male" checked> Male<br>
     <input type="radio" name="gender" value="female"> Female<br>
     <input type="radio" name="gender" value="other"> Other
-</div>    -->
+</div>   
 <div class="form-group">
 <button class="btn btn-block btn-round btn-b">Register</button>
 </div>
