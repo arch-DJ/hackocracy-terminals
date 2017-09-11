@@ -43,13 +43,13 @@
                                                                     <i class="fa fa-calendar"></i><%= data[i].createdAt %>
                                                                     </span>
                                                                     <span class="author">
-                                                                    <i class="fa fa-user"></i><%= data[i].userid.email %>
+                                                                    <i class="fa fa-user"></i><%=data[i].userid.email %>
                                                                     </span>
                                                                     <span class="post-tags">
                                                                     <i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[i].tags %>"><%=data[i].tags%></a>
 																	</span>
 																	<span class="post-tags">
-										             				<i class="fa fa-tags"></i><a href="/getAdmin/ministry/<%=data[i].ministry %>"><%=data[i].ministry%>	</a>					
+										             				<i class="fa fa-tags"></i><a href="/getAdmin/ministry<%=data[i].ministry %>"><%=data[i].ministry%>	</a>					
                                                                     </span>
                                                                     
                                                                     </div>
@@ -67,7 +67,19 @@
                                                                                                                                                                    </div><!-- Widget Section -->
                                                                 <div id="right-sidebar" class="col-md-4 col-sm-4">
                                                                                                                                         <!-- Single Widget -->
-                                                                        
+                                                                        <aside class="widget wow fadeInUp"  data-wow-duration="1000ms">
+                                                                    <div class="widget-title">
+                                                                        <h3>Search</h3>
+                                                                    </div>
+                                                                        <div class="widget-content">
+                                                                            <form action="#" id="search-form" method="get" role="search">
+                                                                                <input type="text" class="form-control" placeholder="Search..." autocomplete="on" name="seach">
+                                                                                <button type="submit" title="Search" id="search-submit">
+                                                                            <i class="fa fa-search"></i>
+                                                                            </button>
+                                                                                </form>
+                                                                            </div>
+                                                                        </aside>
                                                                         <!-- End Single Widget -->
                                                                                                                                             <!-- Single Widget -->
                                                                             <aside class="widget wow fadeInDown">

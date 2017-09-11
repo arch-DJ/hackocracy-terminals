@@ -122,6 +122,9 @@ app.get('/register',function(req,res){
 			res.redirect('/dashboard');
 		else 
 			{
+			//    var pageInfo = {}
+
+		//pageInfo.flash = req.flash("errorMessages");
 			    res.render("login");
 			}
 })

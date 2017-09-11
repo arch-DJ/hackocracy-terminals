@@ -20,6 +20,7 @@ var saveMessage = function(req,callback){
        callback({"res":true})
      },(err)=>{
        console.log("Data not inserted",err);
+       callback({"res":false});
      })
 
 };
