@@ -65,6 +65,20 @@ module.exports = (passport) => {
                 // set the user's local credentials
                 newUser.email          = email;
                 newUser.password       = newUser.generateHash(password);
+                newUser.first_name     = req.body.first_name;
+                newUser.middle_name    = req.body.middle_name;
+                newUser.last_name      = req.body.last_name;
+                newUser.user_name      = req.body.user_name;
+                newUser.mobile        = req.body.mobile_number;
+                newUser.profession      = req.body.profession;
+                newUser.gender          = req.body.gender;
+                newUser.address1        = req.body.address1
+                newUser.address2         =   req.body.address2
+                newUser.city            = req.body.city
+                newUser.district         =    req.body.district  
+                newUser.state                 =req.body.state
+                newUser.pincode                  =req.body.pincode
+                newUser.wardNo                =req.body.ward_no
                 // save the user
                 newUser.save((err)=>{
                     if (err)

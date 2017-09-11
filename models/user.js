@@ -10,19 +10,13 @@ const Schema = mongoose.Schema;
 /*Schema to store the addresses of the users*/
 /*var addressSchema =  new Schema({
 	
-	address1 		: {type : String},
-	address2 		: {type : String,default : ''},
-	city 			: {type : String},
-	district 		: {type : String},
-	state 			: {type : String},
-	pincode 		: {type : Number},
-	wardNo 			: {type : Number}
-})*/
+	
+})
 
 
 /*A user schema to store all its details*/
 /*var UserSchema = new Schema({
-	/*first_name		: {type : String ,default :'',required:true},
+	first_name		: {type : String ,default :'',required:true},
 	middle_name		: {type : String ,default :''},
 	last_name 		: {type : String ,default :''},
 	aadhar_number 	: {type : Number,unique : true,
@@ -33,12 +27,12 @@ const Schema = mongoose.Schema;
 			message : '{VALUE} is not a integer value',
 		}
 	},
-	user_name 		: {type : String,unique : true},	*/
-	/*email     		: {type : String},
+	user_name 		: {type : String,unique : true},	
+	email     		: {type : String},
 	                   
 	password 		: {type : String}
 	
-	/*mobile 			: {type : Number,unique: true},
+	mobile 			: {type : Number,unique: true},
 	
 	address 		: [addressSchema],
 	
@@ -50,8 +44,8 @@ const Schema = mongoose.Schema;
 	
 	dateofbirth 		:{type : Date ,},
 	
-	gender 			:{type : String ,}	*/
-/*});
+	gender 			:{type : String ,}	
+});
 
 // Hashing password and protecting it from rainbow attack i.e maximum login limit
 /*UserSchema.pre('save',function(next){
@@ -92,6 +86,23 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
 	email 			: {type:String},
 	password 		: {type:String},
+	first_name		: {type : String ,default :'',required:true},
+	middle_name		: {type : String ,default :''},
+	last_name 		: {type : String ,default :''},
+	user_name 		: {type : String,unique : true},	
+	
+	mobile 			: {type : Number,unique: true},
+	
+	profession 		: {type : String},
+	
+	gender 			: {type : String},
+	address1 		: {type : String},
+	address2 		: {type : String,default : ''},
+	city 			: {type : String},
+	district 		: {type : String},
+	state 			: {type : String},
+	pincode 		: {type : Number},
+	wardNo 			: {type : Number},
 	group			: {type:Number,default:2},
 	isBanned		: {type:Boolean,default:false}			
 })
