@@ -122,11 +122,7 @@ app.get('/register',function(req,res){
 			res.redirect('/dashboard');
 		else 
 			{
-			    pageInfo = {}
-			    pageInfo.flash = req.flash("errorMessages");
-			    res.render("login",pageInfo);
-			
-			
+			    res.render("login");
 			}
 })
 app.get('/login',(req,res)=>{
