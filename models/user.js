@@ -88,10 +88,9 @@ var userSchema = new Schema({
 	password 		: {type:String},
 	first_name		: {type : String ,default :'',required:true},
 	middle_name		: {type : String ,default :''},
-	last_name 		: {type : String ,default :''},
-	user_name 		: {type : String,unique : true},	
+	last_name 		: {type : String ,default :''},	
 	
-	mobile 			: {type : Number,unique: true},
+	mobile 			: {type : Number},
 	
 	profession 		: {type : String},
 	
