@@ -31,7 +31,7 @@
                                                                                                                                     <div class="post-thumb">
                                                                     
                                                                         <a href="/getAdmin/<%= data[i]._id %>"></a>
-                                                                    <img src="/img/portfolio/landing.jpg"> alt="3D Beach Art | Meghna" class="img-responsive">
+                                                                    <img src="img/blog/3D-beach-art.jpg" alt="3D Beach Art | Meghna" class="img-responsive">
                                                                         </div>
                                                                     <div class="post-excerpt">
                                                                     <h3><a href="/getQuery/mid/<%= data[i]._id %>">Post with featured image</a></h3>
