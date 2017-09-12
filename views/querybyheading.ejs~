@@ -128,7 +128,9 @@ Start Preloader
 <img src="/img/blog/3D-beach-art.jpg" alt="3D Beach Art | Meghna" class="img-responsive">
 </a>
 </div>
-
+ <% if(flash.length > 0){%>
+                <b><%= flash %></b>
+            <% } %>
 <div class="post-excerpt">
 <h3><a href="getQuery/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
 <p><%=data[0].query%></p>

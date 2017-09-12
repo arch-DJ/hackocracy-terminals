@@ -124,7 +124,7 @@ app.get('/register',function(req,res){
 		else 
 			{
 			    var pageInfo = {}
-		        pageInfo.flash = "Try again with different credentials,Your email address have been taken or You have entered some absurd value/unexpected value"
+		        pageInfo.flash = "Try again with different credentials,Your email address have been taken or You have entered some absurd value/unexpected value";
 		        		        console.log("error",pageInfo.flash);
 			    res.render("login",pageInfo);
 			}
@@ -190,6 +190,7 @@ app.get("/getQuery",(req,res)=>{
                 callback()
             })       
         },function(){
+            pageInfo.flash = req.flash("message");
             res.render("queryall",pageInfo);
     })    
 })
@@ -268,6 +269,7 @@ app.get('/getQuery/mid/:qid',isLoggedIn,(req,res)=>{
 		        callback()
 		})
 	},function(){
+	     
 		res.render("querybyheading",pageInfo);
 	    })
     })
@@ -439,6 +441,7 @@ app.get('/getAdmin/mid/:mid',isLoggedIn,(req,res)=>{
 						callback()
 					})
 			},function(){
+			   
 				res.render("adminqueryheading",pageInfo);
                 })
 		    })
@@ -478,15 +481,14 @@ app.get("/getAdmin/tags/:tags",(req,res)=>{
     },function(){
         var items2 = [library];
         async.each(items2,function(item,callback){
-        item.getTag((result)=>{
-        pageInfo.tags=result.data;
-        callback()	
+            item.getTag((result)=>{
+                pageInfo.tags=result.data;
+                callback()	
         })
     },function(){
         async.each(items,function(item,callback){
             item.sortByCreatedDate(req,(result)=>{
                 pageInfo.sortdate=result.data;
-                console.log("sorting by data",result.data)
                 callback()
             })       
         },function(){
@@ -500,9 +502,9 @@ app.get("/getAdmin/tags/:tags",(req,res)=>{
 app.get('/getAdmin/:date',(req,res)=>{
 	admin_controller.getElementbyDate(req,(result)=>{
 		if(result.data.length==0)
-		res.render("404");
-		else
-		res.render("adminquerydate",{"data":result.data});
+    		res.render("404");
+  		else
+	    	res.render("adminquerydate",{"data":result.data});
 	});
 });
 // All query access to the ministry
@@ -511,22 +513,22 @@ app.get('/getAdmin/ministry/:ministry',(req,res)=>{
     var items = [admin_controller];
     async.each(items,function(item,callback){
         item.getElementByMinistry(req,(result)=>{
-        pageInfo.data=result.data;
-        callback();	
+          pageInfo.data=result.data;
+          callback();	
         })
     },function(){
         var items2 = [library];
         async.each(items2,function(item,callback){
         item.getTag((result)=>{
-        pageInfo.tags=result.data;
-        callback()	
+          pageInfo.tags=result.data;
+          callback()	
         })
     },function(){
         async.each(items,function(item,callback){
             item.sortByCreatedDate(req,(result)=>{
-                pageInfo.sortdate=result.data;
-                console.log("sorting by data",result.data)
-                callback()
+                  pageInfo.sortdate=result.data;
+                  console.log("sorting by data",result.data)
+                  callback()
             })       
         },function(){
             res.render("adminquerytags",pageInfo);
@@ -553,11 +555,11 @@ app.post("/commentposting1",isLoggedIn,(req,res)=>{
 	comment_ctrl_query.insertComment(req,(found)=>{
 		console.log(found.data);
 		if(found.res){
-		    req.flash("message","You have inserted your query")
-	        res.redirect('/dashboard')
+		    req.flash("message","You have given your comment")
+	        res.redirect('/')
         }
         else{
-            req.flash("message","Your  query has not been inserted try again")
+            req.flash("message","Sorry some error occured try again")
 	        res.redirect('/dashboard')
         }
     });

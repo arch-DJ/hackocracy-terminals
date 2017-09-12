@@ -124,7 +124,7 @@ app.get('/register',function(req,res){
 		else 
 			{
 			    var pageInfo = {}
-		        pageInfo.flash = "Try again with different credentials,Your email address have been taken or You have entered some absurd value/unexpected value"
+		        pageInfo.flash = "Try again with different credentials,Your email address have been taken or You have entered some absurd value/unexpected value";
 		        		        console.log("error",pageInfo.flash);
 			    res.render("login",pageInfo);
 			}
@@ -190,6 +190,7 @@ app.get("/getQuery",(req,res)=>{
                 callback()
             })       
         },function(){
+            pageInfo.flash = req.flash("message");
             res.render("queryall",pageInfo);
     })    
 })
@@ -268,6 +269,7 @@ app.get('/getQuery/mid/:qid',isLoggedIn,(req,res)=>{
 		        callback()
 		})
 	},function(){
+	     
 		res.render("querybyheading",pageInfo);
 	    })
     })
@@ -439,6 +441,7 @@ app.get('/getAdmin/mid/:mid',isLoggedIn,(req,res)=>{
 						callback()
 					})
 			},function(){
+			   
 				res.render("adminqueryheading",pageInfo);
                 })
 		    })
@@ -552,12 +555,12 @@ app.post("/commentposting1",isLoggedIn,(req,res)=>{
 	comment_ctrl_query.insertComment(req,(found)=>{
 		console.log(found.data);
 		if(found.res){
-		    req.flash("message","You have inserted your query")
-	        res.redirect('/dashboard')
+		    req.flash("message","You have given your comment")
+	        res.redirect('/getQuery')
         }
         else{
-            req.flash("message","Your  query has not been inserted try again")
-	        res.redirect('/dashboard')
+            req.flash("message","Sorry some error occured try again")
+	        res.redirect('/getQuery')
         }
     });
 })

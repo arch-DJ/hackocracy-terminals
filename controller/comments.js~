@@ -33,7 +33,6 @@ var getAllCommentByQuery = function(req,callback){
             callback({"data":results});
         }  
     })
-   };
 
 var countComments = function(req,callback){
   comment.count({"queryid":req.params.qid}, function( err, count){
