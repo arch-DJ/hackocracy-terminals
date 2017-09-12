@@ -129,7 +129,7 @@ Start Preloader
 </a>
 </div>
 <div class="post-excerpt">
-<h3><a href="getAdmin/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
+<h3><a href="getQuery/mid/<%=data[0]._id%>"><%=data[0].heading%></a></h3>
 <p><%=data[0].query%></p>
 <blockquote>
 <input type="button" value="Upvote" style="color: black" onclick="giveVote('up','<%= data[0]._id %>')">
@@ -150,7 +150,7 @@ Start Preloader
 <i class="fa fa-eye"></i><%= downVotes %> Down vote
 </span>
 <span class="author">
-<i class="fa fa-user"></i><a href="#"><%= data[0].userid.email %></a>
+<i class="fa fa-user"></i><a href="#"><%= data[0].userid.first_name%></a>
 </span>
 <span class="post-tags">
 <i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[0].tags%>"><%=data[0].tags%></a>

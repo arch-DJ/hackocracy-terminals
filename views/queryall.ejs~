@@ -43,7 +43,7 @@
                                                                     <i class="fa fa-calendar"></i><%= data[i].createdAt %>
                                                                     </span>
                                                                     <span class="author">
-                                                                    <i class="fa fa-user"></i><%=data[i].userid.first_name %>
+                                                                    <i class="fa fa-user"></i><%=data[i].userid.email %>
                                                                     </span>
                                                                     <span class="post-tags">
                                                                     <i class="fa fa-tags"></i><a href="/getQuery/tags/<%=data[i].tags %>"><%=data[i].tags%></a>

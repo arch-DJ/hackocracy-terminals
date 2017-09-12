@@ -123,7 +123,7 @@ app.get('/register',function(req,res){
 		else 
 			{
 			    var pageInfo = {}
-		        pageInfo.flash = "Try again with different credentials,Your email address have been taken of you"
+		        pageInfo.flash = "Try again with different credentials,Your email address have been taken or You have entered some absurd value/unexpected value"
 		        		        console.log("error",pageInfo.flash);
 			    res.render("login",pageInfo);
 			}
@@ -166,7 +166,16 @@ app.post("/queryposting",(req,res)=>{
 });
 
 app.post("/replyposting",function(req,res){
-	reply.insert(req);
+	reply.insert(req,(result)=>{
+	    if(result.res){
+	        req.flash("message","Your have replied to the User!! Congrats");
+	        res.redirect('/dashboard');
+	    }
+	    else{
+	        req.flash("message","Some error occured while inserting the reply Please try again");
+	        res.redirect('/dashboard');
+	    }
+	});
 })
 
 // All feeds are included from here
@@ -491,15 +500,7 @@ app.get("/enterVote",isLoggedIn,function(req,res){
 		console.log(data)
 	})
 })
-/*app.get('/getAdmin/mid/:mid',(req,res)=>{
-	admin_controller.getElementById(req,(result)=>{
-		if(result.data.length==0)
-		res.render("404");
-		else
-		res.render("adminqueryheading",{"data":result.data});
-	});
-});*/
-// All query according to the particular tags
+
 app.get("/getAdmin/tags/:tags",(req,res)=>{
 	 pageInfo={};
     var items = [admin_controller];
@@ -528,16 +529,6 @@ app.get("/getAdmin/tags/:tags",(req,res)=>{
 })
 })
 });
-// All query according to the heading 
-//app.get("/getAdmin/heading/:heading",(req,res)=>{
-//	admin_controller.getElementByHeading(req,(result)=>{
-//		if(result.data.length==0){
-//			res.render("404");
-//		}
-//		else
-//		res.render("adminqueryheading",{"data":result.data});
-//	});
-//});
 
 // All query according to the date
 app.get('/getAdmin/:date',(req,res)=>{
@@ -589,35 +580,6 @@ app.get('/sortqbydate4',(req,res)=>{
 		res.render("soryByModifiedDate1",{"data":result.data});
 	});
 });
-app.get('/demo',function(req,res){
- // var abc;
- /* admin_controller.getAllElements(req,(found)=>{
-		
-	})*/
-	//var pageInfo = {}
- /* async.each([admin_controller,query_controller],function(item,callback){
-
-		if(item == "admin_controller"){
-			item.getAllElements(req,(found)=>{
-				pageInfo.admin = found.data;
-			})
-		}
-		else if(){
-			item.getAllElements(req,(found)=>{
-				pageInfo.query = found.data;
-			})
-		}
-		callback()
-
-	},function(){
-		res.render("gkhblj",pageInfo)
-	})*/
-	/*async.each([a,b,c],function(item){
-		query_controller.item(req,(found)=>{
-			
-		})
-	})*/
-})
 
 
 // Starting the server on a particular port

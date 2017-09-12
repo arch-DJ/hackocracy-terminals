@@ -50,7 +50,6 @@ var getAllElements = function(req,callback){
         callback({"data":results}) 
      };
      })
-    };
 
 // To put list of the queries posted by an user
 var getElementById = function(req,callback){
