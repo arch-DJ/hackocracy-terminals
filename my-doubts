@@ -1,32 +1,5 @@
-1. query is moving via the post method then how can we get if via get method.=>done
-2. after entering the thing in the database successRedirect should appear.
-3. On all querypage click on the query and the details of the query gets loaded there ///
-4. Search from the heading more optimally.
-5. Search via data modified. => Done
-6. if someone wants to edit his/her query then what to done??
-7. Sort by the data modified and date created.=>done
-8. How to access the createdDate via the req in the database?=>done
-9. Aadhar verification
-10. On the feeds page all the things should appear(both admin and regular user)
-11. If data is null create a page that says nothing found.
-12. Update-and-editing option done
-13. The image addition to the problem
-15. Date not being added to the frontend
-14. Banning any user.
-15. Next not defined
+1. Todo : email verification
+2. Password reset
+3. Notification system
+4. SMS sending when new reply for your query came
 
- <aside class="widget wow fadeInDown">
-                                                                        <div class="widget-title">
-                                                                            <h3>Tag Cloud</h3>
-                                                                        </div>
-                                                                        <div class="widget-content">
-                                                                        <% for(var i = 0 ; i < tags.length ; i++){%>
-                                                                            <a class="tag" href="getAdmin/tags/<%=tags[i]%>"><%=tags[i]%></a>
-                                                                        <%}%>
-                                                                        </div>
-                                                                            </aside>
-                                                                            <!-- End Single Widget -->
-                                                                                                                                                    </div>
-                                                                        <!-- End Widget Section -->
-                                                                                                                                        </div>	    <!-- End row -->
-                                                                    </div>       
