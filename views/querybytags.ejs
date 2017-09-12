@@ -62,6 +62,59 @@
                                                                                                                                                                            </nav>
                                                                                                                                                                        </div>
                                                                                                                                                                    </div><!-- Widget Section -->
-                                                             </section>    <!-- End Section -->
-                                                                    <%include footer2.ejs %>
-                                                                    
+                                                                                                                                                                        <div id="right-sidebar" class="col-md-4 col-sm-4">
+                                                                                                                                        <!-- Single Widget -->
+                                                                     
+                                                                        <!-- End Single Widget -->
+                                                                                                                                            <!-- Single Widget -->
+                                                                            <aside class="widget wow fadeInDown">
+                                                                        <div class="widget-title">
+                                                                            <h3>Text Widget</h3>
+                                                                        </div>
+                                                                        <div class="widget-content">
+                                                                            <p>Here You could see the trending items .</p>
+                                                                        </div>
+                                                                            </aside>
+                                                                            <!-- End Single Widget -->
+                                                                                                                                                <!-- Single Widget -->
+                                                                            <aside class="widget wow fadeInUp">
+                                                                        <div class="widget-title">
+                                                                        <h3>Tab	 Widget</h3>
+                                                                        </div>
+                                                                                                                                                <div class="widget-content">
+                                                                        <!-- tab nav -->
+                                                                        <ul class="tab-post-nav clearfix">
+<!--                                                                        <li class="active"><a href="#popular" data-toggle="tab">Popular Post</a></li>-->
+                                                                        <li><a href="#recent" data-toggle="tab">Recent Post</a></li>
+                                                                        </ul>
+                                                                                                                                                                                              <article class="tab-pane tab-post" id="recent">
+                                                                                                                                                                
+                                                                                                                                                        
+                                                                        <div class="clearfix">
+                                                                        <%for(var i = 0 ; i < sortdate.length; i++){%>
+                                                                        <div class="tab-thumb">
+                                                                                                                                               
+                                                                            <img src="/img/blog/amazing-caves-coverimage.jpg" class="img-responsive" alt="amazing-caves-coverimage | Meghna">
+                                                                            </div>
+                                                                         
+                      
+                                                                          <div class="tab-excerpt">
+                                                                          <p>  <span> <%= sortdate[i].createdAt%></span></p>
+                                                                            <h4><a href="getQuery/mid/<%=sortdate[i]._id%>"><%=sortdate[i].heading%></a></h4>
+                                                                            <p><%= sortdate[i].query.substring(0,30)%></p>
+                                                                            <span><a class="btn btn-transparent" href="/getQuery/mid/<%=sortdate[i]._id %>">Read more</a></span>
+                                                                           
+                                                                            </div>
+                                                                            </div>
+                                                                            <%}%>
+                                                                        </div>
+                                                                        </div>
+</article>
+</aside>
+	                                                                                                                          
+	                                 
+                                                                             <aside class="widget wow fadeInDown">
+                                                                          
+</aside>                                                                        <!-- End Widget Section -->
+                                                                    </section>    <!-- End Section -->
+                                                         

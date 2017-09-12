@@ -35,7 +35,7 @@
                                                             <article class="entry wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">
                                                                                                                                     <div class="post-thumb">
                                                                     
-                                                                        <a href="/getAdmin/<%= data[i]._id %>"></a>
+                                                                        <a href="/getQuery/<%= data[i]._id %>"></a>
                                                                     <img src="img/blog/3D-beach-art.jpg" alt="3D Beach Art | Meghna" class="img-responsive">
                                                                         </div>
                                                                     <div class="post-excerpt">
@@ -90,29 +90,29 @@
                                                                                                                                                 <div class="widget-content">
                                                                         <!-- tab nav -->
                                                                         <ul class="tab-post-nav clearfix">
-                                                                        <li class="active"><a href="#popular" data-toggle="tab">Popular Post</a></li>
+<!--                                                                        <li class="active"><a href="#popular" data-toggle="tab">Popular Post</a></li>-->
                                                                         <li><a href="#recent" data-toggle="tab">Recent Post</a></li>
                                                                         </ul>
                                                                         <!-- /tab nav -->
                                                                                                                                                 <!-- tab content -->
-                                                                        <div class="tab-content">
-                                                                     <div class="clearfix">
-                                                                        <%for(var i = 0 ; i < sortdate.length; i++){%>
-                                                                        <div class="tab-thumb">
-                                                                                                                                               
-                                                                            <img src="img/blog/amazing-caves-coverimage.jpg" class="img-responsive" alt="amazing-caves-coverimage | Meghna">
-                                                                            </div>
-                                                                         
-                                                                            <div class="tab-excerpt">
-                                                                            <h4><a href="getQuery/mid/<%=sortdate[i]._id%>"><%=sortdate[i].heading%></a></h4>
-                                                                            <span><%=sortdate[i].createdAt%></span>
-                                                                            <p><%= sortdate[i].query%></p>
-                                                                            </div>
-                                                                            </div>
-                                                                            <%}%>
-                                                                        </div>
-                                                                        </div>
-                                                                        </article>
+<!--                                                                        <div class="tab-content">-->
+<!--                                                                     <div class="clearfix">-->
+<!--                                                                        <%for(var i = 0 ; i < sortdate.length; i++){%>-->
+<!--                                                                        <div class="tab-thumb">-->
+<!--                                                                                                                                               -->
+<!--                                                                            <img src="img/blog/amazing-caves-coverimage.jpg" class="img-responsive" alt="amazing-caves-coverimage | Meghna">-->
+<!--                                                                            </div>-->
+<!--                                                                         -->
+<!--                                                                            <div class="tab-excerpt">-->
+<!--                                                                            <h4><a href="getQuery/mid/<%=sortdate[i]._id%>"><%=sortdate[i].heading%></a></h4>-->
+<!--                                                                            <span><%=sortdate[i].createdAt%></span>-->
+<!--                                                                            <p><%= sortdate[i].query.substring(0,30)%></p>-->
+<!--                                                                            <span><a class="btn btn-transparent" href="/getQuery/mid/<%=data[i]._id %>">Read more</a></span>-->
+<!--                                                                            </div>-->
+<!--                                                                            <%}%>-->
+<!--                                                                        </div>-->
+<!--                                                                        </div>-->
+<!--                                                                        </article>-->
                                                                                                                                                 <article class="tab-pane tab-post" id="recent">
                                                                                                                                                                 
                                                                                                                                                         
@@ -123,10 +123,13 @@
                                                                             <img src="img/blog/amazing-caves-coverimage.jpg" class="img-responsive" alt="amazing-caves-coverimage | Meghna">
                                                                             </div>
                                                                          
-                                                                            <div class="tab-excerpt">
+                      
+                                                                          <div class="tab-excerpt">
+                                                                          <p>  <span> <%= sortdate[i].createdAt%></span></p>
                                                                             <h4><a href="getQuery/mid/<%=sortdate[i]._id%>"><%=sortdate[i].heading%></a></h4>
-                                                                            <span><%=sortdate[i].createdAt%></span>
-                                                                            <p><%= sortdate[i].query%></p>
+                                                                            <p><%= sortdate[i].query.substring(0,30)%></p>
+                                                                            <span><a class="btn btn-transparent" href="/getQuery/mid/<%=data[i]._id %>">Read more</a></span>
+                                                                           
                                                                             </div>
                                                                             </div>
                                                                             <%}%>

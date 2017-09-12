@@ -12,7 +12,7 @@
                                     <i class="fa fa-book fa-4x"></i>
                                 </div>
                                 <div class="blog-title">
-                                    <h1>Welcome to Our Blog/Government Posts</h1>
+                                    <h1>Welcome to Our Blog/Your Posts</h1>
                                 </div>
                                                             </div>     <!-- End col-lg-12 -->
                             </div>	    <!-- End row -->
@@ -30,13 +30,13 @@
                                                             <article class="entry wow fadeInDown"  data-wow-duration="1000ms" data-wow-delay="300ms">
                                                                                                                                     <div class="post-thumb">
                                                                     
-                                                                        <a href="/getAdmin/<%= data[i]._id %>"></a>
+                                                                        <a href="/getQuery/mid/<%= data[i]._id %>"></a>
                                                                     <img src="/img/blog/3D-beach-art.jpg" alt="3D Beach Art | Meghna" class="img-responsive">
                                                                         </div>
                                                                     <div class="post-excerpt">
-                                                                    <h3><a href="/getAdmin/mid/<%= data[i]._id %>">Post with featured image</a></h3>
+                                                                    <h3><a href="/getQuery/mid/<%= data[i]._id %>">Post with featured image</a></h3>
                                                                     <p><%= data[i].heading %></p>
-                                                                    <a class="btn btn-transparent" href="/getAdmin/mid/<%=data[i]._id %>">Read more</a>
+                                                                    <a class="btn btn-transparent" href="/getQuery/mid/<%=data[i]._id %>">Read more</a>
                                                                     </div>
                                                                     <div class="post-meta">
                                                                     <span class="post-date">
@@ -46,10 +46,7 @@
                                                                     <i class="fa fa-user"></i><%=data[i].userid.email %>
                                                                     </span>
                                                                     <span class="post-tags">
-                                                                    <i class="fa fa-tags"></i><a href="/getAdmin/tags/<%=data[i].tags %>"><%=data[i].tags%></a>
-																	</span>
-																	<span class="post-tags">
-										             				<i class="fa fa-tags"></i><a href="/getAdmin/ministry<%=data[i].ministry %>"><%=data[i].ministry%>	</a>					
+                                                                    <i class="fa fa-tags"></i><a href="/getQuery/tags/<%=data[i].tags %>"><%=data[i].tags%></a>
                                                                     </span>
                                                                     
                                                                     </div>
@@ -85,7 +82,12 @@
                                                                         <h3>Tab	 Widget</h3>
                                                                         </div>
                                                                                                                                                 <div class="widget-content">
-                                                                        <!-- tab nav -->                                                 <article class="tab-pane tab-post" id="recent">
+                                                                        <!-- tab nav -->
+                                                                        <ul class="tab-post-nav clearfix">
+<!--                                                                        <li class="active"><a href="#popular" data-toggle="tab">Popular Post</a></li>-->
+                                                                        <li><a href="#recent" data-toggle="tab">Recent Post</a></li>
+                                                                        </ul>
+                                                                                                                                                                                              <article class="tab-pane tab-post" id="recent">
                                                                                                                                                                 
                                                                                                                                                         
                                                                         <div class="clearfix">
@@ -98,8 +100,8 @@
                       
                                                                           <div class="tab-excerpt">
                                                                           <p>  <span> <%= sortdate[i].createdAt%></span></p>
-                                                                            <h4><a href="getAdmin/mid/<%=sortdate[i]._id%>"><%=sortdate[i].heading%></a></h4>
-                                                                            <p><%= sortdate[i].message.substring(0,30)%></p>
+                                                                            <h4><a href="getQuery/mid/<%=sortdate[i]._id%>"><%=sortdate[i].heading%></a></h4>
+                                                                            <p><%= sortdate[i].query.substring(0,30)%></p>
                                                                             <span><a class="btn btn-transparent" href="/getQuery/mid/<%=sortdate[i]._id %>">Read more</a></span>
                                                                            
                                                                             </div>
@@ -116,4 +118,7 @@
 </aside>                                                                        <!-- End Widget Section -->
                                                                     </section>    <!-- End Section -->
                                                                     <%include footer2.ejs %>
-                                                                  
+                                                                    
+                                                             </section>    <!-- End Section -->
+                                                                    <%include footer2.ejs %>
+                                                                    

@@ -531,7 +531,7 @@ app.get('/getAdmin/ministry/:ministry',(req,res)=>{
                   callback()
             })       
         },function(){
-            res.render("adminquerytags",pageInfo);
+            res.render("adminqueryministry",pageInfo);
         })    
     })
     })
@@ -556,11 +556,11 @@ app.post("/commentposting1",isLoggedIn,(req,res)=>{
 		console.log(found.data);
 		if(found.res){
 		    req.flash("message","You have given your comment")
-	        res.redirect('/')
+	        res.redirect('/getQuery')
         }
         else{
             req.flash("message","Sorry some error occured try again")
-	        res.redirect('/dashboard')
+	        res.redirect('/getQuery')
         }
     });
 })

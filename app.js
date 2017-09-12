@@ -531,7 +531,7 @@ app.get('/getAdmin/ministry/:ministry',(req,res)=>{
                   callback()
             })       
         },function(){
-            res.render("adminquerytags",pageInfo);
+            res.render("adminqueryministry",pageInfo);
         })    
     })
     })

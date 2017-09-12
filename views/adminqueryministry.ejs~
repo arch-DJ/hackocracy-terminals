@@ -116,4 +116,10 @@
 </aside>                                                                        <!-- End Widget Section -->
                                                                     </section>    <!-- End Section -->
                                                                     <%include footer2.ejs %>
-                                                                  
+                                                                    
+                                                                         <aside class="widget wow fadeInDown">
+                                                                          
+</aside>                                                                        <!-- End Widget Section -->
+                                                                    </section>    <!-- End Section -->
+                                                                    <%include footer1.ejs %>
+                                                                    
