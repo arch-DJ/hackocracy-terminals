@@ -123,8 +123,8 @@ app.get('/register',function(req,res){
 		else 
 			{
 			    var pageInfo = {}
-
-		pageInfo.flash = req.flash("errorMessages");
+		        pageInfo.flash = "Try again with different credentials,Your email address have been taken or You have entered some absurd value/unexpected value"
+		        		        console.log("error",pageInfo.flash);
 			    res.render("login",pageInfo);
 			}
 })

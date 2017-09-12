@@ -122,10 +122,10 @@ app.get('/register',function(req,res){
 			res.redirect('/dashboard');
 		else 
 			{
-			//    var pageInfo = {}
-
-		//pageInfo.flash = req.flash("errorMessages");
-			    res.render("login");
+			    var pageInfo = {}
+		        pageInfo.flash = "Try again with different credentials,Your email address have been taken of you"
+		        		        console.log("error",pageInfo.flash);
+			    res.render("login",pageInfo);
 			}
 })
 app.get('/login',(req,res)=>{

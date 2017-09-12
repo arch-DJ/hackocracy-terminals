@@ -79,7 +79,7 @@ module.exports = (passport) => {
                 newUser.state                 =req.body.state
                 newUser.pincode                  =req.body.pincode
                 newUser.wardNo                =req.body.ward_no
-                newUser.country          = req.body.country
+                newUser.country          = req.user
                 // save the user
                 newUser.save((err)=>{
                     if (err)

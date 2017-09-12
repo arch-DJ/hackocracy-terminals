@@ -100,6 +100,7 @@ var userSchema = new Schema({
 	city 			: {type : String},
 	district 		: {type : String},
 	state 			: {type : String},
+	country         : {type : String},
 	pincode 		: {type : Number},
 	wardNo 			: {type : Number},
 	group			: {type:Number,default:2},
