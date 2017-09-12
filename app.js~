@@ -61,6 +61,7 @@ var isLoggedIn = function(req,res,next){
 	}
 }
 
+// homepage of our site
 app.get("/",(req,res)=>{
     pageInfo={};
     var items = [admin_controller];
@@ -139,60 +140,47 @@ app.get('/logout',(req,res)=>{
 })
 
 // Query related things and use of APIs
+// query posting page
 app.get("/queryposting",isLoggedIn,(req,res)=>{
 	library.getTag((result)=>{
 		console.log(result.data[0]);
 		res.render("queryposting",{"data":result.data});
 		console.log(req.body.tags);
 	})
-//  var body = _.pick(req.body,[]);// Do be done according to the body page 
 });
 
 app.post("/queryposting",(req,res)=>{
 	query_controller.insertQuery(req,(found)=>{
 		if(found.res){
-		req.flash("message","You have inserted your query")
-	res.redirect('/dashboard')
- }
- else{
-      req.flash("message","Your  query has not been inserted try again")
-	res.redirect('/dashboard')
- }
+		    req.flash("message","You have inserted your query")
+	        res.redirect('/dashboard')
+        }
+        else{
+            req.flash("message","Your  query has not been inserted try again")
+	        res.redirect('/dashboard')
+        }
  
 	});
-
-	
- 
 });
 
-app.post("/replyposting",function(req,res){
-	reply.insert(req,(result)=>{
-	    if(result.res){
-	        req.flash("message","Your have replied to the User!! Congrats");
-	        res.redirect('/dashboard');
-	    }
-	    else{
-	        req.flash("message","Some error occured while inserting the reply Please try again");
-	        res.redirect('/dashboard');
-	    }
-	});
-})
 
-// All feeds are included from here
+
+
+// All  query getting  are included from here
 app.get("/getQuery",(req,res)=>{
 	pageInfo={};
     var items = [query_controller];
     async.each(items,function(item,callback){
-item.getAllElements(req,(result)=>{
-pageInfo.data=result.data;
-callback();	
-})
+        item.getAllElements(req,(result)=>{
+        pageInfo.data=result.data;
+        callback();	
+    })
     },function(){
         var items2 = [library];
         async.each(items2,function(item,callback){
-        item.getTag((result)=>{
-        pageInfo.tags=result.data;
-        callback()	
+            item.getTag((result)=>{
+                pageInfo.tags=result.data;
+                callback()	
         })
     },function(){
         async.each(items,function(item,callback){
@@ -213,21 +201,21 @@ app.get('/getQuery/tags/:tags',(req,res)=>{
 	pageInfo={};
     var items = [query_controller];
     async.each(items,function(item,callback){
-        item.getElementByTags(req,(result)=>{
-        if(result.data.length==0)
-        {
-            res.render("404");
-        }
+            item.getElementByTags(req,(result)=>{
+            if(result.data.length==0)
+            {
+                res.render("404");
+            }
         else{
-        pageInfo.data=result.data;
-        callback();}	
+            pageInfo.data=result.data;
+            callback();}	
         })
     },function(){
         var items2 = [library];
         async.each(items2,function(item,callback){
-        item.getTag((result)=>{
-        pageInfo.tags=result.data;
-        callback()	
+            item.getTag((result)=>{
+            pageInfo.tags=result.data;
+            callback()	
         })
     },function(){
         async.each(items,function(item,callback){
@@ -260,32 +248,30 @@ app.get('/getQuery/mid/:qid',isLoggedIn,(req,res)=>{
 	},function(){
 		var items1 = [vote];
 		async.each(items1,function(item,callback){
-		item.calculateVotes(req,function(found){
-		pageInfo.upVotes = found.upVote;
-		pageInfo.downVotes = found.downVote;
-		callback()
+		    item.calculateVotes(req,function(found){
+		        pageInfo.upVotes = found.upVote;
+		        pageInfo.downVotes = found.downVote;
+		        callback()
 	})
 	},function(){
 		var items2 = [comment_ctrl_query];
 		async.each(items2,function(item,callback){
-		item.countComments(req,(found)=>{
-		pageInfo.commentcount = found.data;
-		callback()
+		    item.countComments(req,(found)=>{
+		        pageInfo.commentcount = found.data;
+		        callback()
 		});
 	},function(){
 		var items3 = [comment_ctrl_query];
 		async.each(items3,function(item,callback){
-		item.getAllCommentByQuery(req,(found)=>{
-		console.log("--------------")
-		console.log(found)
-		pageInfo.comment = found.data;
-		callback()
+		    item.getAllCommentByQuery(req,(found)=>{
+		        pageInfo.comment = found.data;
+		        callback()
 		})
 	},function(){
 		res.render("querybyheading",pageInfo);
-	})
-})
-})
+	    })
+    })
+  })
 })
 });
 // Getting the query by a particular date posted:
@@ -294,9 +280,9 @@ app.get('/getQuery/all/:date',(req,res)=>{
 	query_controller.getElementbyDate(req,(found)=>{
 		console.log(found.data);
 		if(found.data.length==0)
-		res.render("404");
+	    	res.render("404");
 		else
-		res.render("querybydate",{"data":found.data});
+	    	res.render("querybydate",{"data":found.data});
 	});
 });
 
@@ -305,16 +291,16 @@ app.get('/getQuery/:id',(req,res)=>{
 	pageInfo={};
     var items = [query_controller];
     async.each(items,function(item,callback){
-item.getElementByUserId(req,(result)=>{
-pageInfo.data=result.data;
-callback();	
-})
+        item.getElementByUserId(req,(result)=>{
+            pageInfo.data=result.data;
+            callback();	
+        })
     },function(){
         var items2 = [library];
         async.each(items2,function(item,callback){
-        item.getTag((result)=>{
-        pageInfo.tags=result.data;
-        callback()	
+            item.getTag((result)=>{
+                pageInfo.tags=result.data;
+                callback()	
         })
     },function(){
         async.each(items,function(item,callback){
@@ -332,21 +318,7 @@ callback();
 
 
 
-app.post("/commentposting1",isLoggedIn,(req,res)=>{
-	comment_ctrl_query.insertComment(req,(found)=>{
-		console.log(found.data);
-		if(found.res){
-		req.flash("message","You have inserted your query")
-	res.redirect('/dashboard')
- }
- else{
-      req.flash("message","Your  query has not been inserted try again")
-	res.redirect('/dashboard')
- }
- 
-		
-	});
-})
+
 // Sort the date by date createdAt
 app.get('/sortqbydate1',(req,res)=>{
 	query_controller.sortByCreatedDate(req,(result)=>{
@@ -370,10 +342,10 @@ app.post('/adminposting',(req,res)=>{
 	admin_controller.saveMessage(req,(found)=>{
 	   if(found.res){
 		req.flash("message","You have inserted your query")
-	res.redirect('/dashboard')}
+    	res.redirect('/dashboard')}
 	else{
 	    req.flash("message","You have not inserted your query")
-	res.redirect('/dashboard')
+	    res.redirect('/dashboard')
 	}
 	});
 });
@@ -390,16 +362,16 @@ app.get('/getAdmin',(req,res)=>{
     pageInfo={};
     var items = [admin_controller];
     async.each(items,function(item,callback){
-	item.getAllElements(req,(result)=>{
-	    pageInfo.data=result.data;
-	    callback();	
+	    item.getAllElements(req,(result)=>{
+	        pageInfo.data=result.data;
+	        callback();	
 	})
     },function(){
         var items2 = [library];
         async.each(items2,function(item,callback){
-        item.getTag((result)=>{
-        pageInfo.tags=result.data;
-        callback()	
+            item.getTag((result)=>{
+                pageInfo.tags=result.data;
+                callback()	
         })
     },function(){
         async.each(items,function(item,callback){
@@ -409,12 +381,11 @@ app.get('/getAdmin',(req,res)=>{
              callback()
          })       
         },function(){
-    
-        res.render("admin",pageInfo);
+            res.render("admin",pageInfo);
        })    
     })
-   })
-  });
+  })
+});
 	
 // All query for any particular user
 app.get('/getAdmin/:id',(req,res)=>{
@@ -456,8 +427,6 @@ app.get('/getAdmin/mid/:mid',isLoggedIn,(req,res)=>{
 				var items3 = [comment_ctrl_admin];
 				async.each(items3,function(item,callback){
 					item.getAllCommentByAdmin(req,(found)=>{
-						console.log("--------------")
-						console.log(found)
 						pageInfo.comment = found.data;
 						callback()
 					})
@@ -466,32 +435,29 @@ app.get('/getAdmin/mid/:mid',isLoggedIn,(req,res)=>{
 				var items5 = [library];
 				async.each(items5,function(item,callback){
 					item.getTag((found)=>{
-						console.log("--------------")
-						console.log(found)
 						pageInfo.tags = found.data;
 						callback()
 					})
 			},function(){
-				
-			res.render("adminqueryheading",pageInfo);
-})
-		})
-	})
-})
-})
+				res.render("adminqueryheading",pageInfo);
+                })
+		    })
+	      })
+        })
+    })
 });
 
 app.post("/commentposting",isLoggedIn,(req,res)=>{
 	comment_ctrl_admin.insertComment(req,(found)=>{
 		console.log(found.data);
 		if(found.res){
-		req.flash("message","You have inserted your query")
-	res.redirect('/dashboard')
- }
- else{
-      req.flash("message","Your  query has not been inserted try again")
-	res.redirect('/dashboard')
- }
+		    req.flash("message","You have inserted your query")
+	        res.redirect('/dashboard')
+            }
+        else{
+            req.flash("message","Your  query has not been inserted try again")
+	        res.redirect('/dashboard')
+        }
  
 	});
 })
@@ -506,8 +472,8 @@ app.get("/getAdmin/tags/:tags",(req,res)=>{
     var items = [admin_controller];
     async.each(items,function(item,callback){
             item.getElementByTags(req,(result)=>{
-            pageInfo.data=result.data;
-            callback();	
+                pageInfo.data=result.data;
+                callback();	
             })
     },function(){
         var items2 = [library];
@@ -581,6 +547,37 @@ app.get('/sortqbydate4',(req,res)=>{
 	});
 });
 
+// Comment related things
+
+app.post("/commentposting1",isLoggedIn,(req,res)=>{
+	comment_ctrl_query.insertComment(req,(found)=>{
+		console.log(found.data);
+		if(found.res){
+		    req.flash("message","You have inserted your query")
+	        res.redirect('/dashboard')
+        }
+        else{
+            req.flash("message","Your  query has not been inserted try again")
+	        res.redirect('/dashboard')
+        }
+    });
+})
+
+// Reply related things 
+
+// Reply posting method
+app.post("/replyposting",function(req,res){
+	reply.insert(req,(result)=>{
+	    if(result.res){
+	        req.flash("message","Your have replied to the User!! Congrats");
+	        res.redirect('/dashboard');
+	    }
+	    else{
+	        req.flash("message","Some error occured while inserting the reply Please try again");
+	        res.redirect('/dashboard');
+	    }
+	});
+})
 
 // Starting the server on a particular port
 app.listen(port ,()=> {
