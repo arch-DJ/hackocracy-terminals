@@ -21,6 +21,7 @@ const library = require("./lib/lib");
 const vote = require("./controller/vote");
 require("./models/reply")
 const reply = require("./controller/reply")
+const user = require("./controller/user")
 mongoose.connect(process.env.MONGOLAB_URI||"mongodb://localhost:27017/hackocracy");
 var db = mongoose.connection;
 var app = express();
@@ -61,6 +62,22 @@ var isLoggedIn = function(req,res,next){
 	}
 }
 
+var isAdmin = function(req,res,next){
+	console.log(req.user)
+	if(req.user.group == 2){
+		next();
+	}
+	else
+		res.redirect("/no")
+}
+
+var isNotBanned = function(req,res,next){
+	if(req.user.isBanned == false)
+		next();
+	else{
+		res.redirect("/no")
+	}
+}
 // homepage of our site
 app.get("/",(req,res)=>{
     pageInfo={};
@@ -89,12 +106,9 @@ callback();
 app.get("/no",(req,res)=>{
    res.render("nologin"); 
 });
-//Requires authenticate specially for admins
-app.get("/adminportal",isLoggedIn,(req,res)=>{
-	res.render("adminportal")
-});
+
 //Main page that comes after that of the logining the user in
-app.get("/dashboard",isLoggedIn,(req,res)=>{
+app.get("/dashboard",isLoggedIn,isNotBanned,(req,res)=>{
 		var pageInfo = {}
 
 		pageInfo.flash = req.flash("message")
@@ -359,6 +373,15 @@ app.get("/replies",(req,res)=>{
 		res.render("replies",pageInfo)
 	})
 })
+
+app.get("/adminPanel",isLoggedIn,isAdmin,function(req,res){
+	var pageInfo = {}
+	user.getAllElements(req,(found)=>{
+		pageInfo.users = found.data
+		res.render("adminPanel",pageInfo)
+	})
+	
+})
 // All admin queries
 app.get('/getAdmin',(req,res)=>{
     pageInfo={};
@@ -579,6 +602,14 @@ app.post("/replyposting",function(req,res){
 	        res.redirect('/dashboard');
 	    }
 	});
+})
+
+app.get('/banuser',(req,res)=>{
+	user.banUser(req.query.userId);
+})
+
+app.get('/unbanuser',(req,res)=>{
+	user.unbanUser(req.query.userId);
 })
 
 // Starting the server on a particular port

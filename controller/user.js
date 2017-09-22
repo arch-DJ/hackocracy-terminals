@@ -64,10 +64,34 @@ var getElementBanned = function (req,callback){
     callback({"data":null});
   }) ; 
 };
-models.exports = {
+
+var banUser = function(userId){
+  User.findOneAndUpdate({"_id":userId},{"isBanned":true},function(err,data){
+    if(err)
+      throw err
+    else{
+      console.log(data)
+    }
+  })
+}
+
+var unbanUser = function(userId){
+  User.findOneAndUpdate({"_id":userId},{"isBanned":false},function(err,data){
+    if(err)
+      throw err
+    else{
+      console.log(data)
+    }
+  })
+}
+
+
+module.exports = {
   getElementAdmin,
   getElementNonAdmin,
   getAllElements,
   getElementBanned,
-  getElementNonBanned
+  getElementNonBanned,
+  banUser,
+  unbanUser
 }
