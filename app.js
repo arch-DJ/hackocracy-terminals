@@ -1,5 +1,4 @@
 // import packages
-//require('./package.js');
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
@@ -83,7 +82,8 @@ var isNotBanned = function(req,res,next){
 		res.redirect("/no")
 	}
 }
-// homepage of our site
+
+// Homepage of our site
 app.get("/",(req,res)=>{
     pageInfo={};
     var items = [admin_controller];
@@ -181,9 +181,6 @@ app.post("/queryposting",(req,res)=>{
  
 	});
 });
-
-
-
 
 // All  query getting  are included from here
 app.get("/getQuery",(req,res)=>{
@@ -295,17 +292,6 @@ app.get('/getQuery/mid/:qid',isLoggedIn,(req,res)=>{
   })
 })
 });
-// Getting the query by a particular date posted:
-
-app.get('/getQuery/all/:date',(req,res)=>{
-	query_controller.getElementbyDate(req,(found)=>{
-		console.log(found.data);
-		if(found.data.length==0)
-	    	res.render("404");
-		else
-	    	res.render("querybydate",{"data":found.data});
-	});
-});
 
 // Getting the query according to the a particular id
 app.get('/getQuery/:id',(req,res)=>{
@@ -336,39 +322,16 @@ app.get('/getQuery/:id',(req,res)=>{
     })
     })
     });
+    
+    
+// All admin related queries
 
-
-
-
-// Sort the date by date createdAt
-app.get('/sortqbydate1',(req,res)=>{
-	query_controller.sortByCreatedDate(req,(result)=>{
-		res.render("sortbycreatedDate",{"data":result.data});
-	});
-});
-// Sort the date by date updatedAt
-app.get('/sortqbydate2',(req,res)=>{
-	query_controller.sortByUpdatedDate(req,(result)=>{
-		res.render("sortbyupdatedDate",{"data":result.data});
-	});
-});
 // Calling the admin related queries
 app.get("/adminposting",isLoggedIn,(req,res)=>{
 	library.getTag((result)=>{
 		console.log(result.data[0]);
 		res.render("adminposting",{"data":result.data,"data1":result.data1});
 	})
-});
-app.post('/adminposting',(req,res)=>{
-	admin_controller.saveMessage(req,(found)=>{
-	   if(found.res){
-		req.flash("message","You have inserted your query")
-    	res.redirect('/dashboard')}
-	else{
-	    req.flash("message","You have not inserted your query")
-	    res.redirect('/dashboard')
-	}
-	});
 });
 
 app.get("/replies",(req,res)=>{
@@ -387,7 +350,22 @@ app.get("/adminPanel",isLoggedIn,isAdmin,function(req,res){
 	})
 	
 })
+
+// Admin things goes from here
+
+app.post('/adminposting',(req,res)=>{
+	admin_controller.saveMessage(req,(found)=>{
+	   if(found.res){
+		req.flash("message","You have inserted your query")
+    	res.redirect('/dashboard')}
+	else{
+	    req.flash("message","You have not inserted your query")
+	    res.redirect('/dashboard')
+	}
+	});
+});
 // All admin queries
+
 app.get('/getAdmin',(req,res)=>{
     pageInfo={};
     var items = [admin_controller];
@@ -486,6 +464,8 @@ app.get("/makeadmin",(req,res)=>{
 	user.makeadmin(req.query.userId);
 })
 
+
+// Comment related things
 app.post("/commentposting",isLoggedIn,(req,res)=>{
 	comment_ctrl_admin.insertComment(req,(found)=>{
 		console.log(found.data);
@@ -534,16 +514,8 @@ app.get("/getAdmin/tags/:tags",(req,res)=>{
 })
 });
 
-// All query according to the date
-app.get('/getAdmin/:date',(req,res)=>{
-	admin_controller.getElementbyDate(req,(result)=>{
-		if(result.data.length==0)
-    		res.render("404");
-  		else
-	    	res.render("adminquerydate",{"data":result.data});
-	});
-});
-// All query access to the ministry
+
+// All posts access to the ministry
 app.get('/getAdmin/ministry/:ministry',(req,res)=>{
 	 pageInfo={};
     var items = [admin_controller];
@@ -572,19 +544,6 @@ app.get('/getAdmin/ministry/:ministry',(req,res)=>{
     })
     })
     });
-
-app.get('/sortqbydate3',(req,res)=>{
- admin_controller.sortByCreatedDate(req,(result)=>{
-		res.render("sortbyCreatedDate1",{"data":result.data});
-	});
-});
-// Sort the date by date updatedAt
-app.get('/sortqbydate4',(req,res)=>{
-	admin_controller.sortByUpdatedDate(req,(result)=>{
-		res.render("soryByModifiedDate1",{"data":result.data});
-	});
-});
-
 // Comment related things
 
 app.post("/commentposting1",isLoggedIn,(req,res)=>{
