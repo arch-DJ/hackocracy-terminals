@@ -74,7 +74,7 @@ h1 {
 <% } %>
 </tr>
 </table>
-<p style="color:red">** Note: If the box is checked that means the user in admin and not checked means user is not admin</p>
+<p style="color:red">** Note: If the box is checked that means the user in banned and not checked means user is not banned</p>
 <script type="text/javascript">
 	function banUser(userId){
 		var parameters = {}
