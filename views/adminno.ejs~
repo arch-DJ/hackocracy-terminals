@@ -1,0 +1,12 @@
+<% include header.ejs %>
+<section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="img/portfolio/landing.jpg">
+    <div class="titan-caption">
+        <div class="caption-content">
+            <div class="font-alt mb-30 titan-title-size-4">Access Denied</div>
+            <div class="font-alt">You dont's have access to perform this operation<br/>That is all we know.
+            </div>
+            <div class="font-alt mt-30"><a class="btn btn-border-w btn-round" href="/">Back to home page</a></div>
+        </div>
+    </div>
+</section>
+<%include footer.ejs%>

@@ -62,15 +62,19 @@ var isLoggedIn = function(req,res,next){
 	}
 }
 
+
 var isAdmin = function(req,res,next){
 	console.log(req.user)
 	if(req.user.group == 1){
 		next();
 	}
 	else
-		res.redirect("/no")
+		res.redirect("/adminno")
 }
 
+app.get("/adminno",(req,res)=>{
+   res.render("adminno"); 
+});
 var isNotBanned = function(req,res,next){
 	if(req.user.isBanned == false)
 		next();
