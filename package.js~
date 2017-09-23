@@ -1,4 +1,7 @@
-module.exports(var express = require('express');
+module.exports=function(app){
+    console.log("hello peoples hw r u")
+var express = require('express');
+
 var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -25,3 +28,4 @@ mongoose.connect(process.env.MONGOLAB_URI||"mongodb://localhost:27017/hackocracy
 var db = mongoose.connection;
 var app = express();
 var async = require('async')
+}

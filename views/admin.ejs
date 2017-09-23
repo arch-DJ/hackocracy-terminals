@@ -96,6 +96,7 @@
                                                                                                                                                                 
                                                                                                                                                         
                                                                         <div class="clearfix">
+                                                                        <%if(sortdate.length<3){ %>
                                                                         <%for(var i = 0 ; i < sortdate.length ; i++){%>
                                                                         <div class="tab-thumb">
                                                                                                                                                
@@ -108,6 +109,21 @@
                                                                             <p><%= sortdate[i].message.substring(0,30)%></p>
                                                                             </div>
                                                                             </div>
+                                                                            <%}%>
+                                                                              <%}else{ %>
+                                                                        <%for(var i = 0 ; i < 3 ; i++){%>
+                                                                        <div class="tab-thumb">
+                                                                                                                                               
+                                                                            <img src="img/blog/amazing-caves-coverimage.jpg" class="img-responsive" alt="amazing-caves-coverimage | Meghna">
+                                                                            </div>
+                                                                         
+                                                                            <div class="tab-excerpt">
+                                                                            <h4><a href="getAdmin/mid/<%=sortdate[i]._id%>"><%=sortdate[i].heading%></a></h4>
+                                                                            <span><%=sortdate[i].createdAt%></span>
+                                                                            <p><%= sortdate[i].message.substring(0,30)%></p>
+                                                                            </div>
+                                                                            </div>
+                                                                            <%}%>
                                                                             <%}%>
                                                                         </div>
                                                                         </div>
