@@ -85,6 +85,26 @@ var unbanUser = function(userId){
   })
 }
 
+var makeadmin = function(userId){
+  User.findOneAndUpdate({"_id":userId},{"group":1},function(err,data){
+    if(err)
+      throw err
+    else{
+      console.log(data)
+    }
+  })
+}
+
+var removeadmin = function(userId){
+  User.findOneAndUpdate({"_id":userId},{"group":2},function(err,data){
+    if(err)
+      throw err
+    else{
+      console.log(data)
+    }
+  })
+}
+
 
 module.exports = {
   getElementAdmin,
@@ -93,5 +113,7 @@ module.exports = {
   getElementBanned,
   getElementNonBanned,
   banUser,
-  unbanUser
+  unbanUser,
+  makeadmin,
+  removeadmin
 }

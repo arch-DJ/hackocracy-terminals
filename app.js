@@ -64,7 +64,7 @@ var isLoggedIn = function(req,res,next){
 
 var isAdmin = function(req,res,next){
 	console.log(req.user)
-	if(req.user.group == 2){
+	if(req.user.group == 1){
 		next();
 	}
 	else
@@ -472,6 +472,14 @@ app.get('/getAdmin/mid/:mid',isLoggedIn,(req,res)=>{
         })
     })
 });
+
+app.get("/removeadmin",(req,res)=>{
+	user.removeadmin(req.query.userId);
+})
+
+app.get("/makeadmin",(req,res)=>{
+	user.makeadmin(req.query.userId);
+})
 
 app.post("/commentposting",isLoggedIn,(req,res)=>{
 	comment_ctrl_admin.insertComment(req,(found)=>{

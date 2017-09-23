@@ -8,6 +8,15 @@ List of users:-<br>
 		<input type = "checkbox" onclick="banUser('<%= users[i]._id %>')"><%= users[i].email%><br>
 	<% } %>
 <% } %>
+
+List of users to select admin:-
+<% for(var i=0;i<users.length;i++){ %>
+	<% if(users[i].group == 1){%>
+		<input type = "checkbox" checked="true" onclick="removeadmin('<%= users[i]._id %>')" ><%= users[i].email %><br>
+	<% }else{ %>
+		<input type = "checkbox" onclick="makeadmin('<%= users[i]._id %>')"><%= users[i].email%><br>
+	<% } %>
+<% } %>
 <script type="text/javascript">
 	function banUser(userId){
 		var parameters = {}
@@ -23,4 +32,22 @@ List of users:-<br>
 
 		})
 	}
+
+	function removeadmin(userId){
+		var parameters = {}
+		parameters.userId = userId
+		$.get('/removeadmin',parameters,function(data){
+
+		})
+	}
+
+	function makeadmin(userId){
+		var parameters = {}
+		parameters.userId = userId
+		$.get('/makeadmin',parameters,function(data){
+
+		})
+	}
+
+
 </script>
