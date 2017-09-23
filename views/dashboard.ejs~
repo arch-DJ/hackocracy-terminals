@@ -148,10 +148,10 @@
                             <div class="col-sm-6">
                                 <h2 class="module-title font-alt align-left">Why Your Dashboard is Important</h2>
                                 <p class="module-subtitle font-serif align-left">You Can Do Amazing stuffs here..</p>
-                                <p class="module-subtitle font-serif align-left">1.Check Your Stats</p>
-                                <p class="module-subtitle font-serif align-left">2.See Your Queries</p>
-                                <p class="module-subtitle font-serif align-left">3.See Your Replies</p>
-                                <p class="module-subtitle font-serif align-left">4.If you are admin then have the fun of adminPanel</p>
+                                <p>1.Check Your Stats</p>
+                                <p>2.See Your Queries</p>
+                                <p>3.See Your Replies</p>
+                                <p>4.If you are admin then have the fun of adminPanel</p>
                                 </p>
                                 
                             </div>

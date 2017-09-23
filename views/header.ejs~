@@ -92,6 +92,10 @@
                             </li>
                              </li>
                                <li ><a href="/dashboard" >Dashboard</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/getAdmin"><i class="fa fa-bolt"></i>All Posts</a></li>
+                                    <li><a href="/sortqbydate3"><i class="fa fa-link fa-sm"></i> Posts Sorted By the Created Date</a></li>
+                                </ul>
                             </li>
           </div>
         </div>
