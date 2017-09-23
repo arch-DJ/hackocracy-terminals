@@ -1,4 +1,5 @@
 // import packages
+//require('./package.js');
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
@@ -26,8 +27,8 @@ mongoose.connect(process.env.MONGOLAB_URI||"mongodb://localhost:27017/hackocracy
 var db = mongoose.connection;
 var app = express();
 var async = require('async')
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.text());
 
 const session = require('express-session')
 app.use(session({
