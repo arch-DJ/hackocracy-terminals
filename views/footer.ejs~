@@ -13,8 +13,8 @@
                 <div class="widget">
                   <h5 class="widget-title font-alt">Recent Articles</h5>
                   <ul class="icon-list">
-                    <li>Government Decision<a href="">Demonetisation</a></li>
-                    <li>Government Decision<a href="">GST Implementation</a></li>
+                    <li>Government Decisions<a href="#">Demonetisation</a></li>
+                    <li>John on <a href="#"></a></li>
                   </ul>
                 </div>
               </div>
