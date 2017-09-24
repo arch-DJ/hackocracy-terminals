@@ -56,5 +56,5 @@
 
 1.We have hosted the site on the Internet.You can go there and have a look at item
 
-2.Site link is -: fierce-mountain-23963.herokuapp.com 
+2.Site link is -: https://fierce-mountain-23963.herokuapp.com/
 
