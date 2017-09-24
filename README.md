@@ -1,7 +1,9 @@
 # Hackocracy-Terminals
 
-#About Project
-    In our country India we say that we are the largest democracy of the world but I think this thins is followed only when the elections are taking place. Once the goverment is chosen no matter what they do people can't do anything to dethrone them. So Our Project is about Using the power of Democracy for each and every people of the country. So What we are trying to do is maintain a direct web-based relation between the goverment and people , so that the people have a say in the political democracy of India even after the elections by raising their voice to the goverment. Basically , We have developed a system that can do mainly these things:-
+# About Project
+
+   
+   In our country India we say that we are the largest democracy of the world but I think this thins is followed only when the elections are taking place. Once the goverment is chosen no matter what they do people can't do anything to dethrone them. So Our Project is about Using the power of Democracy for each and every people of the country. So What we are trying to do is maintain a direct web-based relation between the goverment and people , so that the people have a say in the political democracy of India even after the elections by raising their voice to the goverment. Basically , We have developed a system that can do mainly these things:-
     
     1. The people could contact the goverment via a portal called "Query-Posting" that means they can do the following things:-
     
@@ -15,7 +17,6 @@
    
    
    2. The Government could contact the people directly by posting their taken decisions or any decisions they want to take.They have the following functions:-
-   
    -- They can get the feedback from the people on that issue in form of comments and upvotes /downvotes
    
    -- If they are going to take any decision then they can post that decision on the site so that the government cound get the feedback form the people that they are happy or not on that issue.
@@ -37,7 +38,7 @@
     4. Also people can respond to the goverment-Posts in form of comments and upvotes/downVote.
 
 
-#Instructions To Run(On Your Local Machine)
+# Instructions To Run(On Your Local Machine)
 
 1. Install Node version 8.3.0 on your system
 2. Install mongodb version 3.4 or above on your system.
@@ -51,7 +52,7 @@
 
 
 
-#Instructions to Open Site
+# Instructions to Open Site
 
 1.We have hosted the site on the Internet.You can go there and have a look at item
 
