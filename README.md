@@ -9,8 +9,9 @@
     
     -- If they have any suggestions, anything that they want that if it implemented then it would benefit our country they can post this thing so that goverment can hear that.
     
-    -- Also, there is Admin sitting on the opposite side , so when you send the request / post about anything they see that things they give you the feedback about your query (that they can do this thing or not)
-        -- If they found your idea/problem of suggestion unique/genuine then they implement forward it to the corresponding authority and give your the reply
+    -- Also, there is Admin sitting on the opposite side , so when you send the request / post about anything they see that things they give you the feedback about your query (that they can do this thing or not).
+        
+    -- If they found your idea/problem of suggestion unique/genuine then they implement forward it to the corresponding authority and give your the reply.
    
    
    2. The Government could contact the people directly by posting their taken decisions or any decisions they want to take.They have the following functions:-
@@ -53,5 +54,5 @@
 #Instructions to Open Site
 
 1.We have hosted the site on the Internet.You can go there and have a look at item
-2. Site link is -: fierce-mountain-23963.herokuapp.com 
+2.Site link is -: fierce-mountain-23963.herokuapp.com 
 
