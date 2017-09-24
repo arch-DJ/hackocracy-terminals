@@ -13,10 +13,6 @@ exports.getTag = function(callback){
 		"Sewerage Problems",
 		"Transport",
 		"Urban Sprawl",
-		"Suggestions",
-		"Government Decision",
-		"Government Decision To Be Taken",
-		"Centre Decision"
 	];
 	var ministry = [
 		"Ministry of Agriculture and Farmers Welfare",
